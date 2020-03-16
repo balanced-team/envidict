@@ -1,12 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Text>Hello, I'm Envidict</Text>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
 
 export default App
