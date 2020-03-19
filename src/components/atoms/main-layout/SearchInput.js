@@ -6,8 +6,9 @@ import { Colors } from '../../../styles'
 const SearchInput = () => {
   return (
     <Item rounded style={styles.searchInput}>
-      <Icon name="ios-search" />
+      <Icon name="search" />
       <Input placeholder="Gõ từ để tra từ điển" />
+      <Icon name="close" />
     </Item>
   )
 }
