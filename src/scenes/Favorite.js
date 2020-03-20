@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react'
-import { Text, Alert, BackHandler } from 'react-native'
-import { View } from 'native-base'
+import { Text, Alert, BackHandler, Button } from 'react-native'
+import { View, Container } from 'native-base'
+
 
 import { backHandleToExitApp } from '../utils'
 
-const Favorite = () => {
+const Favorite = ({ navigation }) => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
 
   return (
-    <View>
+    <Container>
       <Text>Favorite</Text>
-    </View>
+      <Button title="ClickMe" onPress={() => navigation.navigate('WordView')} />
+      <Button title="Go again" onPress={() => navigation.push('Favorite')} />
+    </Container>
   )
 }
 
