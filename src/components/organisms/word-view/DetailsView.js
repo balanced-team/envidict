@@ -1,185 +1,100 @@
 import React from 'react'
-import { Text, Image, StyleSheet } from 'react-native'
-import { View, ViewBase, Container } from 'native-base'
+import { Text, ScrollView, StyleSheet } from 'react-native'
+import { View, Container, Icon, Button } from 'native-base'
 const DetailsView = () => {
-  this.state = {
-    titleText: 'representatives',
-    pronounce: '/reabc/',
-    typeText: 'adj',
-    explain: 'tiêu biểu, điển hình',
-    example: 'a meeting of representative of monastic life',
-    exampleTrans: 'cuộc họp của những người tiêu biểu'
-  }
   return (
-    <View style={styles.container}>
-      <Text style={styles.headText}>
-        <Text style={styles.titleText}>
-          {this.state.titleText}
-          {'\n'}
-        </Text>
-        <Text>
-          {this.state.pronounce}
-          {'\n'}
-        </Text>
-      </Text>
-      <Text style={styles.baseText}>
-        <Text style={styles.typeText}>
-          {' '}
-          > {this.state.typeText}
-          {'\n'}
-        </Text>
-        <Text style={styles.explain}>
-          1. {this.state.explain}
-          {'\n'}
-        </Text>
+    <ScrollView style={styles.container}>
+      <Text style={styles.titleText}>representatives</Text>
+      <View style={styles.inLine}>
+        <Icon name="volume-high" style={styles.iconVolume}></Icon>
+        <Text style={styles.pronounce}>/ˌrɛ.prɪ.ˈzɛn.tə.tɪv/</Text>
+      </View>
+
+      <View style={styles.inLine}>
+        <Icon type="FontAwesome" name="angle-right" style={styles.iconType} />
+        <Text style={styles.typeText}>adj</Text>
+      </View>
+
+      <View style={styles.baseText}>
+        <Text style={styles.explain}>1. tiêu biểu, điển hình</Text>
         <Text style={styles.example}>
-          {this.state.example}
-          {'\n'}
+          a meeting of representative of monastic life. This is a long lineeeeeeeee.
         </Text>
-        <Text style={styles.exampleTrans}>
-          {' '}
-          > {this.state.exampleTrans}
-          {'\n'}
-        </Text>
-      </Text>
-      <Text style={styles.baseText}>
-        <Text style={styles.explain}>
-          2. {this.state.explain}
-          {'\n'}
-        </Text>
-        <Text style={styles.example}>
-          {this.state.example}
-          {'\n'}
-        </Text>
-        <Text style={styles.exampleTrans}>
-          {' '}
-          > {this.state.exampleTrans}
-          {'\n'}
-        </Text>
-      </Text>
-      <Text style={styles.baseText}>
-        <Text style={styles.explain}>
-          3. {this.state.explain}
-          {'\n'}
-        </Text>
-        <Text style={styles.example}>
-          {this.state.example}
-          {'\n'}
-        </Text>
-        <Text style={styles.exampleTrans}>
-          {' '}
-          > {this.state.exampleTrans}
-          {'\n'}
-        </Text>
-      </Text>
-      <Text style={styles.baseText}>
-        <Text style={styles.typeText}>
-          {' '}
-          > {this.state.typeText}
-          {'\n'}
-        </Text>
-        <Text style={styles.explain}>
-          4. {this.state.explain}
-          {'\n'}
-        </Text>
-        <Text style={styles.example}>
-          {this.state.example}
-          {'\n'}
-        </Text>
-        <Text style={styles.exampleTrans}>
-          {' '}
-          > {this.state.exampleTrans}
-          {'\n'}
-        </Text>
-      </Text>
-      <Text style={styles.baseText}>
-        <Text style={styles.explain}>
-          3. {this.state.explain}
-          {'\n'}
-        </Text>
-        <Text style={styles.example}>
-          {this.state.example}
-          {'\n'}
-        </Text>
-        <Text style={styles.exampleTrans}>
-          {' '}
-          > {this.state.exampleTrans}
-          {'\n'}
-        </Text>
-      </Text>
-      <Text style={styles.baseText}>
-        <Text style={styles.explain}>
-          3. {this.state.explain}
-          {'\n'}
-        </Text>
-        <Text style={styles.example}>
-          {this.state.example}
-          {'\n'}
-        </Text>
-        <Text style={styles.exampleTrans}>
-          {' '}
-          > {this.state.exampleTrans}
-          {'\n'}
-        </Text>
-      </Text>
-      <Text style={styles.baseText}>
-        <Text style={styles.explain}>
-          3. {this.state.explain}
-          {'\n'}
-        </Text>
-        <Text style={styles.example}>
-          {this.state.example}
-          {'\n'}
-        </Text>
-        <Text style={styles.exampleTrans}>
-          {' '}
-          > {this.state.exampleTrans}
-          {'\n'}
-        </Text>
-      </Text>
-    </View>
+
+        <View style={styles.inLine}>
+          <Icon type="FontAwesome" name="angle-right" style={styles.iconRight} />
+          <Text style={styles.exampleTrans}>
+            cuộc họp của những người tiêu biểu
+            {'\n'}
+          </Text>
+        </View>
+      </View>
+    </ScrollView>
   )
 }
 
 export default DetailsView
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 8,
-    overflow: 'visible'
-  },
-  headText: {
-    paddingLeft: 10,
-    paddingTop: 16
-  },
   baseText: {
-    fontSize: 18,
     paddingLeft: 16
   },
   titleText: {
     fontSize: 28,
     fontWeight: 'bold',
     color: '#044470',
-    paddingTop: 20
+    paddingLeft: 6,
+    paddingTop: 16
   },
   pronounce: {
     color: '#4e4e4e',
-    paddingLeft: 16
+    fontSize: 18,
+    paddingLeft: 18,
+    paddingTop: 10
   },
   typeText: {
     fontSize: 16,
-    color: '#0468b6'
+    color: '#0468b6',
+    paddingLeft: 4,
+    paddingTop: 18
   },
   explain: {
     color: '#003764',
-    paddingTop: 20
+    fontSize: 16,
+    paddingTop: 10
   },
   example: {
     color: '#4297d3',
+    fontSize: 16,
     fontStyle: 'italic',
-    paddingTop: 14
+    paddingLeft: 16,
+    paddingTop: 8
   },
   exampleTrans: {
-    color: '#8b8b8b'
+    color: '#8b8b8b',
+    fontSize: 16,
+    paddingLeft: 4,
+    paddingTop: 6
+  },
+  iconVolume: {
+    color: '#1c74bb',
+    fontSize: 24,
+    paddingLeft: 10,
+    paddingTop: 10
+  },
+  iconType: {
+    color: '#0468b6',
+    fontSize: 14,
+    paddingLeft: 10,
+    paddingTop: 22
+  },
+  iconRight: {
+    color: '#8b8b8b',
+    paddingLeft: 10,
+    fontSize: 14,
+    paddingTop: 10
+  },
+  inLine: {
+    flexDirection: 'row',
+    paddingLeft: 10
   }
 })

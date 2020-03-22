@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, StatusBar } from 'react-native'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
@@ -21,7 +21,8 @@ const App = (props) => {
   } else {
     return (
       <View style={styles.container}>
-        <MoveScreen />
+        <StatusBar backgroundColor="red" hidden={false} barStyle="light-content" />
+        {/* <MoveScreen /> */}
         <AppNavigator />
       </View>
     )
@@ -45,7 +46,8 @@ const handleFinishLoading = (setLoadingComplete) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    marginTop: StatusBar.currentHeight
   }
 })
 
