@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, ScrollView, StyleSheet } from 'react-native'
 import { View, Container, Icon, Button } from 'native-base'
+
 const DetailsView = () => {
   return (
     <ScrollView style={styles.container}>

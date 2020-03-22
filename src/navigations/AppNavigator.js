@@ -9,7 +9,7 @@ import Vocabulary from '../scenes/Vocabulary'
 import Learning from '../scenes/Learning'
 import Settings from '../scenes/Settings'
 import TabBarIcon from '../components/atoms/navigations/TabBarIcon'
-import MoveScreen from './MoveScreen'
+import MainStackNavigator from './MainStackNavigator'
 
 const Tab = createBottomTabNavigator()
 
@@ -24,9 +24,9 @@ const AppNavigator = () => {
             tabBarIcon: ({ focused }) => <TabBarIcon name="md-home" focused={focused} />
           }}
         />
-        <Tab.Screen 
+        <Tab.Screen
           name="Favorite"
-          component={MoveScreen}
+          component={MainStackNavigator}
           options={{
             tabBarIcon: ({ focused }) => <TabBarIcon name="md-heart" focused={focused} />
           }}

@@ -5,7 +5,6 @@ import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
 
 import AppNavigator from './src/navigations/AppNavigator'
-import MoveScreen from './src/navigations/MoveScreen'
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
@@ -22,7 +21,6 @@ const App = (props) => {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="red" hidden={false} barStyle="light-content" />
-        {/* <MoveScreen /> */}
         <AppNavigator />
       </View>
     )

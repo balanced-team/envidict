@@ -9,7 +9,7 @@ import WordView from '../scenes/WordView'
 
 const Stack = createStackNavigator()
 
-const MoveScreen = () => {
+const MainStackNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Favorite">
       <Stack.Screen
@@ -33,4 +33,4 @@ const MoveScreen = () => {
   )
 }
 
-export default MoveScreen
+export default MainStackNavigator

@@ -10,7 +10,7 @@ const NoteView = () => {
       <Textarea
         containerStyle={styles.textareaContainer}
         style={styles.textarea}
-        // maxLength={120}
+        maxLength={120}
         placeholder={'Ghi chú'}
       />
     </View>
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     padding: 8
   },
-
   textareaContainer: {
     height: 150,
     backgroundColor: '#FFFFFF',

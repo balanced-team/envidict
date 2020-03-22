@@ -13,7 +13,6 @@ import {
 
 import NoteView from '../components/organisms/word-view/NoteView'
 import DetailsView from '../components/organisms/word-view/DetailsView'
-import MainLayout from '../components/templates/MainLayout'
 
 const WordView = () => {
   return (
@@ -45,7 +44,6 @@ const WordView = () => {
     </Container>
   )
 }
-export default WordView
 const styles = StyleSheet.create({
   remindView: {
     flex: 1,
@@ -92,7 +90,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
-
     elevation: 12
   },
   customIconHeart: {
@@ -106,3 +103,4 @@ const styles = StyleSheet.create({
     color: '#fff'
   }
 })
+export default WordView
