@@ -15,7 +15,10 @@ export const BLUE_TITLE = '#003a68'
 export const BLUE_TEXT = '#044470' // Tu dang tim kiem
 export const BLUE_EXPLAIN = '#01416e' // Giai thich, nghia
 export const BLUE_TRANSLATE = '#8b8b8b' // Vi du tieng viet
+export const BLUE_TYPE = '#0468b6'
 
 // GREEN
 export const GREEN_MEDIUM = '#00c100'
 export const GREEN_LIGHT = '#80ff80'
+
+//

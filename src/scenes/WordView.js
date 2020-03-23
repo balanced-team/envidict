@@ -1,18 +1,10 @@
 import React from 'react'
 import { Text, StyleSheet, Row } from 'react-native'
-import {
-  Container,
-  View,
-  Button,
-  Tabs,
-  Tab,
-  Icon,
-  StyleProvider,
-  Footer
-} from 'native-base'
+import { Container, View, Button, Tabs, Tab, Icon } from 'native-base'
 
 import NoteView from '../components/organisms/word-view/NoteView'
 import DetailsView from '../components/organisms/word-view/DetailsView'
+import { Colors } from '../styles/index'
 
 const WordView = () => {
   return (
@@ -20,15 +12,15 @@ const WordView = () => {
       <Tabs>
         <Tab
           heading="Translate"
-          tabStyle={{ backgroundColor: '#4297d3' }}
-          activeTabStyle={{ backgroundColor: '#1c74bb' }}
+          tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
+          activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >
           <DetailsView />
         </Tab>
         <Tab
           heading="Note"
-          tabStyle={{ backgroundColor: '#4297d3' }}
-          activeTabStyle={{ backgroundColor: '#1c74bb' }}
+          tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
+          activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >
           <NoteView />
         </Tab>
@@ -60,11 +52,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 40,
     height: 40,
-    backgroundColor: '#ffff',
+    backgroundColor: Colors.WHITE,
     borderRadius: 40,
-    borderColor: '#ffff',
+    borderColor: Colors.WHITE,
     marginRight: 5,
-    shadowColor: '#000',
+    shadowColor: Colors.BLACK,
     shadowOffset: {
       width: 2,
       height: 0
@@ -80,10 +72,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 40,
     height: 40,
-    backgroundColor: '#1c74bb',
+    backgroundColor: Colors.BLUE_DARK,
     borderRadius: 40,
-    borderColor: '#1c74bb',
-    shadowColor: '#000',
+    borderColor: Colors.BLUE_DARK,
+    shadowColor: Colors.BLACK,
     shadowOffset: {
       width: 2,
       height: 0
@@ -95,12 +87,12 @@ const styles = StyleSheet.create({
   customIconHeart: {
     width: 20,
     height: 23,
-    color: '#1c74bb'
+    color: Colors.BLUE_DARK
   },
   customIconSearch: {
     width: 17,
     height: 23,
-    color: '#fff'
+    color: Colors.WHITE
   }
 })
 export default WordView

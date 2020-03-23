@@ -4,6 +4,8 @@ import Constants from 'expo-constants'
 import Textarea from 'react-native-textarea'
 import { View } from 'native-base'
 
+import { Colors } from '../../../styles/index'
+
 const NoteView = () => {
   return (
     <View style={styles.container}>
@@ -25,16 +27,16 @@ const styles = StyleSheet.create({
   },
   textareaContainer: {
     height: 150,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.WHITE,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#4297d3'
+    borderColor: Colors.BLUE_LIGHT
   },
   textarea: {
     textAlignVertical: 'top',
     padding: 10,
     height: 180,
     fontSize: 14,
-    color: '#044470'
+    color: Colors.BLUE_TEXT
   }
 })

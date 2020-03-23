@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, ScrollView, StyleSheet } from 'react-native'
 import { View, Container, Icon, Button } from 'native-base'
+import { Colors } from '../../../styles/index'
 
 const DetailsView = () => {
   return (
@@ -42,54 +43,54 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#044470',
+    color: Colors.BLUE_TEXT,
     paddingLeft: 6,
     paddingTop: 16
   },
   pronounce: {
-    color: '#4e4e4e',
+    color: Colors.SECONDARY,
     fontSize: 18,
     paddingLeft: 18,
     paddingTop: 10
   },
   typeText: {
     fontSize: 16,
-    color: '#0468b6',
+    color: Colors.BLUE_TYPE,
     paddingLeft: 4,
     paddingTop: 18
   },
   explain: {
-    color: '#003764',
+    color: Colors.BLUE_EXPLAIN,
     fontSize: 16,
     paddingTop: 10
   },
   example: {
-    color: '#4297d3',
+    color: Colors.BLUE_LIGHT,
     fontSize: 16,
     fontStyle: 'italic',
     paddingLeft: 16,
     paddingTop: 8
   },
   exampleTrans: {
-    color: '#8b8b8b',
+    color: Colors.BLUE_TRANSLATE,
     fontSize: 16,
     paddingLeft: 4,
     paddingTop: 6
   },
   iconVolume: {
-    color: '#1c74bb',
+    color: Colors.BLUE_DARK,
     fontSize: 24,
     paddingLeft: 10,
     paddingTop: 10
   },
   iconType: {
-    color: '#0468b6',
+    color: Colors.BLUE_TYPE,
     fontSize: 14,
     paddingLeft: 10,
     paddingTop: 22
   },
   iconRight: {
-    color: '#8b8b8b',
+    color: Colors.BLUE_TRANSLATE,
     paddingLeft: 10,
     fontSize: 14,
     paddingTop: 10
