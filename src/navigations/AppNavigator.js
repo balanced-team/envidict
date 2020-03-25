@@ -1,7 +1,6 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from 'react-navigation-stack'
 
 import Home from '../scenes/Home'
 import Favorite from '../scenes/Favorite'
@@ -10,6 +9,7 @@ import Learning from '../scenes/Learning'
 import Settings from '../scenes/Settings'
 import TabBarIcon from '../components/atoms/navigations/TabBarIcon'
 import MainStackNavigator from './MainStackNavigator'
+import VocabularyNavigator from './VocabularyNavigator'
 
 const Tab = createBottomTabNavigator()
 
@@ -33,7 +33,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen
           name="Vocabulary"
-          component={Vocabulary}
+          component={VocabularyNavigator}
           options={{
             tabBarIcon: ({ focused }) => <TabBarIcon name="md-book" focused={focused} />
           }}

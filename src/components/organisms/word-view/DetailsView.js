@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, ScrollView, StyleSheet } from 'react-native'
-import { View, Container, Icon, Button } from 'native-base'
+import { View, Icon } from 'native-base'
 import { Colors } from '../../../styles/index'
 
 const DetailsView = () => {
