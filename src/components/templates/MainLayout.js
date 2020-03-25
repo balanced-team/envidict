@@ -7,7 +7,7 @@ import SearchHeader from '../molecules/main-layout/SearchHeader'
 const MainLayout = (props) => {
   return (
     <Container>
-      <SearchHeader />
+      <SearchHeader voiceButtonIsVisible={props.voiceButtonIsVisible} />
       <Content>
         <ScrollView>{props.children}</ScrollView>
       </Content>

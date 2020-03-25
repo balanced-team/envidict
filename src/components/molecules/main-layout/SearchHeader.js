@@ -6,11 +6,11 @@ import SearchInput from '../../atoms/main-layout/SearchInput'
 import VoiceButton from '../../atoms/main-layout/VoiceButton'
 import { Colors } from '../../../styles'
 
-const SearchHeader = () => {
+const SearchHeader = (props) => {
   return (
     <Header style={styles.header}>
       <SearchInput />
-      <VoiceButton />
+      {props.voiceButtonIsVisible === true && <VoiceButton />}
     </Header>
   )
 }
