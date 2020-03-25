@@ -1,5 +1,5 @@
-node_modules/**/*
-.expo/*
+node_modules
+.expo
 npm-debug.*
 *.jks
 *.p8
@@ -9,7 +9,11 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
-yarn.lock
 yarn-error.log
+
 # macOS
 .DS_Store
+
+# Lock files
+package-lock.json
+yarn.lock
