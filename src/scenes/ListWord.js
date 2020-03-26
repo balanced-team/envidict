@@ -19,34 +19,34 @@ const ListWord = ({ navigation }) => {
             representatives
           </Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>Easy</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>Vocabulary</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>Core</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>SAT Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>Hard Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
       </List>

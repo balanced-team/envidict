@@ -24,34 +24,34 @@ const Vocabulary = ({ navigation }) => {
         >
           <Text style={styles.vocabulary}>Business English Vocabulary</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>Easy Vocabulary</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>GMAT Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>Hard Vocabulary</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>IELTS Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>SAT Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>Hard Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
-        <ListItem>
+        <ListItem noIndent>
           <Text style={styles.vocabulary}>TOEFL Core English</Text>
         </ListItem>
       </List>
