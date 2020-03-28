@@ -1,9 +1,13 @@
 import { SQLite } from 'expo-sqlite'
 import { BaseModel, types } from 'expo-sqlite-orm'
 
-export default class ViEn extends BaseModel {
+export default class ViEnWord extends BaseModel {
   constructor(data) {
     super(data)
+  }
+
+  get type() {
+    return 'vi-en'
   }
 
   static get database() {
@@ -21,7 +25,6 @@ export default class ViEn extends BaseModel {
       html: { type: types.TEXT },
       description: { type: types.TEXT },
       pronounce: { type: types.TEXT },
-      timestamp: { type: types.TEXT },
     }
   }
 }

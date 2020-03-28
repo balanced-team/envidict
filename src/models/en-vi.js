@@ -1,9 +1,13 @@
 import { SQLite } from 'expo-sqlite'
 import { BaseModel, types } from 'expo-sqlite-orm'
 
-export default class EnVi extends BaseModel {
+export default class EnViWord extends BaseModel {
   constructor(data) {
     super(data)
+  }
+
+  get type() {
+    return 'en-vi'
   }
 
   static get database() {
@@ -21,7 +25,6 @@ export default class EnVi extends BaseModel {
       html: { type: types.TEXT },
       description: { type: types.TEXT },
       pronounce: { type: types.TEXT },
-      timestamp: { type: types.TEXT },
     }
   }
 }
