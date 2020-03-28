@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Alert, BackHandler } from 'react-native'
 import { Text, View, Button, Icon } from 'native-base'
 import { StyleSheet } from 'react-native'
+
 import MainLayout from '../components/templates/MainLayout'
 import WordOfTheDay from '../components/molecules/word/WordOfTheDay'
 import { backHandleToExitApp } from '../utils'
@@ -19,9 +20,11 @@ const Home = () => {
       <WordOfTheDay />
       <RecentWords />
       <View style={styles.buttonWrapper}>
-        <Button style={buttonStyle} iconLeft block>
+        <Button style={buttonStyle} iconLeft block rounded>
           <Icon name="earth" type="MaterialCommunityIcons" />
-          <Text>Dịch online</Text>
+          <Text style={styles.buttonText} uppercase={false}>
+            Dịch online
+          </Text>
         </Button>
       </View>
       <CurrentVocabularies />
@@ -31,7 +34,7 @@ const Home = () => {
 
 const buttonStyle = {
   backgroundColor: Colors.BLUE_DARK,
-  width: 300
+  width: 200
 }
 
 const styles = StyleSheet.create({
@@ -44,6 +47,9 @@ const styles = StyleSheet.create({
     shadowRadius: 0,
     elevation: 0,
     borderTopColor: Colors.WHITE
+  },
+  buttonText: {
+    fontSize: 16
   }
 })
 

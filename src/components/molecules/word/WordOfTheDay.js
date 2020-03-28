@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, Icon, Button, Right, Row, Left } from 'native-base'
+import { Text, View, Icon, Right, Row, Left } from 'native-base'
 import { StyleSheet } from 'react-native'
 
 import { Colors } from '../../../styles'

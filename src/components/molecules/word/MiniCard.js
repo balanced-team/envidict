@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Text, View, Icon } from 'native-base'
+
 import { Colors } from '../../../styles'
 import { FONT_SIZE_14 } from '../../../styles/typography'
 

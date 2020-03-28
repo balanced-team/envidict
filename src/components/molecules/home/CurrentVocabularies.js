@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, ProgressBarAndroid } from 'react-native'
-import { View, Text, Row, Left, Grid, Col, Button } from 'native-base'
+import { View, Text, Grid, Col, Button, Icon } from 'native-base'
 import { Colors } from '../../../styles'
 
 const CurrentVocabularies = () => {
@@ -23,13 +23,13 @@ const CurrentVocabularies = () => {
         </Grid>
         <View style={styles.buttons}>
           <Button style={buttonStyle} small>
-            <Text>Xem trước</Text>
+            <Text uppercase={false}>Xem trước</Text>
           </Button>
           <Button style={buttonStyle} small>
-            <Text>Học ngay</Text>
+            <Text uppercase={false}>Học ngay</Text>
           </Button>
           <Button style={buttonStyle} small>
-            <Text>Luyện tập</Text>
+            <Text uppercase={false}>Luyện tập</Text>
           </Button>
         </View>
       </View>

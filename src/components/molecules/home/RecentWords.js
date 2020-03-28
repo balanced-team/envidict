@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, View, List, ListItem } from 'native-base'
 import { StyleSheet } from 'react-native'
+
 import MiniCard from '../word/MiniCard'
 import { Colors } from '../../../styles'
 
@@ -19,8 +20,8 @@ const RecentWords = () => {
       <List
         horizontal={true}
         dataArray={recentWords}
-        renderRow={(word) => (
-          <ListItem>
+        renderRow={(word, i) => (
+          <ListItem noBorder key={i}>
             <MiniCard data={word} />
           </ListItem>
         )}
