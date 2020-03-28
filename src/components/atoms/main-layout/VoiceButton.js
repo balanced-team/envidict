@@ -19,7 +19,10 @@ const styles = StyleSheet.create({
     flex: 1
   },
   button: {
-    backgroundColor: Colors.BLUE_DARK
+    backgroundColor: Colors.BLUE_DARK,
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 0,
+    elevation: 0
   },
   icon: {
     color: Colors.WHITE
