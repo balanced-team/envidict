@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import Favorite from '../scenes/Favorite'
-import Home from '../scenes/Home'
+import Vocabulary from '../scenes/Vocabulary'
+import ListWord from '../scenes/ListWord'
 import WordView from '../scenes/WordView'
 import { Colors } from '../styles'
 
@@ -20,14 +20,14 @@ const MainStackNavigator = () => {
     headerTintColor: Colors.WHITE
   }
   return (
-    <Stack.Navigator initialRouteName="Favorite" options={headerOptions}>
+    <Stack.Navigator initialRouteName="Vocabulary">
       <Stack.Screen
-        name="Favorite"
-        component={Favorite}
+        name="Vocabulary"
+        component={Vocabulary}
         options={{ headerShown: false }}
       />
+      <Stack.Screen name="ListWord" component={ListWord} options={headerOptions} />
       <Stack.Screen name="WordView" component={WordView} options={headerOptions} />
-      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
     </Stack.Navigator>
   )
 }

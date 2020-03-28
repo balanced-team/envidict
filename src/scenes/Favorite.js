@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
-import { Text, Alert, BackHandler, Button, StyleSheet } from 'react-native'
-import { View, Container } from 'native-base'
+import { Text, Alert, BackHandler, Button } from 'react-native'
 
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
@@ -11,7 +10,7 @@ const Favorite = ({ navigation }) => {
   }, [])
 
   return (
-    <MainLayout>
+    <MainLayout voiceButtonIsVisible={true}>
       <Text>This is Favorite</Text>
       <Button title="Click Me" onPress={() => navigation.navigate('WordView')} />
       <Button title="Go Favorite Again" onPress={() => navigation.push('Favorite')} />

@@ -1,40 +1,35 @@
-import React, { useEffect } from 'react'
-import { Text, Alert, BackHandler, StyleSheet } from 'react-native'
-import { View, List, ListItem } from 'native-base'
+import React from 'react'
+import { Text, StyleSheet } from 'react-native'
+import { List, ListItem } from 'native-base'
 
-import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
-import ListWord from './ListWord'
 import { Colors, Typography } from '../styles/index'
 
-const Vocabulary = ({ navigation }) => {
-  useEffect(() => {
-    backHandleToExitApp(Alert, BackHandler)
-  }, [])
-
+const ListWord = ({ navigation }) => {
   return (
-    <MainLayout voiceButtonIsVisible={true}>
+    <MainLayout voiceButtonIsVisible={false}>
       <List>
-        <ListItem
-          noIndent
-          // style={{ backgroundColor: '#cde1f9' }}
-          onPress={() => {
-            navigation.navigate('ListWord')
-          }}
-        >
-          <Text style={styles.vocabulary}>Business English Vocabulary</Text>
+        <ListItem noIndent>
+          <Text
+            style={styles.vocabulary}
+            onPress={() => {
+              navigation.navigate('WordView')
+            }}
+          >
+            representatives
+          </Text>
         </ListItem>
         <ListItem>
-          <Text style={styles.vocabulary}>Easy Vocabulary</Text>
+          <Text style={styles.vocabulary}>Easy</Text>
         </ListItem>
         <ListItem>
-          <Text style={styles.vocabulary}>GMAT Core English</Text>
+          <Text style={styles.vocabulary}>English</Text>
         </ListItem>
         <ListItem>
-          <Text style={styles.vocabulary}>Hard Vocabulary</Text>
+          <Text style={styles.vocabulary}>Vocabulary</Text>
         </ListItem>
         <ListItem>
-          <Text style={styles.vocabulary}>IELTS Core English</Text>
+          <Text style={styles.vocabulary}>Core</Text>
         </ListItem>
         <ListItem>
           <Text style={styles.vocabulary}>SAT Core English</Text>
@@ -68,4 +63,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Vocabulary
+export default ListWord

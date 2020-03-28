@@ -11,7 +11,7 @@ const Settings = () => {
   }, [])
 
   return (
-    <MainLayout>
+    <MainLayout voiceButtonIsVisible={true}>
       <Text>This is Learning</Text>
     </MainLayout>
   )

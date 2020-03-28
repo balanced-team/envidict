@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import Constants from 'expo-constants'
 import Textarea from 'react-native-textarea'
 import { View } from 'native-base'

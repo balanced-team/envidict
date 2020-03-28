@@ -11,7 +11,7 @@ const Learning = () => {
   }, [])
 
   return (
-    <MainLayout>
+    <MainLayout voiceButtonIsVisible={true}>
       <Text>Home</Text>
     </MainLayout>
   )

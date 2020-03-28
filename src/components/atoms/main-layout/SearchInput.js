@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   searchInput: {
     flexGrow: 1,
     backgroundColor: Colors.WHITE,
-    marginVertical: 8
+    marginVertical: 10
   }
 })
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, StatusBar } from 'react-native'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
@@ -29,7 +29,9 @@ const App = (props) => {
 
 const loadResourcesAsync = async () => {
   await Font.loadAsync({
-    ...Ionicons.font
+    ...Ionicons.font,
+    Roboto: require('native-base/Fonts/Roboto.ttf'),
+    Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
   })
 }
 
