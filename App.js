@@ -30,17 +30,16 @@ const App = (props) => {
 }
 
 const loadResourcesAsync = async () => {
-  await Promise.all([
-    FileSystem.downloadAsync(
-      Asset.fromModule(require('./dict.db')).uri,
-      `${FileSystem.documentDirectory}/SQLite/dict.db`
-    ),
-    Font.loadAsync({
-      ...Ionicons.font,
-      Roboto: require('native-base/Fonts/Roboto.ttf'),
-      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
-    }),
-  ])
+  await Font.loadAsync({
+    ...Ionicons.font,
+    Roboto: require('native-base/Fonts/Roboto.ttf'),
+    Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+  })
+
+  await FileSystem.downloadAsync(
+    Asset.fromModule(require('./dict.db')).uri,
+    `${FileSystem.documentDirectory}/SQLite/dict.db`
+  )
 }
 
 const handleLoadingError = (error) => {
