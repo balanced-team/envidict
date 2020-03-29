@@ -7,7 +7,6 @@ import MainLayout from '../components/templates/MainLayout'
 import { Colors, Typography } from '../styles'
 
 const Frame = (props) => {
-  // ty tu sua nhe
   const { enable, nameIcon, toggleSwitch, content } = props
   return (
     <ListItem icon>
@@ -72,7 +71,19 @@ const Settings = () => {
         nameIcon="volume-high"
         content="Tự động phát âm"
       />
-      <Frame nameIcon="mic" content="Cài đặt phát âm" />
+      <ListItem icon>
+      <Left>
+        <Button info>
+          <Icon active name= "mic" />
+        </Button>
+      </Left>
+      <Body>
+        <Text>Cài đặt phát âm</Text>
+      </Body>
+      <Right>
+        <Icon active name= 'arrow-forward' />
+      </Right>
+    </ListItem>
       <Content>
         <Text style={styles.textTile}>Notification</Text>
         <Frame
@@ -95,6 +106,10 @@ const styles = StyleSheet.create({
     fontSize: Typography.FONT_SIZE_14,
     fontWeight: 'bold',
     padding: 20
+  },
+  contentStyle: {
+    color: Colors.BLACK,
+    fontSize: Typography.FONT_SIZE_16
   }
 })
 export default Settings

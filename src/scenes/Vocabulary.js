@@ -1,23 +1,21 @@
-import React, { useEffect } from 'react'
-import { Text, Alert, BackHandler, StyleSheet } from 'react-native'
-import { View, List, ListItem } from 'native-base'
+import React from 'react'
+import { Text, StyleSheet } from 'react-native'
+import { List, ListItem } from 'native-base'
 
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
+import { useBackHandleToExitApp } from '../hooks'
 import ListWord from './ListWord'
 import { Colors, Typography } from '../styles/index'
 
 const Vocabulary = ({ navigation }) => {
-  useEffect(() => {
-    backHandleToExitApp(Alert, BackHandler)
-  }, [])
 
+  useBackHandleToExitApp();
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <List>
         <ListItem
           noIndent
-          // style={{ backgroundColor: '#cde1f9' }}
           onPress={() => {
             navigation.navigate('ListWord')
           }}

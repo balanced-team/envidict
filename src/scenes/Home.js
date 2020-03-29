@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Alert, BackHandler } from 'react-native'
 import { Text, View, Button, Icon } from 'native-base'
 import { StyleSheet } from 'react-native'
 
 import MainLayout from '../components/templates/MainLayout'
+import { useBackHandleToExitApp } from '../hooks'
 import WordOfTheDay from '../components/molecules/word/WordOfTheDay'
 import { backHandleToExitApp } from '../utils'
 import RecentWords from '../components/molecules/home/RecentWords'
@@ -11,12 +12,9 @@ import { Colors } from '../styles'
 import CurrentVocabularies from '../components/molecules/home/CurrentVocabularies'
 
 const Home = () => {
-  useEffect(() => {
-    backHandleToExitApp(Alert, BackHandler)
-  }, [])
-
+  useBackHandleToExitApp()
   return (
-    <MainLayout>
+    <MainLayout voiceButtonIsVisible={true}>
       <WordOfTheDay />
       <RecentWords />
       <View style={styles.buttonWrapper}>

@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Text, Alert, BackHandler } from 'react-native'
 import { View } from 'native-base'
 
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
+import { useBackHandleToExitApp } from '../hooks'
 
 const Learning = () => {
-  useEffect(() => {
-    backHandleToExitApp(Alert, BackHandler)
-  }, [])
+  useBackHandleToExitApp();
 
   return (
     <MainLayout voiceButtonIsVisible={true}>
