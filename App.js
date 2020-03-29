@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, StatusBar } from 'react-native'
 import { AppLoading } from 'expo'
+import { Asset } from 'expo-asset'
+import * as FileSystem from 'expo-file-system'
 import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
 
@@ -31,8 +33,13 @@ const loadResourcesAsync = async () => {
   await Font.loadAsync({
     ...Ionicons.font,
     Roboto: require('native-base/Fonts/Roboto.ttf'),
-    Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
+    Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
   })
+
+  await FileSystem.downloadAsync(
+    Asset.fromModule(require('./dict.db')).uri,
+    `${FileSystem.documentDirectory}/SQLite/dict.db`
+  )
 }
 
 const handleLoadingError = (error) => {
@@ -47,8 +54,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: StatusBar.currentHeight
-  }
+    marginTop: StatusBar.currentHeight,
+  },
 })
 
 export default App

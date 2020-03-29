@@ -21,28 +21,30 @@ const AppNavigator = () => {
           name="Home"
           component={Home}
           options={{
-            tabBarIcon: ({ focused }) => <TabBarIcon name="md-home" focused={focused} />
+            tabBarIcon: ({ focused }) => <TabBarIcon name="md-home" focused={focused} />,
           }}
         />
         <Tab.Screen
           name="Favorite"
           component={MainStackNavigator}
           options={{
-            tabBarIcon: ({ focused }) => <TabBarIcon name="md-heart" focused={focused} />
+            tabBarIcon: ({ focused }) => <TabBarIcon name="md-heart" focused={focused} />,
           }}
         />
         <Tab.Screen
           name="Vocabulary"
           component={VocabularyNavigator}
           options={{
-            tabBarIcon: ({ focused }) => <TabBarIcon name="md-book" focused={focused} />
+            tabBarIcon: ({ focused }) => <TabBarIcon name="md-book" focused={focused} />,
           }}
         />
         <Tab.Screen
           name="Learning"
           component={Learning}
           options={{
-            tabBarIcon: ({ focused }) => <TabBarIcon name="md-ribbon" focused={focused} />
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon name="md-ribbon" focused={focused} />
+            ),
           }}
         />
         <Tab.Screen
@@ -51,7 +53,7 @@ const AppNavigator = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <TabBarIcon name="md-settings" focused={focused} />
-            )
+            ),
           }}
         />
       </Tab.Navigator>
