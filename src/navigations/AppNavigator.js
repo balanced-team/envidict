@@ -10,6 +10,7 @@ import Settings from '../scenes/Settings'
 import TabBarIcon from '../components/atoms/navigations/TabBarIcon'
 import MainStackNavigator from './MainStackNavigator'
 import VocabularyNavigator from './VocabularyNavigator'
+import LearningNavigator from './LearningNavigator'
 
 const Tab = createBottomTabNavigator()
 
@@ -40,7 +41,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen
           name="Learning"
-          component={Learning}
+          component={LearningNavigator}
           options={{
             tabBarIcon: ({ focused }) => (
               <TabBarIcon name="md-ribbon" focused={focused} />
