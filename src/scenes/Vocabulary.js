@@ -1,69 +1,40 @@
-import React from 'react'
-import { Text, StyleSheet } from 'react-native'
-import { List, ListItem } from 'native-base'
+import React, { useState, useEffect } from 'react'
+import { Alert, BackHandler } from 'react-native'
+import { List } from 'native-base'
 
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
-import { useBackHandleToExitApp } from '../hooks'
-import ListWord from './ListWord'
-import { Colors, Typography } from '../styles/index'
+import ListItemVocabulary from '../components/atoms/ListItemVocabulary/ListItemVocabulary'
+
+const ArrVocabulary = [
+  {
+    id: 1,
+    name: 'Luyện thi toeic',
+  },
+  {
+    id: 2,
+    name: 'Tiếng anh cơ bản',
+  },
+]
 
 const Vocabulary = ({ navigation }) => {
-
-  useBackHandleToExitApp();
+  const [arrVocabulary, setArrVocabulary] = useState(ArrVocabulary)
+  useEffect(() => {
+    backHandleToExitApp(Alert, BackHandler)
+  }, [])
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <List>
-        <ListItem
-          noIndent
-          onPress={() => {
-            navigation.navigate('ListWord')
-          }}
-        >
-          <Text style={styles.vocabulary}>Business English Vocabulary</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>Easy Vocabulary</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>GMAT Core English</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>Hard Vocabulary</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>IELTS Core English</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>SAT Core English</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>Hard Core English</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
-        <ListItem noIndent>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
+        {arrVocabulary.map((item) => (
+          <ListItemVocabulary
+            key={item.id}
+            nameVocabulary={item.name}
+            onPress={() => navigation.navigate('ListWord')}
+          />
+        ))}
       </List>
     </MainLayout>
   )
 }
-const styles = StyleSheet.create({
-  vocabulary: {
-    color: Colors.BLUE_TITLE,
-    fontSize: Typography.LINE_HEIGHT_20,
-    fontWeight: 'bold',
-    paddingTop: 5,
-    paddingBottom: 5
-  }
-})
 
 export default Vocabulary

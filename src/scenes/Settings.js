@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Text, StyleSheet } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Text, StyleSheet, Alert, BackHandler } from 'react-native'
 import { ListItem, Icon, Left, Body, Right, Switch, Button, Content } from 'native-base'
 
-import { useBackHandleToExitApp } from '../hooks'
 import MainLayout from '../components/templates/MainLayout'
+import { backHandleToExitApp } from '../utils'
 import { Colors, Typography } from '../styles'
 
 const Frame = (props) => {
@@ -34,24 +34,26 @@ const Settings = () => {
     quickSearch: false,
     sound: false,
     notification: false,
-    alertEveryDay: false
+    alertEveryDay: false,
   })
 
   const toggleSwitch = (key, value) => {
     setStateEnable({
       ...stateEnable,
-      [key]: value
+      [key]: value,
     })
   }
 
   const extractFrameProps = (key) => {
     return {
       enable: stateEnable[key],
-      toggleSwitch: (val) => toggleSwitch(key, val)
+      toggleSwitch: (val) => toggleSwitch(key, val),
     }
   }
 
-  useBackHandleToExitApp()
+  useEffect(() => {
+    backHandleToExitApp(Alert, BackHandler)
+  }, [])
 
   return (
     <MainLayout voiceButtonIsVisible={true}>
@@ -72,18 +74,18 @@ const Settings = () => {
         content="Tự động phát âm"
       />
       <ListItem icon>
-      <Left>
-        <Button info>
-          <Icon active name= "mic" />
-        </Button>
-      </Left>
-      <Body>
-        <Text>Cài đặt phát âm</Text>
-      </Body>
-      <Right>
-        <Icon active name= 'arrow-forward' />
-      </Right>
-    </ListItem>
+        <Left>
+          <Button info>
+            <Icon active name="mic" />
+          </Button>
+        </Left>
+        <Body>
+          <Text>Cài đặt phát âm</Text>
+        </Body>
+        <Right>
+          <Icon active name="arrow-forward" />
+        </Right>
+      </ListItem>
       <Content>
         <Text style={styles.textTile}>Notification</Text>
         <Frame
@@ -105,11 +107,11 @@ const styles = StyleSheet.create({
     color: Colors.BLUE_LIGHT,
     fontSize: Typography.FONT_SIZE_14,
     fontWeight: 'bold',
-    padding: 20
+    padding: 20,
   },
   contentStyle: {
     color: Colors.BLACK,
-    fontSize: Typography.FONT_SIZE_16
-  }
+    fontSize: Typography.FONT_SIZE_16,
+  },
 })
 export default Settings

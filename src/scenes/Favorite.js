@@ -1,10 +1,13 @@
-import React from 'react'
-import { Text, Button } from 'react-native'
-import { useBackHandleToExitApp } from '../hooks'
+import React, { useEffect } from 'react'
+import { Text, Button, Alert, BackHandler } from 'react-native'
+
 import MainLayout from '../components/templates/MainLayout'
+import { backHandleToExitApp } from '../utils'
 
 const Favorite = ({ navigation }) => {
-  useBackHandleToExitApp()
+  useEffect(() => {
+    backHandleToExitApp(Alert, BackHandler)
+  }, [])
 
   return (
     <MainLayout voiceButtonIsVisible={true}>
