@@ -25,7 +25,6 @@ const RecentWords = () => {
             <MiniCard data={word} />
           </ListItem>
         )}
-        s
       ></List>
     </View>
   )
