@@ -11,10 +11,15 @@ const Favorite = ({ navigation }) => {
 
   return (
     <MainLayout voiceButtonIsVisible={true}>
-      <Text>This is Favorite</Text>
-      <Button title="Click Me" onPress={() => navigation.navigate('WordView')} />
+      <Button
+        title="Click Me"
+        onPress={() => {
+          navigation.navigate('WordView')
+        }}
+      />
       <Button title="Go Favorite Again" onPress={() => navigation.push('Favorite')} />
       <Button title="Go Home" onPress={() => navigation.push('Home')} />
+      <Text></Text>
     </MainLayout>
   )
 }

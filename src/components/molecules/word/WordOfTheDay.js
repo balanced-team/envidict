@@ -1,11 +1,13 @@
 import React from 'react'
 import { Text, View, Icon, Right, Row, Left } from 'native-base'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 
 import { Colors } from '../../../styles'
 import { FONT_SIZE_14, FONT_SIZE_12 } from '../../../styles/typography'
+import { InstanceSpeaker } from '../../../utils'
 
 const WordOfTheDay = () => {
+  const word = 'unbelivable'
   return (
     <View style={styles.card}>
       <Row>
@@ -23,7 +25,9 @@ const WordOfTheDay = () => {
       </Row>
       <View style={styles.row}>
         <Text style={styles.word}>unbelievable</Text>
-        <Icon name="volume-high" style={[styles.icon, styles.blueDarkColor]} />
+        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+          <Icon name="volume-high" style={[styles.icon, styles.blueDarkColor]} />
+        </TouchableOpacity>
       </View>
       <Text style={styles.type}>tính từ</Text>
       <Text style={styles.meaning}>không thể tin nổi</Text>
@@ -42,40 +46,40 @@ const styles = StyleSheet.create({
     shadowColor: Colors.BLACK,
     shadowOpacity: 1,
     shadowRadius: 5,
-    elevation: 5
+    elevation: 5,
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   word: {
     fontSize: 26,
     fontWeight: 'bold',
     color: Colors.BLUE_MEDIUM,
-    marginVertical: 10
+    marginVertical: 10,
   },
   type: {
     color: Colors.SECONDARY,
     fontWeight: 'bold',
-    fontSize: FONT_SIZE_14
+    fontSize: FONT_SIZE_14,
   },
   meaning: {
     color: Colors.BLUE_EXPLAIN,
     fontSize: FONT_SIZE_14,
-    marginTop: 5
+    marginTop: 5,
   },
   icon: {
     marginHorizontal: 5,
-    fontSize: 26
+    fontSize: 26,
   },
   blueDarkColor: {
-    color: Colors.BLUE_MEDIUM
+    color: Colors.BLUE_MEDIUM,
   },
   title: {
     color: Colors.SECONDARY,
-    fontSize: FONT_SIZE_12
-  }
+    fontSize: FONT_SIZE_12,
+  },
 })
 
 export default WordOfTheDay

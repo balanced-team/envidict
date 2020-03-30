@@ -1,14 +1,17 @@
 import React from 'react'
-import { Text, ScrollView, StyleSheet } from 'react-native'
+import { Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import { View, Icon } from 'native-base'
 import { Colors } from '../../../styles/index'
+import { InstanceSpeaker } from '../../../utils/speaker'
 
 const DetailsView = () => {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.titleText}>representatives</Text>
       <View style={styles.inLine}>
-        <Icon name="volume-high" style={styles.iconVolume}></Icon>
+        <TouchableOpacity onPress={() => InstanceSpeaker.speak('representatives')}>
+          <Icon name="volume-high" style={styles.iconVolume}></Icon>
+        </TouchableOpacity>
         <Text style={styles.pronounce}>/ˌrɛ.prɪ.ˈzɛn.tə.tɪv/</Text>
       </View>
 
@@ -38,65 +41,65 @@ const DetailsView = () => {
 export default DetailsView
 const styles = StyleSheet.create({
   baseText: {
-    paddingLeft: 16
+    paddingLeft: 16,
   },
   titleText: {
     fontSize: 28,
     fontWeight: 'bold',
     color: Colors.BLUE_TEXT,
     paddingLeft: 6,
-    paddingTop: 16
+    paddingTop: 16,
   },
   pronounce: {
     color: Colors.SECONDARY,
     fontSize: 18,
     paddingLeft: 18,
-    paddingTop: 10
+    paddingTop: 10,
   },
   typeText: {
     fontSize: 16,
     color: Colors.BLUE_TYPE,
     paddingLeft: 4,
-    paddingTop: 18
+    paddingTop: 18,
   },
   explain: {
     color: Colors.BLUE_EXPLAIN,
     fontSize: 16,
-    paddingTop: 10
+    paddingTop: 10,
   },
   example: {
     color: Colors.BLUE_LIGHT,
     fontSize: 16,
     fontStyle: 'italic',
     paddingLeft: 16,
-    paddingTop: 8
+    paddingTop: 8,
   },
   exampleTrans: {
     color: Colors.BLUE_TRANSLATE,
     fontSize: 16,
     paddingLeft: 4,
-    paddingTop: 6
+    paddingTop: 6,
   },
   iconVolume: {
     color: Colors.BLUE_DARK,
     fontSize: 24,
     paddingLeft: 10,
-    paddingTop: 10
+    paddingTop: 10,
   },
   iconType: {
     color: Colors.BLUE_TYPE,
     fontSize: 14,
     paddingLeft: 10,
-    paddingTop: 22
+    paddingTop: 22,
   },
   iconRight: {
     color: Colors.BLUE_TRANSLATE,
     paddingLeft: 10,
     fontSize: 14,
-    paddingTop: 10
+    paddingTop: 10,
   },
   inLine: {
     flexDirection: 'row',
-    paddingLeft: 10
-  }
+    paddingLeft: 10,
+  },
 })
