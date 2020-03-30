@@ -2,24 +2,15 @@ import React, { useEffect } from 'react'
 import { Text, Button, Alert, BackHandler } from 'react-native'
 
 import MainLayout from '../components/templates/MainLayout'
+import { backHandleToExitApp } from '../utils'
 
 const Favorite = ({ navigation }) => {
-  const dicStore = useContext(dictStoreContext)
-  const [word, setWord] = useState({})
-
   useEffect(() => {
-    const fetchWord = async () => {
-      const word = await dicStore.findWord('hello')
-      console.log(word)
-      return word
-    }
     backHandleToExitApp(Alert, BackHandler)
-    setWord(fetchWord())
   }, [])
 
   return (
     <MainLayout voiceButtonIsVisible={true}>
-    <Text>{word.word}</Text>
       <Button
         title="Click Me"
         onPress={() => {
