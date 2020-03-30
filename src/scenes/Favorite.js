@@ -3,7 +3,7 @@ import { Text, Button, Alert, BackHandler } from 'react-native'
 
 import MainLayout from '../components/templates/MainLayout'
 
-const Favorite = observer(({ navigation }) => {
+const Favorite = ({ navigation }) => {
   const dicStore = useContext(dictStoreContext)
   const [word, setWord] = useState({})
 
@@ -31,6 +31,6 @@ const Favorite = observer(({ navigation }) => {
       <Text></Text>
     </MainLayout>
   )
-})
+}
 
 export default Favorite
