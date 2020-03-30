@@ -1,9 +1,10 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Text, View, Icon } from 'native-base'
 
 import { Colors, Typography } from '../../../styles'
 import { FONT_SIZE_14 } from '../../../styles/typography'
+import { InstanceSpeaker } from '../../../utils'
 
 const FlashCard = (props) => {
   const { word, pronounce, type, explain } = props
@@ -15,7 +16,9 @@ const FlashCard = (props) => {
       </View>
       <View style={styles.row}>
         <Text style={styles.pronounce}>{pronounce}</Text>
-        <Icon name="volume-high" style={styles.pronounceIcon} />
+        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+          <Icon name="volume-high" style={styles.pronounceIcon} />
+        </TouchableOpacity>
       </View>
       <Text style={styles.type}>{type}</Text>
       <Text style={styles.explain}>{explain}</Text>
@@ -36,7 +39,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     width: 160,
     height: 180,
-    marginTop: 20
+    marginTop: 20,
   },
   word: {
     fontSize: Typography.FONT_SIZE_18,
