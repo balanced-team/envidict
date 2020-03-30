@@ -14,9 +14,8 @@ const Home = () => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
-
   return (
-    <MainLayout>
+    <MainLayout voiceButtonIsVisible={true}>
       <WordOfTheDay />
       <RecentWords />
       <View style={styles.buttonWrapper}>
@@ -34,7 +33,7 @@ const Home = () => {
 
 const buttonStyle = {
   backgroundColor: Colors.BLUE_DARK,
-  width: 200
+  width: 200,
 }
 
 const styles = StyleSheet.create({
@@ -46,11 +45,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0,
     shadowRadius: 0,
     elevation: 0,
-    borderTopColor: Colors.WHITE
+    borderTopColor: Colors.WHITE,
   },
   buttonText: {
-    fontSize: 16
-  }
+    fontSize: 16,
+  },
 })
 
 export default Home

@@ -1,66 +1,46 @@
-import React from 'react'
-import { Text, StyleSheet } from 'react-native'
-import { List, ListItem } from 'native-base'
+import React, { useState } from 'react'
+import { List } from 'native-base'
 
 import MainLayout from '../components/templates/MainLayout'
-import { Colors, Typography } from '../styles/index'
+import ListItemVocabulary from '../components/atoms/ListItemVocabulary/ListItemVocabulary'
+
+const ArrWord = [
+  {
+    id: 1,
+    word: 'representatives',
+  },
+  {
+    id: 2,
+    word: 'learn',
+  },
+  {
+    id: 3,
+    word: 'schedule',
+  },
+  {
+    id: 4,
+    word: 'relinquish',
+  },
+]
 
 const ListWord = ({ navigation }) => {
+  const [arrWord, setArrWord] = useState(ArrWord)
+
   return (
     <MainLayout voiceButtonIsVisible={false}>
       <List>
-        <ListItem noIndent>
-          <Text
-            style={styles.vocabulary}
+        {arrWord.map((item) => (
+          <ListItemVocabulary
+            key={item.id}
+            nameVocabulary={item.word}
             onPress={() => {
               navigation.navigate('WordView')
             }}
-          >
-            representatives
-          </Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>Easy</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>English</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>Vocabulary</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>Core</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>SAT Core English</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>Hard Core English</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
-        <ListItem>
-          <Text style={styles.vocabulary}>TOEFL Core English</Text>
-        </ListItem>
+          />
+        ))}
       </List>
     </MainLayout>
   )
 }
-const styles = StyleSheet.create({
-  vocabulary: {
-    color: Colors.BLUE_TITLE,
-    fontSize: Typography.LINE_HEIGHT_20,
-    fontWeight: 'bold',
-    paddingTop: 5,
-    paddingBottom: 5
-  }
-})
 
 export default ListWord

@@ -1,10 +1,7 @@
-import React, { useEffect, useContext, useState } from 'react'
-import { Text, Alert, BackHandler, Button } from 'react-native'
+import React, { useEffect } from 'react'
+import { Text, Button, Alert, BackHandler } from 'react-native'
 
-import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
-import { dictStoreContext } from '../contexts'
-import { observer } from 'mobx-react'
 
 const Favorite = observer(({ navigation }) => {
   const dicStore = useContext(dictStoreContext)
