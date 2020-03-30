@@ -4,16 +4,14 @@ import { View } from 'native-base'
 
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
+import Courses from '../components/atoms/courses/Courses'
 
 const Learning = () => {
-  useEffect(() => {
-    backHandleToExitApp(Alert, BackHandler)
-  }, [])
 
   return (
-    <MainLayout voiceButtonIsVisible={true}>
-      <Text>Home</Text>
-    </MainLayout>
+    <View>
+      <Courses />
+    </View>
   )
 }
 

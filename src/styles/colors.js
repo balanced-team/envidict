@@ -21,4 +21,5 @@ export const BLUE_TYPE = '#0468b6'
 export const GREEN_MEDIUM = '#00c100'
 export const GREEN_LIGHT = '#80ff80'
 
-//
+//BACKGROUND
+export const SECONDARY_LIGHT = '#d9d9d9'
