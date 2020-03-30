@@ -1,12 +1,14 @@
+import { InstanceSpeaker } from './speaker'
+
 const backHandleToExitApp = (Alert, BackHandler) => {
   const backAction = () => {
     Alert.alert('Thoát', 'Bạn có chắc chắn muốn thoát không?', [
       {
         text: 'Hủy',
         onPress: () => null,
-        style: 'cancel'
+        style: 'cancel',
       },
-      { text: 'Thoát', onPress: () => BackHandler.exitApp() }
+      { text: 'Thoát', onPress: () => BackHandler.exitApp() },
     ])
     return true
   }
@@ -15,4 +17,4 @@ const backHandleToExitApp = (Alert, BackHandler) => {
   return () => backHandler.remove()
 }
 
-module.exports = { backHandleToExitApp }
+module.exports = { backHandleToExitApp, InstanceSpeaker }
