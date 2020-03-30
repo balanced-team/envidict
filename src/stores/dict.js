@@ -7,9 +7,9 @@ export default class DictStore {
 
   async findWord(word) {
     // always find in "av" table first
-    let word = await EnViWord.findBy({ word })
-    if (word) return word
-    word = await ViEnWord.findBy({ word })
-    return word
+    let result = await EnViWord.findBy({ word })
+    if (result) return result
+    result = await ViEnWord.findBy({ word })
+    return result
   }
 }
