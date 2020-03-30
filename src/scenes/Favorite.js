@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { Text, Alert, BackHandler, Button } from 'react-native'
+import { Text, Button, Alert, BackHandler } from 'react-native'
 
-import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
+import { backHandleToExitApp } from '../utils'
 
 const Favorite = ({ navigation }) => {
   useEffect(() => {
