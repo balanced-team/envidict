@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, StyleSheet, Row } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Container, View, Button, Tabs, Tab, Icon } from 'native-base'
 
 import NoteView from '../components/organisms/word-view/NoteView'
