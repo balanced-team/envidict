@@ -4,7 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { Colors } from '../styles'
 import Learning from '../scenes/Learning'
 import MainLearning from '../scenes/MainLearning'
-import LessonDeatail from '../scenes/LessonDetail'
+import LessonList from '../scenes/LessonList'
+import LessonDetail from '../scenes/LessonDetail'
 
 const Stack = createStackNavigator()
 
@@ -32,10 +33,11 @@ const LearningNavigator = () => {
         options={headerOptions}
       />
       <Stack.Screen
-        name="LessonDeatail"
-        component={LessonDeatail}
+        name="LessonDetail"
+        component={LessonDetail}
         options={headerOptions}
       />
+      <Stack.Screen name="LessonList" component={LessonList} options={headerOptions} />
     </Stack.Navigator>
   )
 }

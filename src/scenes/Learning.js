@@ -13,14 +13,14 @@ const Learning = ({ navigation }) => {
   }, [])
 
   const handleNavigate = () => {
-    navigation.navigate('MainLearning')
+    navigation.navigate('LessonList')
   }
 
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <Courses
         coursesName="Ôn luyện giao tiếp cơ bản"
-        onGoToMainLearning={handleNavigate}
+        onGoToLessonDetail={handleNavigate}
       />
     </MainLayout>
   )
