@@ -6,32 +6,35 @@ import { Colors } from '../../../styles'
 import { FONT_SIZE_14, FONT_SIZE_12 } from '../../../styles/typography'
 import { InstanceSpeaker } from '../../../utils'
 
-const WordOfTheDay = () => {
+const WordOfTheDay = (props) => {
+  const { onGoToWordView } = props
   const word = 'unbelivable'
   return (
-    <View style={styles.card}>
-      <Row>
-        <Left>
-          <View style={styles.row}>
-            <Icon name="md-calendar" style={[styles.icon, styles.blueDarkColor]} />
-            <Text style={styles.title}>TỪ CỦA HÔM NAY</Text>
-          </View>
-        </Left>
-        <Right>
-          <View style={styles.row}>
-            <Icon name="md-sync" style={[styles.icon, styles.blueDarkColor]} />
-          </View>
-        </Right>
-      </Row>
-      <View style={styles.row}>
-        <Text style={styles.word}>unbelievable</Text>
-        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
-          <Icon name="volume-high" style={[styles.icon, styles.blueDarkColor]} />
-        </TouchableOpacity>
+    <TouchableOpacity onPress={onGoToWordView}>
+      <View style={styles.card}>
+        <Row>
+          <Left>
+            <View style={styles.row}>
+              <Icon name="md-calendar" style={[styles.icon, styles.blueDarkColor]} />
+              <Text style={styles.title}>TỪ CỦA HÔM NAY</Text>
+            </View>
+          </Left>
+          <Right>
+            <View style={styles.row}>
+              <Icon name="md-sync" style={[styles.icon, styles.blueDarkColor]} />
+            </View>
+          </Right>
+        </Row>
+        <View style={styles.row}>
+          <Text style={styles.word}>unbelievable</Text>
+          <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+            <Icon name="volume-high" style={[styles.icon, styles.blueDarkColor]} />
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.type}>tính từ</Text>
+        <Text style={styles.meaning}>không thể tin nổi</Text>
       </View>
-      <Text style={styles.type}>tính từ</Text>
-      <Text style={styles.meaning}>không thể tin nổi</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 
@@ -56,11 +59,11 @@ const styles = StyleSheet.create({
   word: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: Colors.BLUE_MEDIUM,
+    color: Colors.BLUE_TEXT,
     marginVertical: 10,
   },
   type: {
-    color: Colors.SECONDARY,
+    color: Colors.BLUE_TRANSLATE,
     fontWeight: 'bold',
     fontSize: FONT_SIZE_14,
   },

@@ -9,6 +9,7 @@ import Learning from '../scenes/Learning'
 import Settings from '../scenes/Settings'
 import TabBarIcon from '../components/atoms/navigations/TabBarIcon'
 import MainStackNavigator from './MainStackNavigator'
+import FavoriteNavigator from './FavoriteNavigator'
 import VocabularyNavigator from './VocabularyNavigator'
 import LearningNavigator from './LearningNavigator'
 
@@ -20,14 +21,14 @@ const AppNavigator = () => {
       <Tab.Navigator tabBarOptions={{ showLabel: false }}>
         <Tab.Screen
           name="Home"
-          component={Home}
+          component={MainStackNavigator}
           options={{
             tabBarIcon: ({ focused }) => <TabBarIcon name="md-home" focused={focused} />,
           }}
         />
         <Tab.Screen
           name="Favorite"
-          component={MainStackNavigator}
+          component={FavoriteNavigator}
           options={{
             tabBarIcon: ({ focused }) => <TabBarIcon name="md-heart" focused={focused} />,
           }}

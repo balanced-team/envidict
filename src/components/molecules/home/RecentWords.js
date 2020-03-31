@@ -10,10 +10,11 @@ const recentWords = [
   { word: 'run', type: 'động từ' },
   { word: 'card', type: 'danh từ' },
   { word: 'nice', type: 'tính từ' },
-  { word: 'love', type: 'động từ' }
+  { word: 'love', type: 'động từ' },
 ]
 
-const RecentWords = () => {
+const RecentWords = (props) => {
+  const { onGoToWordView } = props
   return (
     <View>
       <Text style={styles.tittle}>Tìm kiếm gần đây</Text>
@@ -21,7 +22,7 @@ const RecentWords = () => {
         horizontal={true}
         dataArray={recentWords}
         renderRow={(word, i) => (
-          <ListItem noBorder key={i}>
+          <ListItem noBorder key={i} onPress={onGoToWordView}>
             <MiniCard data={word} />
           </ListItem>
         )}
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     fontWeight: 'bold',
     fontSize: 18,
-    color: Colors.BLUE_TITLE
-  }
+    color: Colors.BLUE_TITLE,
+  },
 })
 export default RecentWords

@@ -9,15 +9,20 @@ const Favorite = ({ navigation }) => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
-
+  const onGoToWordView = () => {
+    navigation.navigate('WordView')
+  }
   return (
     <MainLayout voiceButtonIsVisible={true}>
-      <Button
-        title="Click Me"
-        onPress={() => {
-          navigation.navigate('WordView')
-        }}
+      <ListItemWord
+        word="representatives"
+        type="adjective"
+        onGoToWordView={onGoToWordView}
       />
+      <ListItemWord word="compacity" type="adjective" onGoToWordView={onGoToWordView} />
+      <ListItemWord word="reduction" type="noun" onGoToWordView={onGoToWordView} />
+      <ListItemWord word="capacity" type="noun" onGoToWordView={onGoToWordView} />
+      <ListItemWord word="initiavtive" type="noun" onGoToWordView={onGoToWordView} />
     </MainLayout>
   )
 }
