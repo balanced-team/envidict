@@ -28,7 +28,7 @@ const FlashCard = (props) => {
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 2,
+    borderRadius: 10,
     borderColor: Colors.BLUE_DARK,
     borderWidth: 1,
     backgroundColor: Colors.WHITE,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 5,
     elevation: 5,
-    width: 160,
+    width: 165,
     height: 180,
     marginTop: 20,
   },

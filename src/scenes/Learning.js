@@ -20,7 +20,7 @@ const Learning = ({ navigation }) => {
     <MainLayout voiceButtonIsVisible={true}>
       <Courses
         coursesName="Ôn luyện giao tiếp cơ bản"
-        onGoToMainLearning={handleNavigate}
+        onGoToLessonDetail={handleNavigate}
       />
     </MainLayout>
   )

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
-import { Text, Button, Alert, BackHandler } from 'react-native'
+import { Text, Button, Alert, BackHandler, List } from 'react-native'
 
 import MainLayout from '../components/templates/MainLayout'
 import { backHandleToExitApp } from '../utils'
+import ListItemWord from '../components/molecules/favorite/ListItemWord'
 
 const Favorite = ({ navigation }) => {
   useEffect(() => {
@@ -17,9 +18,6 @@ const Favorite = ({ navigation }) => {
           navigation.navigate('WordView')
         }}
       />
-      <Button title="Go Favorite Again" onPress={() => navigation.push('Favorite')} />
-      <Button title="Go Home" onPress={() => navigation.push('Home')} />
-      <Text></Text>
     </MainLayout>
   )
 }

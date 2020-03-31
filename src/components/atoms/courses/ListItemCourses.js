@@ -4,10 +4,10 @@ import { Content, Left, Body } from 'native-base'
 import { Typography, Colors } from '../../../styles'
 
 const ListItemCourses = (props) => {
-  const { image, title, subTitle, onGoToMainLearning } = props
+  const { image, title, subTitle, onGoToLessonDetail } = props
 
   return (
-    <TouchableOpacity onPress={onGoToMainLearning}>
+    <TouchableOpacity onPress={onGoToLessonDetail}>
       <View style={styles.container}>
         <Image style={styles.image} source={{ uri: image }} />
         <View style={styles.subView}>

@@ -14,7 +14,7 @@ const dataArr = [
   },
 ]
 const Courses = (props) => {
-  const { coursesName, onGoToMainLearning } = props
+  const { coursesName, onGoToLessonDetail } = props
   return (
     <View>
       <Text style={styles.coursesName}>{coursesName}</Text>
@@ -23,19 +23,19 @@ const Courses = (props) => {
           image="https://reactjs.org/logo-og.png"
           title="600 Từ vựng TOEIC"
           subTitle="Số bài học: 50"
-          onGoToMainLearning={onGoToMainLearning}
+          onGoToLessonDetail={onGoToLessonDetail}
         />
         <ListItemCourses
           image="https://reactjs.org/logo-og.png"
           title="OOAD"
           subTitle="50 cau hoi"
-          onGoToMainLearning={onGoToMainLearning}
+          onGoToLessonDetail={onGoToLessonDetail}
         />
         <ListItemCourses
           image="https://reactjs.org/logo-og.png"
           title="OOAD"
           subTitle="50 cau hoi"
-          onGoToMainLearning={onGoToMainLearning}
+          onGoToLessonDetail={onGoToLessonDetail}
         />
       </List>
     </View>
