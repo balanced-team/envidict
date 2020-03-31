@@ -4,9 +4,9 @@ import { View, Text, Grid, Col, Button, Icon } from 'native-base'
 import { Colors } from '../../../styles'
 
 const CurrentVocabularies = (props) => {
-  const { onClickPreView, onClickPractise } = props
+  const { onPress } = props
   return (
-    <TouchableOpacity onPress={onClickPreView}>
+    <TouchableOpacity onPress={onPress}>
       <View>
         <Text style={styles.tittle}>Từ vựng phỏng vấn, xin việc</Text>
         <View style={styles.card}>
@@ -25,13 +25,13 @@ const CurrentVocabularies = (props) => {
             </Col>
           </Grid>
           <View style={styles.buttons}>
-            <Button style={buttonStyle} small onPress={onClickPreView}>
+            <Button style={buttonStyle} small>
               <Text uppercase={false}>Xem trước</Text>
             </Button>
             <Button style={buttonStyle} small>
               <Text uppercase={false}>Học ngay</Text>
             </Button>
-            <Button style={buttonStyle} small onPress={onClickPractise}>
+            <Button style={buttonStyle} small>
               <Text uppercase={false}>Luyện tập</Text>
             </Button>
           </View>
