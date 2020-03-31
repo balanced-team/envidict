@@ -31,8 +31,10 @@ const CurrentVocabularies = (props) => {
             <Button style={buttonStyle} small>
               <Text uppercase={false}>Học ngay</Text>
             </Button>
-            <Button style={buttonStyle} small onPress={onClickPractise}>
-              <Text uppercase={false}>Luyện tập</Text>
+            <Button style={buttonStyle} small>
+              <Text uppercase={false} onPress={onClickPractise}>
+                Luyện tập
+              </Text>
             </Button>
           </View>
         </View>
