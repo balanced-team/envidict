@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, FlatList } from 'react-native'
+import { StyleSheet, FlatList, SafeAreaView } from 'react-native'
 import { View, List, ListItem } from 'native-base'
 
 import { Colors } from '../../../styles'
@@ -36,22 +36,24 @@ const recentWords = [
 
 const LessonContent = () => {
   return (
-    <FlatList
-      numColumns={2}
-      columnWrapperStyle={styles.row}
-      data={recentWords}
-      renderItem={({ item }) => (
-        <FlashCard
-          word={item.word}
-          pronounce={item.pronounce}
-          type={item.type}
-          explain={item.explain}
-        />
-      )}
-      keyExtractor={(item) => {
-        item.id
-      }}
-    ></FlatList>
+    <SafeAreaView>
+      <FlatList
+        numColumns={2}
+        columnWrapperStyle={styles.row}
+        data={recentWords}
+        renderItem={({ item }) => (
+          <FlashCard
+            word={item.word}
+            pronounce={item.pronounce}
+            type={item.type}
+            explain={item.explain}
+          />
+        )}
+        keyExtractor={(item) => {
+          item.id
+        }}
+      ></FlatList>
+    </SafeAreaView>
   )
 }
 

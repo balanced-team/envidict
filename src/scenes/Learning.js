@@ -13,7 +13,7 @@ const Learning = ({ navigation }) => {
   }, [])
 
   const handleNavigate = () => {
-    navigation.navigate('MainLearning')
+    navigation.navigate('LessonList')
   }
 
   return (
