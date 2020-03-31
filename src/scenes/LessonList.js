@@ -8,6 +8,9 @@ import CurrentVocabularies from '../components/molecules/home/CurrentVocabularie
 import Lesson from '../components/atoms/lesson/Lesson'
 
 const LessonList = ({ navigation }) => {
+  const onClickPreView = () => {
+    navigation.navigate('LessonDetail')
+  }
   const onClickPractise = () => {
     navigation.navigate('MainLearning')
   }
@@ -19,9 +22,7 @@ const LessonList = ({ navigation }) => {
         subTitle="Số bài học: 50"
       />
       <CurrentVocabularies
-        onPress={() => {
-          navigation.navigate('LessonDetail')
-        }}
+        onClickPreView={onClickPreView}
         onClickPractise={onClickPractise}
       />
       <Separator>
