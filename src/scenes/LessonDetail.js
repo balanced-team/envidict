@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: Mixins.WINDOW_WIDTH,
     justifyContent: 'center',
+    backgroundColor: Colors.BLUE_DARK,
   },
   textButton: {
     fontSize: Typography.FONT_SIZE_16,
