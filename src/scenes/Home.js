@@ -23,10 +23,13 @@ const Home = ({ navigation }) => {
   const onClickPractise = () => {
     navigation.navigate('MainLearning')
   }
+  const onClickLearnNow = () => {
+    navigation.navigate('LearnNow')
+  }
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <WordOfTheDay onGoToWordView={onGoToWordView} />
-      <RecentWords onGoToWordView={onGoToWordView}/>
+      <RecentWords onGoToWordView={onGoToWordView} />
       <View style={styles.buttonWrapper}>
         <Button style={buttonStyle} iconLeft block rounded>
           <Icon name="earth" type="MaterialCommunityIcons" />
@@ -38,6 +41,7 @@ const Home = ({ navigation }) => {
       <CurrentVocabularies
         onClickPreView={onClickPreView}
         onClickPractise={onClickPractise}
+        onClickLearnNow={onClickLearnNow}
       />
     </MainLayout>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
-import { View, List } from 'native-base'
+import { View, List, ListItem } from 'native-base'
 
 import { Typography, Colors } from '../../../styles'
 import ListItemCourses from './ListItemCourses'
@@ -19,24 +19,30 @@ const Courses = (props) => {
     <View>
       <Text style={styles.coursesName}>{coursesName}</Text>
       <List>
-        <ListItemCourses
-          image="https://reactjs.org/logo-og.png"
-          title="600 Từ vựng TOEIC"
-          subTitle="Số bài học: 50"
-          onGoToLessonDetail={onGoToLessonDetail}
-        />
-        <ListItemCourses
-          image="https://reactjs.org/logo-og.png"
-          title="OOAD"
-          subTitle="50 cau hoi"
-          onGoToLessonDetail={onGoToLessonDetail}
-        />
-        <ListItemCourses
-          image="https://reactjs.org/logo-og.png"
-          title="OOAD"
-          subTitle="50 cau hoi"
-          onGoToLessonDetail={onGoToLessonDetail}
-        />
+        <ListItem noIndent>
+          <ListItemCourses
+            image="https://reactjs.org/logo-og.png"
+            title="600 Từ vựng TOEIC"
+            subTitle="Số bài học: 50"
+            onGoToLessonDetail={onGoToLessonDetail}
+          />
+        </ListItem>
+        <ListItem noIndent>
+          <ListItemCourses
+            image="https://reactjs.org/logo-og.png"
+            title="600 Từ vựng TOEIC"
+            subTitle="Số bài học: 50"
+            onGoToLessonDetail={onGoToLessonDetail}
+          />
+        </ListItem>
+        <ListItem noIndent>
+          <ListItemCourses
+            image="https://reactjs.org/logo-og.png"
+            title="600 Từ vựng TOEIC"
+            subTitle="Số bài học: 50"
+            onGoToLessonDetail={onGoToLessonDetail}
+          />
+        </ListItem>
       </List>
     </View>
   )

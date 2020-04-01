@@ -5,6 +5,7 @@ import Home from '../scenes/Home'
 import WordView from '../scenes/WordView'
 import LessonDetail from '../scenes/LessonDetail'
 import MainLearning from '../scenes/MainLearning'
+import LearnNow from '../scenes/LearnNow'
 import { Colors } from '../styles'
 
 const Stack = createStackNavigator()
@@ -34,6 +35,7 @@ const MainStackNavigator = () => {
         component={MainLearning}
         options={headerOptions}
       />
+      <Stack.Screen name="LearnNow" component={LearnNow} options={headerOptions} />
     </Stack.Navigator>
   )
 }
