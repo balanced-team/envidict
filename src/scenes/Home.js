@@ -10,14 +10,23 @@ import RecentWords from '../components/molecules/home/RecentWords'
 import { Colors } from '../styles'
 import CurrentVocabularies from '../components/molecules/home/CurrentVocabularies'
 
-const Home = () => {
+const Home = ({ navigation }) => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
+  const onGoToWordView = () => {
+    navigation.navigate('WordView')
+  }
+  const onClickPreView = () => {
+    navigation.navigate('LessonDetail')
+  }
+  const onClickPractise = () => {
+    navigation.navigate('MainLearning')
+  }
   return (
     <MainLayout voiceButtonIsVisible={true}>
-      <WordOfTheDay />
-      <RecentWords />
+      <WordOfTheDay onGoToWordView={onGoToWordView} />
+      <RecentWords onGoToWordView={onGoToWordView}/>
       <View style={styles.buttonWrapper}>
         <Button style={buttonStyle} iconLeft block rounded>
           <Icon name="earth" type="MaterialCommunityIcons" />
@@ -26,7 +35,10 @@ const Home = () => {
           </Text>
         </Button>
       </View>
-      <CurrentVocabularies />
+      <CurrentVocabularies
+        onClickPreView={onClickPreView}
+        onClickPractise={onClickPractise}
+      />
     </MainLayout>
   )
 }

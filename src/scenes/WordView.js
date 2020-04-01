@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, StyleSheet, Row } from 'react-native'
 import { Container, View, Button, Tabs, Tab, Icon } from 'native-base'
 
@@ -7,6 +7,9 @@ import DetailsView from '../components/organisms/word-view/DetailsView'
 import { Colors } from '../styles/index'
 
 const WordView = () => {
+  const [isFavorite, setIsFavorite] = useState(false)
+  const toggleFavorite = () => setIsFavorite((previousState) => !previousState)
+
   return (
     <Container>
       <Tabs>
@@ -26,8 +29,11 @@ const WordView = () => {
         </Tab>
       </Tabs>
       <View style={styles.remindView}>
-        <Button bordered style={styles.customButonIconHeart}>
-          <Icon style={styles.customIconHeart} name="md-heart-empty" />
+        <Button bordered style={styles.customButonIconHeart} onPress={toggleFavorite}>
+          <Icon
+            style={isFavorite ? styles.customIconFavorite : styles.customIconHeart}
+            name={isFavorite ? 'md-heart' : 'md-heart-empty'}
+          />
         </Button>
         <Button bordered style={styles.customButonIconSearch}>
           <Icon style={styles.customIconSearch} name="search" />
@@ -44,7 +50,7 @@ const styles = StyleSheet.create({
     bottom: 5,
     position: 'absolute',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   customButonIconHeart: {
     borderWidth: 1,
@@ -59,12 +65,12 @@ const styles = StyleSheet.create({
     shadowColor: Colors.BLACK,
     shadowOffset: {
       width: 2,
-      height: 0
+      height: 0,
     },
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
 
-    elevation: 12
+    elevation: 12,
   },
   customButonIconSearch: {
     borderWidth: 1,
@@ -78,21 +84,26 @@ const styles = StyleSheet.create({
     shadowColor: Colors.BLACK,
     shadowOffset: {
       width: 2,
-      height: 0
+      height: 0,
     },
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
-    elevation: 12
+    elevation: 12,
   },
   customIconHeart: {
     width: 20,
     height: 23,
-    color: Colors.BLUE_DARK
+    color: Colors.BLUE_DARK,
+  },
+  customIconFavorite: {
+    width: 20,
+    height: 23,
+    color: Colors.WARNING,
   },
   customIconSearch: {
     width: 17,
     height: 23,
-    color: Colors.WHITE
-  }
+    color: Colors.WHITE,
+  },
 })
 export default WordView
