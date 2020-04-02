@@ -21,9 +21,6 @@ const ListItemCourses = (props) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 10,
-    borderColor: Colors.SECONDARY_LIGHT,
-    borderWidth: 0.7,
   },
   image: {
     width: 50,

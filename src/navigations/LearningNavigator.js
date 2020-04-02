@@ -6,6 +6,7 @@ import Learning from '../scenes/Learning'
 import MainLearning from '../scenes/MainLearning'
 import LessonList from '../scenes/LessonList'
 import LessonDetail from '../scenes/LessonDetail'
+import LearnNow from '../scenes/LearnNow'
 
 const Stack = createStackNavigator()
 
@@ -38,6 +39,7 @@ const LearningNavigator = () => {
         options={headerOptions}
       />
       <Stack.Screen name="LessonList" component={LessonList} options={headerOptions} />
+      <Stack.Screen name="LearnNow" component={LearnNow} options={headerOptions} />
     </Stack.Navigator>
   )
 }
