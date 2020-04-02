@@ -10,8 +10,9 @@ const ListItemVocabulary = (props, { navigation }) => {
   const onPressListItem = () => {
     navigation.navigate('ListWord')
   }
+
   return (
-    <ListItem noIndent onPress={onPress}>
+    <ListItem noIndent onPress={onPressListItem}>
       <Text style={styles.vocabulary}>{nameVocabulary}</Text>
     </ListItem>
   )

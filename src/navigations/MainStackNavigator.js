@@ -5,6 +5,7 @@ import Home from '../scenes/Home'
 import WordView from '../scenes/WordView'
 import LessonDetail from '../scenes/LessonDetail'
 import MainLearning from '../scenes/MainLearning'
+import OnlineTranslation from '../scenes/OnlineTranslation'
 import LearnNow from '../scenes/LearnNow'
 import { Colors } from '../styles'
 import AppNavigator from './AppNavigator'
@@ -26,6 +27,11 @@ const MainStackNavigator = () => {
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Stack.Screen name="WordView" component={WordView} options={headerOptions} />
+      <Stack.Screen
+        name="Dịch online"
+        component={OnlineTranslation}
+        options={headerOptions}
+      />
       <Stack.Screen
         name="LessonDetail"
         component={LessonDetail}
