@@ -1,14 +1,17 @@
-import React from 'react'
-import { Text, View, Icon, Right, Row, Left } from 'native-base'
+import { Icon, Left, Right, Row, Text, View } from 'native-base'
+import React, { useContext } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 
+import { dictStoreContext } from '../../../contexts'
 import { Colors } from '../../../styles'
-import { FONT_SIZE_14, FONT_SIZE_12 } from '../../../styles/typography'
+import { FONT_SIZE_12, FONT_SIZE_14 } from '../../../styles/typography'
 import { InstanceSpeaker } from '../../../utils'
 
 const WordOfTheDay = (props) => {
   const { onGoToWordView } = props
-  const word = 'unbelivable'
+  const dictStore = useContext(dictStoreContext)
+  const word = dictStore.findWord('hello')
+
   return (
     <TouchableOpacity onPress={onGoToWordView}>
       <View style={styles.card}>
@@ -26,13 +29,13 @@ const WordOfTheDay = (props) => {
           </Right>
         </Row>
         <View style={styles.row}>
-          <Text style={styles.word}>unbelievable</Text>
-          <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+          <Text style={styles.word}>{word.word}</Text>
+          <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
             <Icon name="volume-high" style={[styles.icon, styles.blueDarkColor]} />
           </TouchableOpacity>
         </View>
-        <Text style={styles.type}>tính từ</Text>
-        <Text style={styles.meaning}>không thể tin nổi</Text>
+        {/* <Text style={styles.type}>tính từ</Text> */}
+        <Text style={styles.meaning}>{word.description}</Text>
       </View>
     </TouchableOpacity>
   )
