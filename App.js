@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
-import { StyleSheet, View, StatusBar } from 'react-native'
-import { AppLoading } from 'expo'
-import { Asset } from 'expo-asset'
-import * as FileSystem from 'expo-file-system'
-import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
-
+import { AppLoading } from 'expo'
+import * as Font from 'expo-font'
+import React, { useState } from 'react'
+import { StatusBar, StyleSheet, View } from 'react-native'
 import AppNavigator from './src/navigations/AppNavigator'
 
 const App = (props) => {
@@ -35,11 +32,6 @@ const loadResourcesAsync = async () => {
     Roboto: require('native-base/Fonts/Roboto.ttf'),
     Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
   })
-
-  await FileSystem.downloadAsync(
-    Asset.fromModule(require('./dict.db')).uri,
-    `${FileSystem.documentDirectory}/SQLite/dict.db`
-  )
 }
 
 const handleLoadingError = (error) => {
