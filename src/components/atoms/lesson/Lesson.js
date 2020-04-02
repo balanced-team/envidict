@@ -17,7 +17,7 @@ import { Typography, Colors } from '../../../styles'
 
 const Lesson = (props) => {
   return (
-    <Card>
+    <Card style={styles.card}>
       <CardItem>
         <Body>
           <Text style={styles.namLesson}>Chủ đề 1: Constracts</Text>
@@ -47,6 +47,10 @@ const Lesson = (props) => {
   )
 }
 const styles = StyleSheet.create({
+  card: {
+    marginLeft: 10,
+    marginRight: 10,
+  },
   namLesson: {
     color: Colors.BLUE_TEXT,
     fontSize: Typography.FONT_SIZE_18,

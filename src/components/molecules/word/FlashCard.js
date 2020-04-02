@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 5,
     elevation: 5,
-    width: 165,
-    height: 180,
-    marginTop: 20,
+    width: 170,
+    height: 185,
+    marginTop: 10,
   },
   word: {
     fontSize: Typography.FONT_SIZE_18,

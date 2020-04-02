@@ -31,6 +31,9 @@ const Home = ({ navigation }) => {
     navigation.navigate('Dịch online')
   }
 
+  const onClickLearnNow = () => {
+    navigation.navigate('LearnNow')
+  }
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <WordOfTheDay onGoToWordView={onGoToWordView} />
@@ -52,6 +55,7 @@ const Home = ({ navigation }) => {
       <CurrentVocabularies
         onClickPreView={onClickPreView}
         onClickPractise={onClickPractise}
+        onClickLearnNow={onClickLearnNow}
       />
     </MainLayout>
   )

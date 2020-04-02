@@ -23,7 +23,6 @@ const OnlineTranslation = () => {
   }
 
   const onTranslate = async () => {
-    console.log(fromLang + ' ' + toLang)
     setTranslatedText('Đang dịch văn bản...')
     const result = await translateOnlineAPI.translate(text, fromLang, toLang)
     setTranslatedText(result)

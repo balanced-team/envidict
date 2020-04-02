@@ -4,7 +4,7 @@ import { View, Icon } from 'native-base'
 import { Colors } from '../../../styles/index'
 import { InstanceSpeaker } from '../../../utils/speaker'
 
-const DetailsView = () => {
+const DetailsView = (props) => {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.titleText}>representatives</Text>
@@ -15,25 +15,29 @@ const DetailsView = () => {
         <Text style={styles.pronounce}>/ˌrɛ.prɪ.ˈzɛn.tə.tɪv/</Text>
       </View>
 
-      <View style={styles.inLine}>
-        <Icon type="FontAwesome" name="angle-right" style={styles.iconType} />
-        <Text style={styles.typeText}>adj</Text>
-      </View>
+      {props.isShowTranslate === true && (
+        <View>
+          <View style={styles.inLine}>
+            <Icon type="FontAwesome" name="angle-right" style={styles.iconType} />
+            <Text style={styles.typeText}>adj</Text>
+          </View>
 
-      <View style={styles.baseText}>
-        <Text style={styles.explain}>1. tiêu biểu, điển hình</Text>
-        <Text style={styles.example}>
-          a meeting of representative of monastic life. This is a long lineeeeeeeee.
-        </Text>
+          <View style={styles.baseText}>
+            <Text style={styles.explain}>1. tiêu biểu, điển hình</Text>
+            <Text style={styles.example}>
+              a meeting of representative of monastic life. This is a long lineeeeeeeee.
+            </Text>
 
-        <View style={styles.inLine}>
-          <Icon type="FontAwesome" name="angle-right" style={styles.iconRight} />
-          <Text style={styles.exampleTrans}>
-            cuộc họp của những người tiêu biểu
-            {'\n'}
-          </Text>
+            <View style={styles.inLine}>
+              <Icon type="FontAwesome" name="angle-right" style={styles.iconRight} />
+              <Text style={styles.exampleTrans}>
+                cuộc họp của những người tiêu biểu
+                {'\n'}
+              </Text>
+            </View>
+          </View>
         </View>
-      </View>
+      )}
     </ScrollView>
   )
 }

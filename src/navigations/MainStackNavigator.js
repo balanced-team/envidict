@@ -6,7 +6,9 @@ import WordView from '../scenes/WordView'
 import LessonDetail from '../scenes/LessonDetail'
 import MainLearning from '../scenes/MainLearning'
 import OnlineTranslation from '../scenes/OnlineTranslation'
+import LearnNow from '../scenes/LearnNow'
 import { Colors } from '../styles'
+import AppNavigator from './AppNavigator'
 
 const Stack = createStackNavigator()
 
@@ -22,7 +24,7 @@ const MainStackNavigator = () => {
     headerTintColor: Colors.WHITE,
   }
   return (
-    <Stack.Navigator initialRouteName="Home" options={headerOptions}>
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Stack.Screen name="WordView" component={WordView} options={headerOptions} />
       <Stack.Screen
@@ -40,6 +42,7 @@ const MainStackNavigator = () => {
         component={MainLearning}
         options={headerOptions}
       />
+      <Stack.Screen name="LearnNow" component={LearnNow} options={headerOptions} />
     </Stack.Navigator>
   )
 }

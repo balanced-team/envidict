@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, StyleSheet, Row } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Container, View, Button, Tabs, Tab, Icon } from 'native-base'
 
 import NoteView from '../components/organisms/word-view/NoteView'
@@ -18,7 +18,7 @@ const WordView = () => {
           tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
           activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >
-          <DetailsView />
+          <DetailsView isShowTranslate={true}/>
         </Tab>
         <Tab
           heading="Note"
