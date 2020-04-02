@@ -14,22 +14,36 @@ const Home = ({ navigation }) => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
+
   const onGoToWordView = () => {
     navigation.navigate('WordView')
   }
+
   const onClickPreView = () => {
     navigation.navigate('LessonDetail')
   }
+
   const onClickPractise = () => {
     navigation.navigate('MainLearning')
   }
+
+  const onClickOnlineTranslationButton = () => {
+    navigation.navigate('Dịch online')
+  }
+
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <WordOfTheDay onGoToWordView={onGoToWordView} />
-      <RecentWords onGoToWordView={onGoToWordView}/>
+      <RecentWords onGoToWordView={onGoToWordView} />
       <View style={styles.buttonWrapper}>
-        <Button style={buttonStyle} iconLeft block rounded>
-          <Icon name="earth" type="MaterialCommunityIcons" />
+        <Button
+          style={buttonStyle}
+          onPress={onClickOnlineTranslationButton}
+          iconLeft
+          block
+          rounded
+        >
+          <Icon name="translate" type="MaterialCommunityIcons" />
           <Text style={styles.buttonText} uppercase={false}>
             Dịch online
           </Text>
