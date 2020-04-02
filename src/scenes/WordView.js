@@ -18,7 +18,7 @@ const WordView = () => {
           tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
           activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >
-          <DetailsView />
+          <DetailsView isShowTranslate={true}/>
         </Tab>
         <Tab
           heading="Note"
