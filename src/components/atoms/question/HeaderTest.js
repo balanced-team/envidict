@@ -18,7 +18,7 @@ const HeaderTest = () => {
         <View style={[styles.block, styles.inLine]}>
           <Icon name="clock" type="Feather" style={styles.icon} />
           <View>
-            <Text style={styles.text}>Stop</Text>
+            <Text style={styles.text}>Thời gian</Text>
             <Text style={styles.text}>01:45</Text>
           </View>
         </View>
