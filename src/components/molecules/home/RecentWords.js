@@ -19,7 +19,7 @@ const RecentWords = (props) => {
     <View>
       <Text style={styles.tittle}>Tìm kiếm gần đây</Text>
       <List
-        horizontal={true}
+        horizontal
         dataArray={recentWords}
         renderRow={(word, i) => (
           <ListItem noBorder key={i} onPress={onGoToWordView}>
