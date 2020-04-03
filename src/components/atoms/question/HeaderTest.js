@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon } from 'native-base'
-import { Colors, Typography } from '../../../styles'
+import { Colors, Typography, Mixins } from '../../../styles'
 
 const HeaderTest = () => {
   return (
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   block: {
-    width: 100,
+    width:( Mixins.WINDOW_WIDTH - 50) /3,
     height: 50,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,

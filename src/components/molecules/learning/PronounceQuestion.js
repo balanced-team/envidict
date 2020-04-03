@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
   },
   block: {
-    width: 340,
+    width: Mixins.WINDOW_WIDTH - 20,
     height: 100,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
