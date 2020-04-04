@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BLUE_DARK,
     position: 'absolute',
     bottom: 0,
-    marginBottom: 130,
   },
   textButton: {
     fontSize: Typography.FONT_SIZE_16,

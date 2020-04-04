@@ -6,7 +6,7 @@ import HeaderTest from '../../atoms/question/HeaderTest'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 
-const PronounceQuestion = () => {
+const PronunticationQuestion = () => {
   return (
     <View style={styles.container}>
       <HeaderTest />
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BLUE_DARK,
     position: 'absolute',
     bottom: 0,
-    marginBottom: 130,
   },
   textButton: {
     fontSize: Typography.FONT_SIZE_16,
@@ -81,4 +80,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 })
-export default PronounceQuestion
+export default PronunticationQuestion

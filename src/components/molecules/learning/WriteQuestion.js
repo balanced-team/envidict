@@ -7,7 +7,7 @@ import HeaderTest from '../../atoms/question/HeaderTest'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 
-const PronounceQuestion = () => {
+const WriteQuestion = () => {
   const [answer, setAnswer] = useState('')
   return (
     <View style={styles.container}>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BLUE_DARK,
     position: 'absolute',
     bottom: 0,
-    marginBottom: 130,
+    marginBottom: 66,
   },
   buttonCheck: {
     width: 180,
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 })
-export default PronounceQuestion
+export default WriteQuestion

@@ -4,6 +4,7 @@ import * as Font from 'expo-font'
 import React, { useState } from 'react'
 import { StatusBar, StyleSheet, View } from 'react-native'
 import AppNavigator from './src/navigations/AppNavigator'
+import Routes from './src/navigations/Routes'
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
@@ -20,7 +21,7 @@ const App = (props) => {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="red" hidden={false} barStyle="light-content" />
-        <AppNavigator />
+        <Routes />
       </View>
     )
   }
