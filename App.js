@@ -3,8 +3,8 @@ import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import React, { useState } from 'react'
 import { StatusBar, StyleSheet, View } from 'react-native'
-import AppNavigator from './src/navigations/AppNavigator'
-import { Root } from 'native-base'
+import AppNavigator from './src/navigations/BottomTabNavigator'
+import Routes from './src/navigations/Routes'
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
@@ -19,12 +19,10 @@ const App = (props) => {
     )
   } else {
     return (
-      <Root>
-        <View style={styles.container}>
-          <StatusBar backgroundColor="red" hidden={false} barStyle="light-content" />
-          <AppNavigator />
-        </View>
-      </Root>
+      <View style={styles.container}>
+        <StatusBar backgroundColor="red" hidden={false} barStyle="light-content" />
+        <Routes />
+      </View>
     )
   }
 }

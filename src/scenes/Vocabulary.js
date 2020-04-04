@@ -29,7 +29,7 @@ const Vocabulary = ({ navigation }) => {
           <ListItemVocabulary
             key={item.id}
             nameVocabulary={item.name}
-            onPress={() => navigation.navigate('ListWord')}
+            onPressListItem={() => navigation.navigate('ListWord')}
           />
         ))}
       </List>

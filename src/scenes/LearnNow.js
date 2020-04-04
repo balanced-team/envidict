@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 20,
     marginRight: 10,
-    height: 500,
+    height: Mixins.WINDOW_HEIGHT * 0.6,
     borderRadius: 10,
     borderColor: Colors.BLUE_DARK,
   },

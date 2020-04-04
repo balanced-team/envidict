@@ -33,7 +33,7 @@ const ListWord = ({ navigation }) => {
           <ListItemVocabulary
             key={item.id}
             nameVocabulary={item.word}
-            onPress={() => {
+            onPressListItem={() => {
               navigation.navigate('WordView')
             }}
           />

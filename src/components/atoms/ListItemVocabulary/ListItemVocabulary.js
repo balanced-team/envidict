@@ -5,12 +5,7 @@ import { ListItem, View } from 'native-base'
 import { Colors, Typography } from '../../../styles'
 
 const ListItemVocabulary = (props, { navigation }) => {
-  const { nameVocabulary, onPress } = props
-
-  const onPressListItem = () => {
-    navigation.navigate('ListWord')
-  }
-
+  const { nameVocabulary, onPressListItem } = props
   return (
     <ListItem noIndent onPress={onPressListItem}>
       <Text style={styles.vocabulary}>{nameVocabulary}</Text>
