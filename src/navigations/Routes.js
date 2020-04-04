@@ -2,13 +2,14 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import AppNavigator from './AppNavigator'
+import BottomTabNavigator from './BottomTabNavigator'
 import WordView from '../scenes/WordView'
 import MainLearning from '../scenes/MainLearning'
 import LessonList from '../scenes/LessonList'
 import LessonDetail from '../scenes/LessonDetail'
 import LearnNow from '../scenes/LearnNow'
 import ListWord from '../scenes/ListWord'
+import OnlineTranslation from '../scenes/OnlineTranslation'
 import { Colors } from '../styles'
 const Stack = createStackNavigator()
 const headerOptions = {
@@ -28,7 +29,7 @@ const Routes = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="App"
-          component={AppNavigator}
+          component={BottomTabNavigator}
           options={{ headerShown: false }}
         />
         <Stack.Screen name="WordView" component={WordView} options={headerOptions} />
@@ -45,6 +46,11 @@ const Routes = () => {
           options={headerOptions}
         />
         <Stack.Screen name="ListWord" component={ListWord} options={headerOptions} />
+        <Stack.Screen
+          name="Dịch online"
+          component={OnlineTranslation}
+          options={headerOptions}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

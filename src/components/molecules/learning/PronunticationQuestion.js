@@ -2,14 +2,14 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Separator, Card, Button } from 'native-base'
 
-import HeaderTest from '../../atoms/question/HeaderTest'
+import HeaderExam from '../../atoms/question/HeaderExam'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 
 const PronunticationQuestion = () => {
   return (
     <View style={styles.container}>
-      <HeaderTest />
+      <HeaderExam />
 
       <View style={styles.block}>
         <Icon name="volume-high" style={styles.icon} />

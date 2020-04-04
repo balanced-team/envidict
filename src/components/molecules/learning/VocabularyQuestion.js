@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Button, Card } from 'native-base'
 
-import HeaderTest from '../../atoms/question/HeaderTest'
+import HeaderExam from '../../atoms/question/HeaderExam'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -10,7 +10,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 const VocabularyQuestion = () => {
   return (
     <View style={styles.container}>
-      <HeaderTest />
+      <HeaderExam />
 
       <View style={[styles.block, styles.inLine]}>
         <View>

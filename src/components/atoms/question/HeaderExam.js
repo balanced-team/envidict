@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import { Icon } from 'native-base'
 import { Colors, Typography, Mixins } from '../../../styles'
 
-const HeaderTest = () => {
+const HeaderExam = () => {
   return (
     <View style={styles.container}>
       <View style={styles.inLine}>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   block: {
-    width:( Mixins.WINDOW_WIDTH - 50) /3,
+    width: (Mixins.WINDOW_WIDTH - 50) / 3,
     height: 50,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
     color: Colors.BLUE_DARK,
   },
 })
-export default HeaderTest
+export default HeaderExam

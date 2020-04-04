@@ -3,15 +3,14 @@ import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Button } from 'native-base'
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input'
 
-import HeaderTest from '../../atoms/question/HeaderTest'
-import AnswerLine from '../../atoms/question/AnswerLine'
+import HeaderExam from '../../atoms/question/HeaderExam'
 import { Colors, Typography, Mixins } from '../../../styles'
 
 const WriteQuestion = () => {
   const [answer, setAnswer] = useState('')
   return (
     <View style={styles.container}>
-      <HeaderTest />
+      <HeaderExam />
       <View style={styles.block}>
         <Icon name="volume-high" style={styles.icon} />
       </View>

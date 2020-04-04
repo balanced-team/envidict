@@ -10,7 +10,7 @@ import TabBarIcon from '../components/atoms/navigations/TabBarIcon'
 
 const Tab = createBottomTabNavigator()
 
-const AppNavigator = () => {
+const BottomTabNavigator = () => {
   return (
     <Tab.Navigator tabBarOptions={{ showLabel: false }}>
       <Tab.Screen
@@ -54,4 +54,4 @@ const AppNavigator = () => {
   )
 }
 
-export default AppNavigator
+export default BottomTabNavigator

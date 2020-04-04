@@ -50,6 +50,7 @@ const LessonList = ({ navigation }) => {
       <Lesson />
       <Lesson />
       <Lesson />
+      <Lesson />
     </MainLayout>
   )
 }
