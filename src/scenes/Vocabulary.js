@@ -22,6 +22,7 @@ const Vocabulary = ({ navigation }) => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
+  
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <List>

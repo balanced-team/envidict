@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Text, View, Textarea, Row, Icon, Left, Right, Button, Toast } from 'native-base'
 import { StyleSheet, TouchableOpacity, ScrollView, Clipboard } from 'react-native'
 
@@ -12,7 +12,6 @@ const OnlineTranslation = () => {
   const [translatedText, setTranslatedText] = useState('')
   const [fromLang, setFromLang] = useState('en')
   const [toLang, setToLang] = useState('vi')
-  const [showToast, setShowToast] = useState(false)
 
   const switchLang = () => {
     const from = fromLang
@@ -20,6 +19,10 @@ const OnlineTranslation = () => {
 
     setFromLang(to)
     setToLang(from)
+
+    const temp = text
+    setTranslatedText(temp)
+    setText(translatedText)
   }
 
   const onTranslate = async () => {

@@ -1,40 +1,34 @@
 import React from 'react'
 import { Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import { View, Icon } from 'native-base'
+import HTMLView from 'react-native-htmlview'
+
 import { Colors } from '../../../styles/index'
 import { InstanceSpeaker } from '../../../utils/speaker'
 
 const DetailsView = (props) => {
+  const { word } = props
+
+  const renderNode = (node, index, siblings, parent, defaultRenderer) => {
+    if (node.name === 'h1' || node.name === 'h3') {
+      return null
+    }
+  }
+
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.titleText}>representatives</Text>
+      <Text style={styles.titleText}>{word.word}</Text>
       <View style={styles.inLine}>
-        <TouchableOpacity onPress={() => InstanceSpeaker.speak('representatives')}>
+        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
           <Icon name="volume-high" style={styles.iconVolume}></Icon>
         </TouchableOpacity>
-        <Text style={styles.pronounce}>/ˌrɛ.prɪ.ˈzɛn.tə.tɪv/</Text>
+        <Text style={styles.pronounce}>{'/' + word.pronounce + '/'}</Text>
       </View>
 
       {props.isShowTranslate === true && (
         <View>
-          <View style={styles.inLine}>
-            <Icon type="FontAwesome" name="angle-right" style={styles.iconType} />
-            <Text style={styles.typeText}>adj</Text>
-          </View>
-
           <View style={styles.baseText}>
-            <Text style={styles.explain}>1. tiêu biểu, điển hình</Text>
-            <Text style={styles.example}>
-              a meeting of representative of monastic life. This is a long lineeeeeeeee.
-            </Text>
-
-            <View style={styles.inLine}>
-              <Icon type="FontAwesome" name="angle-right" style={styles.iconRight} />
-              <Text style={styles.exampleTrans}>
-                cuộc họp của những người tiêu biểu
-                {'\n'}
-              </Text>
-            </View>
+            <HTMLView value={word.html} renderNode={renderNode} stylesheet={htmlStyles} />
           </View>
         </View>
       )}
@@ -105,5 +99,30 @@ const styles = StyleSheet.create({
   inLine: {
     flexDirection: 'row',
     paddingLeft: 10,
+  },
+})
+
+const htmlStyles = StyleSheet.create({
+  // Type
+  h2: {
+    fontSize: 16,
+    color: Colors.BLUE_TYPE,
+    paddingLeft: 4,
+    paddingTop: 10,
+    paddingBottom: 0,
+  },
+  // Meaning
+  ul: {
+    color: Colors.BLUE_EXPLAIN,
+    fontSize: 16,
+    marginHorizontal: 18,
+  },
+  ol: {
+    marginHorizontal: 18,
+    fontSize: 16,
+  },
+  li: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 })

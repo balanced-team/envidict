@@ -1,42 +1,48 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { List } from 'native-base'
 
 import MainLayout from '../components/templates/MainLayout'
-import ListItemVocabulary from '../components/atoms/ListItemVocabulary/ListItemVocabulary'
+import WordItem from '../components/atoms/ListItemVocabulary/WordItem'
+import { RoutesConstants } from '../navigations/route-constants'
+import { dictStoreContext } from '../contexts'
 
-const ArrWord = [
-  {
-    id: 1,
-    word: 'representatives',
-  },
-  {
-    id: 2,
-    word: 'learn',
-  },
-  {
-    id: 3,
-    word: 'schedule',
-  },
-  {
-    id: 4,
-    word: 'relinquish',
-  },
+const wordList = [
+  'good',
+  'allocate',
+  'compatible',
+  'delete',
+  'delete',
+  'duplicate',
+  'failure',
+  'ignore',
+  'figure',
+  'search',
 ]
 
 const ListWord = ({ navigation }) => {
-  const [arrWord, setArrWord] = useState(ArrWord)
+  const [words, setWords] = useState([])
+
+  const dicStore = useContext(dictStoreContext)
+
+  useEffect(() => {
+    let data = []
+    wordList.forEach((word) => {
+      const result = dicStore.findWord(word)
+      console.log(result)
+      data.push(result)
+    })
+    setWords(data)
+  }, [])
+
+  const onPressListItem = (word) => {
+    navigation.navigate(RoutesConstants.WordView, { word: word })
+  }
 
   return (
     <MainLayout voiceButtonIsVisible={false}>
       <List>
-        {arrWord.map((item) => (
-          <ListItemVocabulary
-            key={item.id}
-            nameVocabulary={item.word}
-            onPressListItem={() => {
-              navigation.navigate('WordView')
-            }}
-          />
+        {words.map((word, i) => (
+          <WordItem key={i} word={word} onPressListItem={onPressListItem} />
         ))}
       </List>
     </MainLayout>

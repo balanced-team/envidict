@@ -6,9 +6,10 @@ import NoteView from '../components/organisms/word-view/NoteView'
 import DetailsView from '../components/organisms/word-view/DetailsView'
 import { Colors } from '../styles/index'
 
-const WordView = () => {
+const WordView = ({ route, navigation }) => {
   const [isFavorite, setIsFavorite] = useState(false)
   const toggleFavorite = () => setIsFavorite((previousState) => !previousState)
+  const { word } = route.params
 
   return (
     <Container>
@@ -18,7 +19,7 @@ const WordView = () => {
           tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
           activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >
-          <DetailsView isShowTranslate={true}/>
+          <DetailsView isShowTranslate={true} word={word} />
         </Tab>
         <Tab
           heading="Note"

@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Text, View, List, ListItem } from 'native-base'
 import { StyleSheet } from 'react-native'
 
 import MiniCard from '../word/MiniCard'
 import { Colors } from '../../../styles'
+import { dictStoreContext } from '../../../contexts'
 
-const recentWords = [
-  { word: 'beautiful', type: 'tính từ' },
-  { word: 'run', type: 'động từ' },
-  { word: 'card', type: 'danh từ' },
-  { word: 'nice', type: 'tính từ' },
-  { word: 'love', type: 'động từ' },
-]
+let recentWords = []
+
+const words = ['beautiful', 'run', 'card', 'nice', 'love']
 
 const RecentWords = (props) => {
   const { onGoToWordView } = props
+  const dictStore = useContext(dictStoreContext)
+
+  useEffect(() => {
+    words.forEach(async (word) => {
+      const result = dictStore.findWord(word)
+      recentWords.push(result)
+    })
+  }, [])
+
   return (
     <View>
       <Text style={styles.tittle}>Tìm kiếm gần đây</Text>
@@ -22,7 +28,7 @@ const RecentWords = (props) => {
         horizontal
         dataArray={recentWords}
         renderRow={(word, i) => (
-          <ListItem noBorder key={i} onPress={onGoToWordView}>
+          <ListItem noBorder key={i} onPress={() => onGoToWordView(word)}>
             <MiniCard data={word} />
           </ListItem>
         )}

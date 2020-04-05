@@ -32,7 +32,7 @@ const Routes = () => {
           component={BottomTabNavigator}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="WordView" component={WordView} options={headerOptions} />
+        <Stack.Screen name="Thông tin từ" component={WordView} options={headerOptions} />
         <Stack.Screen
           name="LessonDetail"
           component={LessonDetail}

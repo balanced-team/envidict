@@ -3,8 +3,8 @@ import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import React, { useState } from 'react'
 import { StatusBar, StyleSheet, View } from 'react-native'
-import AppNavigator from './src/navigations/BottomTabNavigator'
 import Routes from './src/navigations/Routes'
+import { Root } from 'native-base'
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
@@ -19,10 +19,12 @@ const App = (props) => {
     )
   } else {
     return (
-      <View style={styles.container}>
-        <StatusBar backgroundColor="red" hidden={false} barStyle="light-content" />
-        <Routes />
-      </View>
+      <Root>
+        <View style={styles.container}>
+          <StatusBar backgroundColor="red" hidden={false} barStyle="light-content" />
+          <Routes />
+        </View>
+      </Root>
     )
   }
 }
@@ -47,7 +49,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: StatusBar.currentHeight,
   },
 })
 

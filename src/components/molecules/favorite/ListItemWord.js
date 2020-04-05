@@ -1,19 +1,20 @@
 import React from 'react'
 import { Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { ListItem, View, Body, Button, Right, Icon } from 'native-base'
+import { ListItem, Body, Right, Icon } from 'native-base'
 
 import { Colors, Typography } from '../../../styles'
 import { InstanceSpeaker } from '../../../utils'
+
 const ListItemWord = (props) => {
-  const { word, type, onGoToWordView } = props
+  const { word, onGoToWordView } = props
   return (
-    <ListItem noIndent onPress={onGoToWordView}>
+    <ListItem noIndent onPress={() => onGoToWordView(word)}>
       <Body>
-        <Text style={styles.vocabulary}>{word}</Text>
-        <Text style={styles.type}>{type}</Text>
+        <Text style={styles.vocabulary}>{word.word}</Text>
+        <Text style={styles.type}>{word.description}</Text>
       </Body>
       <Right>
-        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
           <Icon style={styles.customIconVolume} name="volume-high" />
         </TouchableOpacity>
       </Right>

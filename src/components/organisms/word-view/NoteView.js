@@ -23,20 +23,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    padding: 8
+    padding: 8,
   },
   textareaContainer: {
     height: 150,
     backgroundColor: Colors.WHITE,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: Colors.BLUE_LIGHT
+    borderColor: Colors.BLUE_LIGHT,
   },
   textarea: {
     textAlignVertical: 'top',
     padding: 10,
     height: 180,
     fontSize: 14,
-    color: Colors.BLUE_TEXT
-  }
+    color: Colors.BLUE_TEXT,
+  },
 })
