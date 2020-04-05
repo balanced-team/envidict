@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Button, Card } from 'native-base'
 
-import HeaderTest from '../../atoms/question/HeaderTest'
+import HeaderExam from '../../atoms/question/HeaderExam'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -10,7 +10,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 const VocabularyQuestion = () => {
   return (
     <View style={styles.container}>
-      <HeaderTest />
+      <HeaderExam />
 
       <View style={[styles.block, styles.inLine]}>
         <View>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   block: {
-    width: 340,
+    width: Mixins.WINDOW_WIDTH - 20,
     height: 100,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BLUE_DARK,
     position: 'absolute',
     bottom: 0,
-    marginBottom: 130,
   },
   textButton: {
     fontSize: Typography.FONT_SIZE_16,

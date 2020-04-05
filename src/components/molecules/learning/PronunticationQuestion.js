@@ -2,14 +2,14 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Separator, Card, Button } from 'native-base'
 
-import HeaderTest from '../../atoms/question/HeaderTest'
+import HeaderExam from '../../atoms/question/HeaderExam'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 
-const PronounceQuestion = () => {
+const PronunticationQuestion = () => {
   return (
     <View style={styles.container}>
-      <HeaderTest />
+      <HeaderExam />
 
       <View style={styles.block}>
         <Icon name="volume-high" style={styles.icon} />
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
   },
   block: {
-    width: 340,
+    width: Mixins.WINDOW_WIDTH - 20,
     height: 100,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BLUE_DARK,
     position: 'absolute',
     bottom: 0,
-    marginBottom: 130,
   },
   textButton: {
     fontSize: Typography.FONT_SIZE_16,
@@ -81,4 +80,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 })
-export default PronounceQuestion
+export default PronunticationQuestion

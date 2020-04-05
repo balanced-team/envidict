@@ -3,15 +3,14 @@ import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Button } from 'native-base'
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input'
 
-import HeaderTest from '../../atoms/question/HeaderTest'
-import AnswerLine from '../../atoms/question/AnswerLine'
+import HeaderExam from '../../atoms/question/HeaderExam'
 import { Colors, Typography, Mixins } from '../../../styles'
 
-const PronounceQuestion = () => {
+const WriteQuestion = () => {
   const [answer, setAnswer] = useState('')
   return (
     <View style={styles.container}>
-      <HeaderTest />
+      <HeaderExam />
       <View style={styles.block}>
         <Icon name="volume-high" style={styles.icon} />
       </View>
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
   },
   block: {
-    width: 340,
+    width: Mixins.WINDOW_WIDTH - 20,
     height: 100,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BLUE_DARK,
     position: 'absolute',
     bottom: 0,
-    marginBottom: 130,
+    marginBottom: 66,
   },
   buttonCheck: {
     width: 180,
@@ -98,4 +97,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 })
-export default PronounceQuestion
+export default WriteQuestion

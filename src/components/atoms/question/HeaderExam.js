@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon } from 'native-base'
-import { Colors, Typography } from '../../../styles'
+import { Colors, Typography, Mixins } from '../../../styles'
 
-const HeaderTest = () => {
+const HeaderExam = () => {
   return (
     <View style={styles.container}>
       <View style={styles.inLine}>
@@ -18,7 +18,7 @@ const HeaderTest = () => {
         <View style={[styles.block, styles.inLine]}>
           <Icon name="clock" type="Feather" style={styles.icon} />
           <View>
-            <Text style={styles.text}>Stop</Text>
+            <Text style={styles.text}>Thời gian</Text>
             <Text style={styles.text}>01:45</Text>
           </View>
         </View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   block: {
-    width: 100,
+    width: (Mixins.WINDOW_WIDTH - 50) / 3,
     height: 50,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
     color: Colors.BLUE_DARK,
   },
 })
-export default HeaderTest
+export default HeaderExam
