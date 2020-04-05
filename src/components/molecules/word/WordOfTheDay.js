@@ -13,7 +13,7 @@ const WordOfTheDay = (props) => {
   const word = dictStore.findWord('hello')
 
   return (
-    <TouchableOpacity onPress={onGoToWordView}>
+    <TouchableOpacity onPress={() => onGoToWordView(word)}>
       <View style={styles.card}>
         <Row>
           <Left>

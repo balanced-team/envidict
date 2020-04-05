@@ -9,14 +9,15 @@ import { backHandleToExitApp } from '../utils'
 import RecentWords from '../components/molecules/home/RecentWords'
 import { Colors } from '../styles'
 import CurrentVocabularies from '../components/molecules/home/CurrentVocabularies'
+import { RoutesConstants } from '../navigations/route-constants'
 
 const Home = ({ navigation }) => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
 
-  const onGoToWordView = () => {
-    navigation.navigate('WordView')
+  const onGoToWordView = (data) => {
+    navigation.navigate(RoutesConstants.WordView, { word: data })
   }
 
   const onClickPreView = () => {

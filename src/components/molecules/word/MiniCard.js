@@ -7,7 +7,7 @@ import { FONT_SIZE_14 } from '../../../styles/typography'
 import { InstanceSpeaker } from '../../../utils/speaker'
 
 const MiniCard = (props) => {
-  const { word, type } = props.data
+  const { word, description } = props.data
   return (
     <View style={styles.card}>
       <View style={styles.row}>
@@ -16,7 +16,7 @@ const MiniCard = (props) => {
           <Icon name="volume-high" style={styles.icon} />
         </TouchableOpacity>
       </View>
-      <Text style={styles.type}>{type}</Text>
+      <Text style={styles.type}>{description}</Text>
     </View>
   )
 }
