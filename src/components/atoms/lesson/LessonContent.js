@@ -13,21 +13,7 @@ const recentWords = [
     type: 'tính từ',
     explain: 'xinh xắn, đáng yêu',
   },
-  {
-    id: 2,
-    word: 'beautiful',
-    pronounce: '/biutiful/',
-    type: 'tính từ',
-    explain: 'xinh xắn, đáng yêu',
-  },
   { id: 3, word: 'forbidden', pronounce: '/ferbiden/', type: 'động từ', explain: 'cấm' },
-  {
-    id: 4,
-    word: 'beautiful',
-    pronounce: '/biutiful/',
-    type: 'tính từ',
-    explain: 'xinh đẹp',
-  },
   { id: 5, word: 'run', pronounce: '/biutiful/', type: 'tính từ', explain: 'chạy' },
   { id: 6, word: 'card', pronounce: '/biutiful/', type: 'tính từ', explain: 'thẻ' },
   { id: 7, word: 'nice', pronounce: '/biutiful/', type: 'tính từ', explain: 'tốt' },
@@ -42,6 +28,7 @@ const LessonContent = () => {
       data={recentWords}
       renderItem={({ item }) => (
         <FlashCard
+          key={item.id}
           word={item.word}
           pronounce={item.pronounce}
           type={item.type}

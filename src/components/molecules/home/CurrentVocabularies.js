@@ -1,12 +1,17 @@
 import React from 'react'
-import { StyleSheet, ProgressBarAndroid, TouchableOpacity } from 'react-native'
+import {
+  StyleSheet,
+  ProgressBarAndroid,
+  TouchableOpacity,
+  TouchableHighlight,
+} from 'react-native'
 import { View, Text, Grid, Col, Button, Icon } from 'native-base'
 import { Colors } from '../../../styles'
 
 const CurrentVocabularies = (props) => {
   const { onClickPreView, onClickLearnNow, onClickPractise } = props
   return (
-    <TouchableOpacity onPress={onClickPreView}>
+    <TouchableHighlight onPress={onClickPreView}>
       <View>
         <Text style={styles.tittle}>Từ vựng phỏng vấn, xin việc</Text>
         <View style={styles.card}>
@@ -39,7 +44,7 @@ const CurrentVocabularies = (props) => {
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+    </TouchableHighlight>
   )
 }
 
