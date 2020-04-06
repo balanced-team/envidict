@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import { Content, Left, Body } from 'native-base'
 import { Typography, Colors } from '../../../styles'
 
 const ListItemCourses = (props) => {
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
   },
   subView: {
     paddingLeft: 10,
-    flexDirection: 'column',
+    marginRight: 100,
   },
   title: {
     fontSize: Typography.FONT_SIZE_20,

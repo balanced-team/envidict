@@ -1,24 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Card, CardItem, Button, Icon } from 'native-base'
 
 import DetailView from '../components/organisms/word-view/DetailsView'
 import { Colors, Mixins, Typography } from '../styles'
+import { dictStoreContext } from '../contexts'
+
 const LearnNow = () => {
   const [isShowTranslate, setIsShowTranslate] = useState(true)
   const [isRemembered, setisRemembered] = useState(false)
 
+  const dicStore = useContext(dictStoreContext)
+  const word = dicStore.findWord('application')
+
   const toggleShowTranslate = () => {
     setIsShowTranslate((preState) => !preState)
   }
+
   const toggleRemember = () => {
     setisRemembered(true)
   }
+
   return (
     <View style={styles.container}>
       <Card style={styles.card}>
-        <DetailView isShowTranslate={isShowTranslate} />
-        <Button full style={styles.button} onPress={toggleShowTranslate}>
+        <DetailView word={word} isShowTranslate={isShowTranslate} />
+        <Button
+          full
+          style={[styles.button, styles.noShadow]}
+          onPress={toggleShowTranslate}
+        >
           <Text style={styles.text}>{isShowTranslate ? 'Ẩn nghĩa' : 'Xem nghĩa'}</Text>
         </Button>
       </Card>
@@ -73,10 +84,15 @@ const styles = StyleSheet.create({
     fontSize: Typography.FONT_SIZE_14,
     fontWeight: 'bold',
   },
+  noShadow: {
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 0,
+    elevation: 0,
+  },
   inLineView: {
     flexDirection: 'row',
     position: 'absolute',
-    bottom: 0,
+    bottom: 10,
   },
   buttonLeft: {
     justifyContent: 'flex-start',

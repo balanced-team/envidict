@@ -23,7 +23,7 @@ const Learning = ({ navigation }) => {
         onGoToLessonDetail={handleNavigate}
       />
       <Courses
-        coursesName="Ôn luyện Toeic"
+        coursesName="Ôn luyện TOEIC"
         onGoToLessonDetail={handleNavigate}
       />
     </MainLayout>

@@ -28,7 +28,6 @@ const ListWord = ({ navigation }) => {
     let data = []
     wordList.forEach((word) => {
       const result = dicStore.findWord(word)
-      console.log(result)
       data.push(result)
     })
     setWords(data)

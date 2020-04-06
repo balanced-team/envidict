@@ -5,12 +5,38 @@ import { View, List, ListItem } from 'native-base'
 import { Typography, Colors } from '../../../styles'
 import ListItemCourses from './ListItemCourses'
 
-const dataArr = [
+const courses = [
   {
-    id: 1,
-    avatar: 'https://reactjs.org/logo-og.png',
-    title: 'OOAD',
-    subTitle: '50 cau hoi vi sao',
+    image: 'https://cdn.iconicjob.vn/prod/wp-content/uploads/2018/01/%E1%BA%A3nh-1.jpg',
+    title: 'Từ vựng phỏng vấn, xin việc',
+    subTitle: 'Số bài học: 20',
+  },
+  {
+    image: 'https://i.imgur.com/VqZQVGK.jpg',
+    title: 'Từ vựng chuyên ngành kế toán',
+    subTitle: 'Số bài học: 30',
+  },
+  {
+    image: 'https://cie.iiit.ac.in/wp-content/uploads/2020/03/tech-bytes-cie.jpg',
+    title: 'Từ vựng chuyên ngành Công nghệ thông tin',
+    subTitle: 'Số bài học: 24',
+  },
+  {
+    image:
+      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fkurtbadenhausen%2Ffiles%2F2018%2F01%2Fbank.jpg',
+    title: 'Từ vựng chuyên ngành Ngân hàng',
+    subTitle: 'Số bài học: 35',
+  },
+  {
+    image: 'https://comendadormarcioborlenghifasano.files.wordpress.com/2019/03/lei.jpg',
+    title: 'Từ vựng chuyên ngành Luật',
+    subTitle: 'Số bài học: 40',
+  },
+  {
+    image:
+      'https://lh3.googleusercontent.com/proxy/FzMWix8P_whTkg5OyjXVs4a4LNhPxARQcu4jCQXcckJz22kOigkzsZwz7vfYtQzmqOwbfGrN1BWqXK66r4brTIpnoXcVISJMEUQjr12Rx4s0t05IbapkNi9b0_-tQERsmOmlmggyoAoNCP0',
+    title: 'Từ vựng Văn phòng',
+    subTitle: 'Số bài học: 20',
   },
 ]
 const Courses = (props) => {
@@ -19,30 +45,17 @@ const Courses = (props) => {
     <View>
       <Text style={styles.coursesName}>{coursesName}</Text>
       <List>
-        <ListItem noIndent>
-          <ListItemCourses
-            image="https://reactjs.org/logo-og.png"
-            title="600 Từ vựng TOEIC"
-            subTitle="Số bài học: 50"
-            onGoToLessonDetail={onGoToLessonDetail}
-          />
-        </ListItem>
-        <ListItem noIndent>
-          <ListItemCourses
-            image="https://reactjs.org/logo-og.png"
-            title="600 Từ vựng TOEIC"
-            subTitle="Số bài học: 50"
-            onGoToLessonDetail={onGoToLessonDetail}
-          />
-        </ListItem>
-        <ListItem noIndent>
-          <ListItemCourses
-            image="https://reactjs.org/logo-og.png"
-            title="600 Từ vựng TOEIC"
-            subTitle="Số bài học: 50"
-            onGoToLessonDetail={onGoToLessonDetail}
-          />
-        </ListItem>
+        {courses.map((course, i) => (
+          <ListItem noIndent>
+            <ListItemCourses
+              key={course.title}
+              image={course.image}
+              title={course.title}
+              subTitle={course.subTitle}
+              onGoToLessonDetail={onGoToLessonDetail}
+            />
+          </ListItem>
+        ))}
       </List>
     </View>
   )
