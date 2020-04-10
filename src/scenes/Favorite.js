@@ -31,7 +31,11 @@ const Favorite = ({ navigation }) => {
   return (
     <MainLayout voiceButtonIsVisible={true}>
       {wordDetailsList.map((word, i) => (
-        <ListItemWord key={i} word={word} onGoToWordView={onGoToWordView} />
+        <ListItemWord
+          key={'word' + i.toString()}
+          word={word}
+          onGoToWordView={onGoToWordView}
+        />
       ))}
     </MainLayout>
   )

@@ -28,7 +28,11 @@ const RecentWords = (props) => {
         horizontal
         dataArray={recentWords}
         renderRow={(word, i) => (
-          <ListItem noBorder key={i} onPress={() => onGoToWordView(word)}>
+          <ListItem
+            noBorder
+            key={'word' + i.toString()}
+            onPress={() => onGoToWordView(word)}
+          >
             <MiniCard data={word} />
           </ListItem>
         )}

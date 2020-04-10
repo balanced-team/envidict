@@ -41,7 +41,7 @@ const ListWord = ({ navigation }) => {
     <MainLayout voiceButtonIsVisible={false}>
       <List>
         {words.map((word, i) => (
-          <WordItem key={i} word={word} onPressListItem={onPressListItem} />
+          <WordItem key={'word' + i} word={word} onPressListItem={onPressListItem} />
         ))}
       </List>
     </MainLayout>
