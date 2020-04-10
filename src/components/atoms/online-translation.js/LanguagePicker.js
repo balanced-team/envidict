@@ -16,7 +16,9 @@ const LanguagePicker = (props) => {
         onValueChange={onValueChange}
       >
         {langs.map((lang, index) => {
-          return <Picker.Item key={index} label={lang.label} value={lang.value} />
+          return (
+            <Picker.Item key={'word' + index} label={lang.label} value={lang.value} />
+          )
         })}
       </Picker>
     </Form>

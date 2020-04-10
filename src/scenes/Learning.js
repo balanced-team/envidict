@@ -19,11 +19,15 @@ const Learning = ({ navigation }) => {
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <Courses
-        key={1}
+        key={'course 1'}
         coursesName="Ôn luyện giao tiếp cơ bản"
         onGoToLessonDetail={handleNavigate}
       />
-      <Courses key={2} coursesName="Ôn luyện TOEIC" onGoToLessonDetail={handleNavigate} />
+      <Courses
+        key={'course 2'}
+        coursesName="Ôn luyện TOEIC"
+        onGoToLessonDetail={handleNavigate}
+      />
     </MainLayout>
   )
 }

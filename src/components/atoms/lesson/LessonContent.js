@@ -26,9 +26,9 @@ const LessonContent = () => {
       numColumns={2}
       columnWrapperStyle={styles.row}
       data={recentWords}
-      renderItem={({ item }) => (
+      _renderItem={({ item }) => (
         <FlashCard
-          key={item.id}
+          key={'word-${item.id}'}
           word={item.word}
           pronounce={item.pronounce}
           type={item.type}
@@ -36,7 +36,7 @@ const LessonContent = () => {
         />
       )}
       keyExtractor={(item) => {
-        item.id
+        item.id.toString()
       }}
     ></FlatList>
   )

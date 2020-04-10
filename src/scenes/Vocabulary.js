@@ -45,7 +45,7 @@ const Vocabulary = ({ navigation }) => {
       <List>
         {arrVocabulary.map((item) => (
           <ListItemVocabulary
-            key={item.id}
+            key={'vocabulary-' + item.id}
             nameVocabulary={item.name}
             onPressListItem={() => navigation.navigate('ListWord')}
           />

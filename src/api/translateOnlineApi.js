@@ -5,19 +5,23 @@ const key =
 const translate = async (text, from, to) => {
   const lang = from + '-' + to
 
-  const res = await fetch(
-    URL + '?key=' + key + '&text=' + text + '&lang=' + lang + '&format=plain'
-  )
-  const data = await res.json()
-  switch (res.code) {
-    case 200:
-      return data.text[0]
-    case 422:
-      return 'Không thể dịch văn bản, vui lòng thử lại'
-    case 412:
-      return 'Độ dài văn bản quá lớn'
-    default:
-      return 'Không thể dịch lúc này, vui lòng thử lại sau'
+  try {
+    const res = await fetch(
+      URL + '?key=' + key + '&text=' + text + '&lang=' + lang + '&format=plain'
+    )
+    const data = await res.json()
+    switch (data.code) {
+      case 200:
+        return data.text[0]
+      case 422:
+        return 'Không thể dịch văn bản, vui lòng thử lại'
+      case 412:
+        return 'Độ dài văn bản quá lớn'
+      default:
+        return 'Không thể dịch lúc này, vui lòng thử lại sau'
+    }
+  } catch (err) {
+    console.error(err)
   }
 }
 
