@@ -1,10 +1,10 @@
 import { Ionicons } from '@expo/vector-icons'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
+import { Root } from 'native-base'
 import React, { useState } from 'react'
 import { StatusBar, StyleSheet, View } from 'react-native'
 import Routes from './src/navigations/Routes'
-import { Root } from 'native-base'
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
