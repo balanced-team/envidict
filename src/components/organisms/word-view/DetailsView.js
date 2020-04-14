@@ -15,10 +15,6 @@ const DetailsView = (props) => {
     }
   }
 
-  useEffect(() => {
-    console.log(word.html)
-  }, [])
-
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.titleText}>{word.word}</Text>
