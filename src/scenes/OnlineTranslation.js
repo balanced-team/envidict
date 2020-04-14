@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Text, View, Textarea, Row, Icon, Left, Right, Button, Toast } from 'native-base'
-import { StyleSheet, TouchableOpacity, ScrollView, Clipboard } from 'react-native'
+import { StyleSheet, TouchableOpacity, ScrollView, Clipboard, Dimensions } from 'react-native'
 
 import LanguagePicker from '../components/atoms/online-translation.js/LanguagePicker'
 import { Colors } from '../styles'
@@ -42,8 +42,8 @@ const OnlineTranslation = () => {
   }
 
   return (
-    <ScrollView>
-      <View style={styles.box}>
+    <ScrollView >
+    <View style={styles.wrapper}><View style={styles.box}>
         <Row style={styles.row}>
           <Left>
             <TouchableOpacity onPress={() => InstanceSpeaker.speak(text, fromLang)}>
@@ -117,7 +117,8 @@ const OnlineTranslation = () => {
           placeholderTextColor={Colors.SECONDARY_LIGHT}
         ></Textarea>
       </View>
-    </ScrollView>
+    </View>
+      </ScrollView>
   )
 }
 
@@ -511,6 +512,10 @@ const buttonStyle = {
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: Colors.WHITE,
+    height: Math.round(Dimensions.get('window').height)
+  },
   box: {
     flexDirection: 'column',
     borderColor: Colors.BLUE_DARK,
