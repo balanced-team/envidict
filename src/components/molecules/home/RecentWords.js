@@ -1,10 +1,9 @@
-import React, { useEffect, useContext } from 'react'
-import { Text, View, List, ListItem } from 'native-base'
+import { List, ListItem, Text, View } from 'native-base'
+import React, { useContext, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
-
-import MiniCard from '../word/MiniCard'
-import { Colors } from '../../../styles'
 import { dictStoreContext } from '../../../contexts'
+import { Colors } from '../../../styles'
+import MiniCard from '../word/MiniCard'
 
 let recentWords = []
 
@@ -16,7 +15,7 @@ const RecentWords = (props) => {
 
   useEffect(() => {
     words.forEach(async (word) => {
-      const result = dictStore.findWord(word)
+      const result = await dictStore.findWord(word)
       recentWords.push(result)
     })
   }, [])

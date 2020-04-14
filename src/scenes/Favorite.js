@@ -1,24 +1,22 @@
-import React, { useEffect, useContext, useState } from 'react'
-import { Text, Button, Alert, BackHandler, ScrollView, ListView } from 'react-native'
-import { View, List } from 'native-base'
-
-import MainLayout from '../components/templates/MainLayout'
-import { backHandleToExitApp } from '../utils'
+import React, { useContext, useEffect, useState } from 'react'
+import { Alert, BackHandler } from 'react-native'
 import ListItemWord from '../components/molecules/favorite/ListItemWord'
+import MainLayout from '../components/templates/MainLayout'
 import { dictStoreContext } from '../contexts'
 import { RoutesConstants } from '../navigations/route-constants'
+import { backHandleToExitApp } from '../utils'
 
 const words = ['representative', 'presentation', 'reduction', 'capacity']
 
 const Favorite = ({ navigation }) => {
-  const dicStore = useContext(dictStoreContext)
+  const dictStore = useContext(dictStoreContext)
   const [wordDetailsList, setWordDetailsList] = useState([])
 
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
     let data = []
-    words.forEach((word) => {
-      const result = dicStore.findWord(word)
+    words.forEach(async (word) => {
+      const result = await dictStore.findWord(word)
       data.push(result)
     })
     setWordDetailsList(data)

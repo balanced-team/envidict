@@ -1,7 +1,6 @@
 import { Icon, Left, Right, Row, Text, View } from 'native-base'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
-
 import { dictStoreContext } from '../../../contexts'
 import { Colors } from '../../../styles'
 import { FONT_SIZE_12, FONT_SIZE_14 } from '../../../styles/typography'
@@ -10,7 +9,13 @@ import { InstanceSpeaker } from '../../../utils'
 const WordOfTheDay = (props) => {
   const { onGoToWordView } = props
   const dictStore = useContext(dictStoreContext)
-  const word = dictStore.findWord('hello')
+  const [word, setWord] = useState({})
+  useEffect(() => {
+    const run = async () => {
+      setWord(await dictStore.findWord('absorb'))
+    }
+    run()
+  }, [])
 
   return (
     <TouchableOpacity onPress={() => onGoToWordView(word)}>

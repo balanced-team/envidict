@@ -1,4 +1,5 @@
-import * as firebase from 'firebase'
+import * as firebase from 'firebase/app'
+import 'firebase/firestore'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyDuVs4fMylajYaD400oHVKGtXZW3FT9Xss',
@@ -21,10 +22,18 @@ export default class DictStore {
   async findWords(s) {
     s = s.trim().toLowerCase() // normalize input
 
-    const words = []
-    words.concat((await this.envi.where('word', '==', s).get()).docs)
-    words.concat((await this.vien.where('word', '==', s).get()).docs)
-    return words
+    const enviWords = (await this.envi.where('word', '==', s).get()).docs.map(
+      (doc) => new Word(doc.data(), 'envi')
+    )
+    const vienWords = (await this.vien.where('word', '==', s).get()).docs.map(
+      (doc) => new Word(doc.data(), 'vien')
+    )
+    return [...enviWords, ...vienWords]
+  }
+
+  async findWord(s) {
+    const words = await this.findWords(s)
+    return words[0] // be cautious, this may be undefined
   }
 }
 
