@@ -28,7 +28,12 @@ const DetailsView = (props) => {
       {props.isShowTranslate === true && (
         <View>
           <View style={styles.baseText}>
-            <HTMLView value={word.html} renderNode={renderNode} stylesheet={htmlStyles} />
+            <HTMLView
+              value={word.html}
+              addLineBreaks={true}
+              renderNode={renderNode}
+              stylesheet={htmlStyles}
+            />
           </View>
         </View>
       )}
@@ -122,7 +127,6 @@ const htmlStyles = StyleSheet.create({
     fontSize: 16,
   },
   li: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    lineHeight: 28,
   },
 })
