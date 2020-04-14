@@ -9,11 +9,11 @@ import ListItemVocabulary from '../components/atoms/ListItemVocabulary/ListItemV
 const ArrVocabulary = [
   {
     id: 1,
-    name: 'Luyện thi TOEIC',
+    name: 'Tiếng Anh cơ bản',
   },
   {
     id: 2,
-    name: 'Tiếng Anh cơ bản',
+    name: 'Tiếng Anh cho người mới bắt đầu',
   },
   {
     id: 3,
@@ -30,6 +30,30 @@ const ArrVocabulary = [
   {
     id: 6,
     name: 'Tiếng anh chuyên ngành Tài chính',
+  },
+  {
+    id: 7,
+    name: 'Tiếng anh chuyên ngành Viễn thông',
+  },
+  {
+    id: 8,
+    name: 'Tiếng anh giao tiếp',
+  },
+  {
+    id: 9,
+    name: 'Luyện thi TOEFL cơ bản',
+  },
+  {
+    id: 10,
+    name: 'Luyện thi TOEFL nâng cao ',
+  },
+  {
+    id: 11,
+    name: 'Luyện thi IELTS cơ bản',
+  },
+  {
+    id: 10,
+    name: 'Luyện thi IELTS nâng cao ',
   },
 ]
 
