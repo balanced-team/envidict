@@ -51,7 +51,8 @@ const CurrentVocabularies = (props) => {
 const styles = StyleSheet.create({
   tittle: {
     marginLeft: 10,
-    marginTop: 15,
+    marginTop: 10,
+    marginBottom: 15,
     fontWeight: 'bold',
     fontSize: 18,
     color: Colors.BLUE_TITLE,

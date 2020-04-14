@@ -65,6 +65,7 @@ const Home = ({ navigation }) => {
 const buttonStyle = {
   backgroundColor: Colors.BLUE_DARK,
   width: 200,
+  marginBottom: 25,
 }
 
 const styles = StyleSheet.create({

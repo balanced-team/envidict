@@ -10,7 +10,7 @@ const LessonDetail = ({ navigation }) => {
     navigation.navigate('LearnNow')
   }
   return (
-    <View>
+    <View style={styles.container}>
       <LessonContent />
       <Button info style={styles.buttonLearn} onPress={onClickLearnNow}>
         <Text style={styles.textButton}>HỌC NGAY</Text>
@@ -20,6 +20,9 @@ const LessonDetail = ({ navigation }) => {
   )
 }
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   buttonLearn: {
     position: 'absolute',
     bottom: 0,
