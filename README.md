@@ -26,7 +26,7 @@ Link ứng dụng: [https://play.google.com/store/apps/details?id=com.ffff.tudie
 - Cài đặt Git (https://git-scm.com/downloads)
 - Cài đặt Expo CLI
 	`npm install -g expo-cli`
-- Điện thoại đã cài đặt Expo hoặc máy tính đã có máy ảo.
+- Điện thoại đã cài đặt Expo.
 #### Cài đặt
 - Clone repository về máy:
 `git clone https://github.com/balanced-team/envidict`
@@ -35,9 +35,9 @@ Link ứng dụng: [https://play.google.com/store/apps/details?id=com.ffff.tudie
 `yarn install`
 - Sau khi hoàn thành, chạy lệnh:
 `yarn start`
-- Màn hình Developer Tools của Expo xuất hiện, quét mã vạch từ ứng dụng Expo để khởi chạy
+- Màn hình Developer Tools của Expo xuất hiện, quét mã vạch bằng ứng dụng Expo để khởi chạy
 Chúc các bạn thành công!
-## 3. Lộ trình làm việc:
+## 4. Lộ trình làm việc:
 - Tuần 1: Setup project, phân chia công việc.
 - Tuần 2: Hoàn thành layout chính, màn hình đầu tiên và màn hính quan trọng nhất.
 - Tuần 3: Hoàn thành splash screen và 2 màn hình. Link pull request:
