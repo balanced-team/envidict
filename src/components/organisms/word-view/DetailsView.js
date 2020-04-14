@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import { View, Icon } from 'native-base'
 import HTMLView from 'react-native-htmlview'
