@@ -1,4 +1,4 @@
-## Nhóm 50: Ứng dụng từ điển Vitadi. 
+## Nhóm 50: Ứng dụng từ điển Envidic. 
 Link ứng dụng: [https://play.google.com/store/apps/details?id=com.ffff.tudienta&hl=vi](https://play.google.com/store/apps/details?id=com.ffff.tudienta&hl=vi)
 
 ## 1.Thông tin thành viên:
@@ -8,9 +8,9 @@ Link ứng dụng: [https://play.google.com/store/apps/details?id=com.ffff.tudie
 - Đoàn Hồng Phúc: 16022482
 ## 2. Thông tin ứng dụng
 #### Mô tả ứng dụng
-  - Vitadi là từ điển Anh - Việt, Việt - Anh có phát âm bản ngữ chuẩn (Anh - Anh, Anh - Mỹ). Có thể sử dụng offline và online.
-  - Vitadi giúp học từ vựng Anh - Việt, cách phát âm Tiếng Anh, giúp dịch từ vừng, câu văn, đoạn văn từ Tiếng Anh sang Tiếng Việt và ngược lại. Ngoài ra, còn có thể học từ vựng theo các cấp học, chủ đề.
-  - Vitady có thể dịch từ, luyện phát âm, luyện nhớ từ theo mọi cấp độ: Tiếng Anh cho trẻ em, Tiếng Anh tiểu học, Trung học cơ sở, Phổ thông trung hoc,... Tiếng Anh cho người đi làm...
+  - Envidict là từ điển Anh - Việt, Việt - Anh có phát âm bản ngữ chuẩn (Anh - Anh, Anh - Mỹ). Có thể sử dụng offline và online.
+  - Envidict giúp học từ vựng Anh - Việt, cách phát âm Tiếng Anh, giúp dịch từ vừng, câu văn, đoạn văn từ Tiếng Anh sang Tiếng Việt và ngược lại. Ngoài ra, còn có thể học từ vựng theo các cấp học, chủ đề.
+  - Envidict có thể dịch từ, luyện phát âm, luyện nhớ từ theo mọi cấp độ: Tiếng Anh cho trẻ em, Tiếng Anh tiểu học, Trung học cơ sở, Phổ thông trung hoc,... Tiếng Anh cho người đi làm...
 
 #### Các chức năng chính
   - Tra từ vựng Anh - Việt, Việt Anh có dịch nghĩa, phiên âm, phát âm bản ngữ chuẩn Anh - Anh, Anh - Mỹ (khi dùng offline thì không có chức năng phát âm).
