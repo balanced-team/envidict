@@ -20,7 +20,23 @@ Link ứng dụng: [https://play.google.com/store/apps/details?id=com.ffff.tudie
   - Tạo ghi chú cho từng từ, giúp việc nhớ từ dễ dàng hơn.
   - Tạo danh sách từ yêu thích
   - Thông báo nhắc nhở học tiếng Anh hằng ngày.
- 
+ ## 3. Cách cài đặt dự án
+#### Yêu cầu
+- Cài đặt npm trên máy tính. (https://nodejs.org/en/download/)
+- Cài đặt Git (https://git-scm.com/downloads)
+- Cài đặt Expo CLI
+	`npm install -g expo-cli`
+- Điện thoại đã cài đặt Expo hoặc máy tính đã có máy ảo.
+#### Cài đặt
+- Clone repository về máy:
+`git clone https://github.com/balanced-team/envidict`
+- Truy cập repo bằng CMD hoặc Terminal của các IDE thông dụng.`
+- Tải các thư viện, package cần thiết
+`yarn install`
+- Sau khi hoàn thành, chạy lệnh:
+`yarn start`
+- Màn hình Developer Tools của Expo xuất hiện, quét mã vạch từ ứng dụng Expo để khởi chạy
+Chúc các bạn thành công!
 ## 3. Lộ trình làm việc:
 - Tuần 1: Setup project, phân chia công việc.
 - Tuần 2: Hoàn thành layout chính, màn hình đầu tiên và màn hính quan trọng nhất.
