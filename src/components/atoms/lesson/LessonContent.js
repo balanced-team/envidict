@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, FlatList } from 'react-native'
-import { View, List, ListItem } from 'native-base'
 
 import { Colors } from '../../../styles'
 import FlashCard from '../../molecules/word/FlashCard'

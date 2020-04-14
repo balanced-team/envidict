@@ -22,7 +22,7 @@ const RecentWords = (props) => {
   }, [])
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.tittle}>Tìm kiếm gần đây</Text>
       <List
         horizontal
@@ -42,9 +42,13 @@ const RecentWords = (props) => {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   tittle: {
     marginLeft: 10,
     marginTop: 15,
+    marginBottom: 10,
     fontWeight: 'bold',
     fontSize: 18,
     color: Colors.BLUE_TITLE,
