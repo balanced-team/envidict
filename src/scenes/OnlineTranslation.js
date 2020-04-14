@@ -43,6 +43,7 @@ const OnlineTranslation = () => {
 
   return (
     <ScrollView >
+    // View box
     <View style={styles.wrapper}><View style={styles.box}>
         <Row style={styles.row}>
           <Left>
@@ -122,6 +123,7 @@ const OnlineTranslation = () => {
   )
 }
 
+// Language list
 const langs = [
   {
     label: 'Tiếng Việt',
@@ -506,11 +508,14 @@ const langs = [
     value: 'yi',
   },
 ]
+
+// button' style
 const buttonStyle = {
   backgroundColor: Colors.BLUE_DARK,
   width: 150,
 }
 
+// component' style
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: Colors.WHITE,
