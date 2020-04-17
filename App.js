@@ -1,10 +1,18 @@
 import { Ionicons } from '@expo/vector-icons'
+import { decode, encode } from 'base-64'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
+import { Root } from 'native-base'
 import React, { useState } from 'react'
 import { StatusBar, StyleSheet, View } from 'react-native'
 import Routes from './src/navigations/Routes'
-import { Root } from 'native-base'
+
+if (!global.btoa) {
+  global.btoa = encode
+}
+if (!global.atob) {
+  global.atob = decode
+}
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)

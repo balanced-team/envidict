@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react'
 import { List } from 'native-base'
-
-import MainLayout from '../components/templates/MainLayout'
+import React, { useContext, useEffect, useState } from 'react'
 import WordItem from '../components/atoms/ListItemVocabulary/WordItem'
-import { RoutesConstants } from '../navigations/route-constants'
+import MainLayout from '../components/templates/MainLayout'
 import { dictStoreContext } from '../contexts'
+import { RoutesConstants } from '../navigations/route-constants'
 
 const wordList = [
   'good',
@@ -22,12 +21,12 @@ const wordList = [
 const ListWord = ({ navigation }) => {
   const [words, setWords] = useState([])
 
-  const dicStore = useContext(dictStoreContext)
+  const dictStore = useContext(dictStoreContext)
 
   useEffect(() => {
     let data = []
-    wordList.forEach((word) => {
-      const result = dicStore.findWord(word)
+    wordList.forEach(async (word) => {
+      const result = await dictStore.findWord(word)
       data.push(result)
     })
     setWords(data)
