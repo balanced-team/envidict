@@ -11,6 +11,9 @@ import LearnNow from '../scenes/LearnNow'
 import ListWord from '../scenes/ListWord'
 import OnlineTranslation from '../scenes/OnlineTranslation'
 import { Colors } from '../styles'
+import SearchWord from '../scenes/SearchWord'
+import { RoutesConstants } from './route-constants'
+
 const Stack = createStackNavigator()
 const headerOptions = {
   headerStyle: {
@@ -32,7 +35,25 @@ const Routes = () => {
           component={BottomTabNavigator}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Thông tin từ" component={WordView} options={headerOptions} />
+        <Stack.Screen
+          name={RoutesConstants.WordView}
+          component={WordView}
+          options={headerOptions}
+        />
+        <Stack.Screen
+          name="Tìm kiếm"
+          component={SearchWord}
+          options={{
+            headerStyle: {
+              height: 0,
+            },
+            headerTitleStyle: {
+              color: 'transparent',
+            },
+            headerTintColor: 'transparent',
+            animationEnabled: false,
+          }}
+        />
         <Stack.Screen
           name="LessonDetail"
           component={LessonDetail}
@@ -47,7 +68,7 @@ const Routes = () => {
         />
         <Stack.Screen name="ListWord" component={ListWord} options={headerOptions} />
         <Stack.Screen
-          name="Dịch online"
+          name={RoutesConstants.OnlineTranslation}
           component={OnlineTranslation}
           options={headerOptions}
         />
