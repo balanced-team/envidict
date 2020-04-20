@@ -5,9 +5,14 @@ import { ScrollView } from 'react-native'
 import SearchHeader from '../molecules/main-layout/SearchHeader'
 
 const MainLayout = (props) => {
+  const { onGoToSearchView, autoFocusSearchInput } = props
   return (
     <Container>
-      <SearchHeader voiceButtonIsVisible={props.voiceButtonIsVisible} />
+      <SearchHeader
+        autoFocus={autoFocusSearchInput}
+        onGoToSearchView={onGoToSearchView}
+        voiceButtonIsVisible={props.voiceButtonIsVisible}
+      />
       <Content>
         <ScrollView>{props.children}</ScrollView>
       </Content>

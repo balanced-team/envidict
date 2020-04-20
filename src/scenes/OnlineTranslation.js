@@ -1,17 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, View, Textarea, Row, Icon, Left, Right, Button, Toast } from 'native-base'
-import { StyleSheet, TouchableOpacity, ScrollView, Clipboard, Dimensions } from 'react-native'
+import {
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  Clipboard,
+  Dimensions,
+} from 'react-native'
 
 import LanguagePicker from '../components/atoms/online-translation.js/LanguagePicker'
 import { Colors } from '../styles'
 import { translateOnlineAPI } from '../api'
 import { InstanceSpeaker } from '../utils'
 
-const OnlineTranslation = () => {
-  const [text, setText] = useState('')
+const OnlineTranslation = ({ route, navigation }) => {
+  const { initText } = route.params
+  const [text, setText] = useState(initText ? initText : '')
   const [translatedText, setTranslatedText] = useState('')
   const [fromLang, setFromLang] = useState('en')
   const [toLang, setToLang] = useState('vi')
+
+  useEffect(() => {
+    if (text !== '') {
+      onTranslate()
+    }
+  }, [initText])
 
   const switchLang = () => {
     const from = fromLang
@@ -42,9 +55,8 @@ const OnlineTranslation = () => {
   }
 
   return (
-    <ScrollView >
-    // View box
-    <View style={styles.wrapper}><View style={styles.box}>
+    <ScrollView style={styles.wrapper}>
+      <View style={styles.box}>
         <Row style={styles.row}>
           <Left>
             <TouchableOpacity onPress={() => InstanceSpeaker.speak(text, fromLang)}>
@@ -118,8 +130,7 @@ const OnlineTranslation = () => {
           placeholderTextColor={Colors.SECONDARY_LIGHT}
         ></Textarea>
       </View>
-    </View>
-      </ScrollView>
+    </ScrollView>
   )
 }
 
@@ -519,7 +530,6 @@ const buttonStyle = {
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: Colors.WHITE,
-    height: Math.round(Dimensions.get('window').height)
   },
   box: {
     flexDirection: 'column',

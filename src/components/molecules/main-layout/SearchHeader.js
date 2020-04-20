@@ -9,7 +9,13 @@ import { Colors } from '../../../styles'
 const SearchHeader = (props) => {
   return (
     <Header style={styles.header}>
-      <SearchInput />
+      <SearchInput
+        onGoToSearchView={props.onGoToSearchView}
+        searchByKey={props.searchByKey}
+        setWordList={props.setWordList}
+        setKey={props.setKey}
+        autoFocus={props.autoFocus}
+      />
       {props.voiceButtonIsVisible === true && <VoiceButton />}
     </Header>
   )
@@ -17,8 +23,8 @@ const SearchHeader = (props) => {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: Colors.BLUE_DARK
-  }
+    backgroundColor: Colors.BLUE_DARK,
+  },
 })
 
 export default SearchHeader

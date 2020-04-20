@@ -35,8 +35,16 @@ const Home = ({ navigation }) => {
   const onClickLearnNow = () => {
     navigation.navigate('LearnNow')
   }
+
+  const onGoToSearchView = () => {
+    navigation.navigate('Tìm kiếm')
+  }
   return (
-    <MainLayout voiceButtonIsVisible={true}>
+    <MainLayout
+      autoFocusSearchInput={false}
+      voiceButtonIsVisible={true}
+      onGoToSearchView={onGoToSearchView}
+    >
       <WordOfTheDay onGoToWordView={onGoToWordView} />
       <RecentWords onGoToWordView={onGoToWordView} />
       <View style={styles.buttonWrapper}>
