@@ -54,4 +54,4 @@ Chúc các bạn thành công!
           Tuần 5, nhóm đã thực hiện hoàn thiện sản phẩm. Chỉnh sửa những lỗi giao diện sau khi nhận review từ các bạn cùng lớp.
 - Tuần 6: Hoàn thiện sản phẩm, refactor code.
 ### Link repo nhóm: [https://github.com/balanced-team/envidict](https://github.com/balanced-team/envidict)
-### Link apk hiện tại: https://drive.google.com/file/d/1fVP-m11ZOEudoKCI2oSvTH6WsLit0H2F/view?usp=sharing
+### Link apk hiện tại: https://drive.google.com/file/d/1FHxKGCErgsk9_EJXO-0-vCeCLjKyqfYU/view?usp=sharing
