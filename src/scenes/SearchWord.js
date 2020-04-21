@@ -37,7 +37,6 @@ const SearchWord = ({ navigation }) => {
         recentWords = []
       }
       await AsyncStorage.setItem('recentWords', JSON.stringify(recentWords))
-      console.log(await AsyncStorage.getItem('recentWords'))
       onGoToWordView(word)
     } catch (error) {
       console.error(error)
