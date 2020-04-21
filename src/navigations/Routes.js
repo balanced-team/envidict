@@ -44,13 +44,7 @@ const Routes = () => {
           name="Tìm kiếm"
           component={SearchWord}
           options={{
-            headerStyle: {
-              height: 0,
-            },
-            headerTitleStyle: {
-              color: 'transparent',
-            },
-            headerTintColor: 'transparent',
+            headerShown: false,
             animationEnabled: false,
           }}
         />

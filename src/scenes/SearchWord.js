@@ -6,6 +6,7 @@ import SearchHeader from '../components/molecules/main-layout/SearchHeader'
 import { dictStoreContext } from '../contexts'
 import { RoutesConstants } from '../navigations/route-constants'
 import { InstanceSpeaker } from '../utils/speaker'
+import { AsyncStorage } from 'react-native'
 
 const SearchWord = ({ navigation }) => {
   const [key, setKey] = useState('')
@@ -26,6 +27,22 @@ const SearchWord = ({ navigation }) => {
     navigation.navigate(RoutesConstants.OnlineTranslation, { initText: text })
   }
 
+  const onPressRow = async (word) => {
+    try {
+      let recentWords = JSON.parse(await AsyncStorage.getItem('recentWords'))
+      if (recentWords !== null) {
+        recentWords.push(word.word)
+        recentWords = [...new Set(recentWords)]
+      } else {
+        recentWords = []
+      }
+      await AsyncStorage.setItem('recentWords', JSON.stringify(recentWords))
+      onGoToWordView(word)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <View>
       <SearchHeader
@@ -39,7 +56,7 @@ const SearchWord = ({ navigation }) => {
         <List>
           {wordList.length > 0 &&
             wordList.map((word, i) => (
-              <ListItem key={i} onPress={() => onGoToWordView(word)} icon>
+              <ListItem key={i} onPress={() => onPressRow(word)} icon>
                 <Left>
                   <Icon name="dictionary" type="MaterialCommunityIcons" />
                 </Left>

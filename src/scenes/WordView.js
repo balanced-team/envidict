@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { StyleSheet } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { StyleSheet, AsyncStorage } from 'react-native'
 import { Container, View, Button, Tabs, Tab, Icon } from 'native-base'
 
 import NoteView from '../components/organisms/word-view/NoteView'
@@ -7,9 +7,47 @@ import DetailsView from '../components/organisms/word-view/DetailsView'
 import { Colors } from '../styles/index'
 
 const WordView = ({ route, navigation }) => {
-  const [isFavorite, setIsFavorite] = useState(false)
-  const toggleFavorite = () => setIsFavorite((previousState) => !previousState)
   const { word } = route.params
+
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  const toggleFavorite = async () => {
+    try {
+      let favoriteWords = JSON.parse(await AsyncStorage.getItem('favoriteWords'))
+      if (isFavorite) {
+        const index = favoriteWords.indexOf(word.word)
+        if (index !== -1) {
+          favoriteWords.splice(index, 1)
+        }
+      } else {
+        if (favoriteWords === null) {
+          favoriteWords = []
+        }
+        favoriteWords.push(word.word)
+      }
+      await AsyncStorage.setItem('favoriteWords', JSON.stringify(favoriteWords))
+    } catch (error) {
+      console.error(error)
+    }
+    setIsFavorite((previousState) => !previousState)
+  }
+
+  useEffect(() => {
+    const setUp = async () => {
+      try {
+        let favoriteWords = JSON.parse(await AsyncStorage.getItem('favoriteWords'))
+        const index = favoriteWords.indexOf(word.word)
+        if (index !== -1) {
+          setIsFavorite(true)
+        } else {
+          setIsFavorite(false)
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    setUp()
+  }, [word])
 
   return (
     <Container>
