@@ -1,23 +1,27 @@
 import { List, ListItem, Text, View } from 'native-base'
-import React, { useContext, useEffect } from 'react'
-import { StyleSheet } from 'react-native'
+import React, { useContext, useEffect, useState } from 'react'
+import { StyleSheet, AsyncStorage } from 'react-native'
 import { dictStoreContext } from '../../../contexts'
 import { Colors } from '../../../styles'
 import MiniCard from '../word/MiniCard'
-
-let recentWords = []
-
-const words = ['beautiful', 'run', 'card', 'nice', 'love']
 
 const RecentWords = (props) => {
   const { onGoToWordView } = props
   const dictStore = useContext(dictStoreContext)
 
+  const [recentWords, setRecentsWord] = useState([])
+
   useEffect(() => {
-    words.forEach(async (word) => {
-      const result = await dictStore.findWord(word)
-      recentWords.push(result)
-    })
+    let recentWordList = []
+    const setupRecentWord = async () => {
+      const words = JSON.parse(await AsyncStorage.getItem('recentWords'))
+      for (let i = words.length - 1; i >= 0; i--) {
+        const result = await dictStore.findWord(words[i])
+        recentWordList.push(result)
+      }
+      setRecentsWord(recentWordList)
+    }
+    setupRecentWord()
   }, [])
 
   return (
@@ -27,11 +31,7 @@ const RecentWords = (props) => {
         horizontal
         dataArray={recentWords}
         renderRow={(word, i) => (
-          <ListItem
-            noBorder
-            key={'word' + i.toString()}
-            onPress={() => onGoToWordView(word)}
-          >
+          <ListItem noBorder key={i} onPress={() => onGoToWordView(word)}>
             <MiniCard data={word} />
           </ListItem>
         )}
@@ -42,7 +42,7 @@ const RecentWords = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   tittle: {
     marginLeft: 10,

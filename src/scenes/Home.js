@@ -29,7 +29,7 @@ const Home = ({ navigation }) => {
   }
 
   const onClickOnlineTranslationButton = () => {
-    navigation.navigate('Dịch online')
+    navigation.navigate('Dịch online', '')
   }
 
   const onClickLearnNow = () => {
