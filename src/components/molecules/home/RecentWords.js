@@ -22,7 +22,7 @@ const RecentWords = (props) => {
       setRecentsWord(recentWordList)
     }
     setupRecentWord()
-  }, [])
+  }, [AsyncStorage.getItem('recentWords')])
 
   return (
     <View style={styles.container}>
