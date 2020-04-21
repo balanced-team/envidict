@@ -6,7 +6,7 @@ import { Colors, Typography } from '../../../styles'
 import { InstanceSpeaker } from '../../../utils'
 
 const ListItemWord = (props) => {
-  const { word, onGoToWordView } = props
+  const { word, onGoToWordView, onRemoveFavoriteWord } = props
   return (
     <ListItem noIndent onPress={() => onGoToWordView(word)}>
       <Body>
@@ -19,7 +19,9 @@ const ListItemWord = (props) => {
         </TouchableOpacity>
       </Right>
       <Right>
-        <Icon style={styles.customIconHeart} name="md-heart" />
+        <TouchableOpacity onPress={() => onRemoveFavoriteWord(word.word)}>
+          <Icon style={styles.customIconHeart} name="md-heart" />
+        </TouchableOpacity>
       </Right>
     </ListItem>
   )
