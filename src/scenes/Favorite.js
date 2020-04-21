@@ -15,11 +15,15 @@ const Favorite = ({ navigation }) => {
   useEffect(() => {
     backHandleToExitApp(Alert, BackHandler)
     let data = []
-    words.forEach(async (word) => {
-      const result = await dictStore.findWord(word)
-      data.push(result)
-    })
-    setWordDetailsList(data)
+    const setUp = async () => {
+      const words = JSON.parse(await AsyncStorage.getItem('recentWords'))
+      for (let i = words.length - 1; i >= 0; i--) {
+        const result = await dictStore.findWord(words[i])
+        data.push(result)
+      }
+      setWordDetailsList(data)
+    }
+    setUp()
   }, [])
 
   const onGoToWordView = (word) => {
