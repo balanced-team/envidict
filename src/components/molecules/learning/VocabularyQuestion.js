@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Button, Card } from 'native-base'
 
@@ -7,7 +7,21 @@ import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-const VocabularyQuestion = () => {
+const VocabularyQuestion = (props) => {
+  const { question, toNextQuestion } = props
+  const [userAnswer, setUserAnswer] = useState('')
+  const [isDone, setIsDone] = useState(false)
+
+  const onSubmitAnswer = async (content) => {
+    setIsDone(true)
+    setUserAnswer(content)
+    const trueAnswer = await question.answers.find((answer) => answer.isTrue === true)
+    if (content === trueAnswer.content) {
+      alert('correct')
+    }
+    toNextQuestion()
+  }
+
   return (
     <View style={styles.container}>
       <HeaderExam />
@@ -31,9 +45,14 @@ const VocabularyQuestion = () => {
 
       <Text style={styles.text}>Chọn nghĩa của từ đã cho</Text>
       <Card style={styles.card}>
-        <AnswerLine answer="Biến mất" />
-        <AnswerLine answer="Xuất hiện" />
-        <AnswerLine answer="Quá hạn" />
+        {question.answers.map((answer, i) => (
+          <AnswerLine
+            content={answer.content}
+            isCorrect={answer.isCorrect}
+            onSubmitAnswer={onSubmitAnswer}
+            isDone={isDone}
+          />
+        ))}
       </Card>
       <Button info style={styles.buttonLearn}>
         <Text style={styles.textButton}>TIẾP TỤC</Text>

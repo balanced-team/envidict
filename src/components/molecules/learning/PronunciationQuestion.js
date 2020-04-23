@@ -10,7 +10,6 @@ const PronunticationQuestion = () => {
   return (
     <View style={styles.container}>
       <HeaderExam />
-
       <View style={styles.block}>
         <Icon name="volume-high" style={styles.icon} />
       </View>
