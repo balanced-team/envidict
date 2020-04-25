@@ -3,7 +3,8 @@ import { View, Text, StyleSheet } from 'react-native'
 import { Icon } from 'native-base'
 import { Colors, Typography, Mixins } from '../../../styles'
 
-const HeaderExam = () => {
+const HeaderExam = (props) => {
+  const { numCorrect, currentQuestionIndex, numQuestion } = props
   return (
     <View style={styles.container}>
       <View style={styles.inLine}>
@@ -11,7 +12,9 @@ const HeaderExam = () => {
           <Icon name="question" type="AntDesign" style={styles.icon} />
           <View>
             <Text style={styles.text}>Câu</Text>
-            <Text style={styles.text}>3/10</Text>
+            <Text style={styles.text}>
+              {currentQuestionIndex + 1 + '/' + numQuestion}
+            </Text>
           </View>
         </View>
 
@@ -19,7 +22,7 @@ const HeaderExam = () => {
           <Icon name="clock" type="Feather" style={styles.icon} />
           <View>
             <Text style={styles.text}>Thời gian</Text>
-            <Text style={styles.text}>01:45</Text>
+            <Text style={styles.text}>{10}</Text>
           </View>
         </View>
 
@@ -31,7 +34,7 @@ const HeaderExam = () => {
           />
           <View>
             <Text style={styles.textCorrect}>Chính xác</Text>
-            <Text style={styles.textCorrect}>3</Text>
+            <Text style={styles.textCorrect}>{numCorrect}</Text>
           </View>
         </View>
       </View>

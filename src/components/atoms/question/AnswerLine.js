@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Radio, Right } from 'native-base'
 
@@ -7,6 +7,10 @@ import { Colors, Typography } from '../../../styles'
 const AnswerLine = (props) => {
   const [selected, setSelected] = useState(false)
   const { content, onSubmitAnswer, isCorrect, isDone } = props
+
+  useEffect(() => {
+    setSelected(false)
+  }, [content])
 
   const onPressRadio = () => {
     if (!isDone) {

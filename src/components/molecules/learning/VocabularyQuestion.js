@@ -1,31 +1,30 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Button, Card } from 'native-base'
 
-import HeaderExam from '../../atoms/question/HeaderExam'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const VocabularyQuestion = (props) => {
-  const { question, toNextQuestion } = props
-  const [userAnswer, setUserAnswer] = useState('')
+  const { question, loading, setLoading, increaseNumCorrect } = props
   const [isDone, setIsDone] = useState(false)
 
+  useEffect(() => {
+    setIsDone(false)
+    setLoading(false)
+  }, [question])
+
   const onSubmitAnswer = async (content) => {
+    const trueAnswer = await question.answers.find((answer) => answer.content === content)
     setIsDone(true)
-    setUserAnswer(content)
-    const trueAnswer = await question.answers.find((answer) => answer.isTrue === true)
-    if (content === trueAnswer.content) {
-      alert('correct')
+    if (trueAnswer.isCorrect) {
+      increaseNumCorrect()
     }
-    toNextQuestion()
   }
 
   return (
-    <View style={styles.container}>
-      <HeaderExam />
-
+    <View>
       <View style={[styles.block, styles.inLine]}>
         <View>
           <Text style={styles.text}>outdated</Text>
@@ -45,27 +44,20 @@ const VocabularyQuestion = (props) => {
 
       <Text style={styles.text}>Chọn nghĩa của từ đã cho</Text>
       <Card style={styles.card}>
-        {question.answers.map((answer, i) => (
-          <AnswerLine
-            content={answer.content}
-            isCorrect={answer.isCorrect}
-            onSubmitAnswer={onSubmitAnswer}
-            isDone={isDone}
-          />
-        ))}
+        {!loading &&
+          question.answers.map((answer, i) => (
+            <AnswerLine
+              content={answer.content}
+              isCorrect={answer.isCorrect}
+              onSubmitAnswer={onSubmitAnswer}
+              isDone={isDone}
+            />
+          ))}
       </Card>
-      <Button info style={styles.buttonLearn}>
-        <Text style={styles.textButton}>TIẾP TỤC</Text>
-        <Icon name="doubleright" type="AntDesign" style={styles.iconRight} />
-      </Button>
     </View>
   )
 }
 const styles = StyleSheet.create({
-  container: {
-    height: Mixins.WINDOW_HEIGHT,
-    backgroundColor: Colors.WHITE,
-  },
   inLine: {
     flexDirection: 'row',
   },
@@ -101,17 +93,6 @@ const styles = StyleSheet.create({
     height: 200,
     marginTop: 10,
     justifyContent: 'space-evenly',
-  },
-  buttonLearn: {
-    width: Mixins.WINDOW_WIDTH,
-    justifyContent: 'center',
-    backgroundColor: Colors.BLUE_DARK,
-    position: 'absolute',
-    bottom: 0,
-  },
-  textButton: {
-    fontSize: Typography.FONT_SIZE_16,
-    color: Colors.WHITE,
   },
   iconRight: {
     fontSize: 12,
