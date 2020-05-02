@@ -1,19 +1,60 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Icon, Button } from 'native-base'
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input'
 
 import HeaderExam from '../../atoms/question/HeaderExam'
 import { Colors, Typography, Mixins } from '../../../styles'
+import { InstanceSpeaker } from '../../../utils/speaker'
+import WordInformation from './WordInformation'
 
-const WriteQuestion = () => {
+const WriteQuestion = (props) => {
+  const { question, loading, setLoading, increaseNumCorrect } = props
+  const [isDone, setIsDone] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(null)
+
+  useEffect(() => {
+    setIsDone(false)
+    setIsCorrect(null)
+    setLoading(false)
+    setAnswer('')
+  }, [question])
+
   const [answer, setAnswer] = useState('')
+
+  const onChangeAnswer = (text) => {
+    setAnswer(text)
+    console.log(text)
+    if (text.toLowerCase() === question.word.toLowerCase()) {
+      setIsDone(true)
+      setIsCorrect(true)
+      increaseNumCorrect()
+    }
+  }
+
+  const onSubmit = () => {
+    if (!isDone) {
+      if (answer.toLowerCase() === question.word.toLowerCase()) {
+        setIsCorrect(true)
+        increaseNumCorrect()
+      } else {
+        setIsCorrect(false)
+      }
+    }
+    setIsDone(true)
+  }
+
   return (
     <View style={styles.container}>
-      <HeaderExam />
-      <View style={styles.block}>
-        <Icon name="volume-high" style={styles.icon} />
-      </View>
+      {!isDone && (
+        <View style={styles.block}>
+          <TouchableOpacity onPress={() => InstanceSpeaker.speak(question.word)}>
+            <Icon name="volume-high" style={styles.icon} />
+          </TouchableOpacity>
+        </View>
+      )}
+      {isDone && isCorrect && <WordInformation isCorrect={true} question={question} />}
+      {isDone && !isCorrect && <WordInformation isCorrect={false} question={question} />}
       <SmoothPinCodeInput
         containerStyle={{
           justifyContent: 'center',
@@ -30,26 +71,19 @@ const WriteQuestion = () => {
           textTransform: 'uppercase',
         }}
         value={answer}
-        onTextChange={(code) => setAnswer(code)}
+        onTextChange={onChangeAnswer}
         keyboardType="email-address"
-        codeLength={6}
+        codeLength={question.word.length}
       />
 
-      <Button style={styles.buttonCheck}>
+      <Button style={styles.buttonCheck} onPress={onSubmit}>
         <Text style={styles.textButton}>KIỂM TRA</Text>
-      </Button>
-      <Button info style={styles.buttonLearn}>
-        <Text style={styles.textButton}>TIẾP TỤC</Text>
-        <Icon name="doubleright" type="AntDesign" style={styles.iconRight} />
       </Button>
     </View>
   )
 }
+
 const styles = StyleSheet.create({
-  container: {
-    height: Mixins.WINDOW_HEIGHT,
-    backgroundColor: Colors.WHITE,
-  },
   block: {
     width: Mixins.WINDOW_WIDTH - 20,
     height: 100,
@@ -58,7 +92,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'space-around',
     alignSelf: 'center',
-    marginTop: 20,
+    marginVertical: 20,
   },
   icon: {
     color: Colors.BLUE_DARK,

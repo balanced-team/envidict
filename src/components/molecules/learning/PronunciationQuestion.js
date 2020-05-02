@@ -1,25 +1,58 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import { Icon, Separator, Card, Button } from 'native-base'
+import React, { useState, useEffect } from 'react'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { Icon, Card, Button } from 'native-base'
 
-import HeaderExam from '../../atoms/question/HeaderExam'
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
+import { InstanceSpeaker } from '../../../utils/speaker'
+import WordInformation from './WordInformation'
 
-const PronunticationQuestion = () => {
+const PronunticationQuestion = (props) => {
+  const { question, loading, setLoading, increaseNumCorrect } = props
+
+  const [isDone, setIsDone] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(null)
+
+  useEffect(() => {
+    setIsCorrect(null)
+    setIsDone(false)
+    setLoading(false)
+  }, [question])
+
+  const onSubmitAnswer = async (content) => {
+    const trueAnswer = await question.answers.find((answer) => answer.content === content)
+    setIsDone(true)
+    if (trueAnswer.isCorrect) {
+      setIsCorrect(true)
+      increaseNumCorrect()
+    } else {
+      setIsCorrect(false)
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <HeaderExam />
-      <View style={styles.block}>
-        <Icon name="volume-high" style={styles.icon} />
-      </View>
+      {!isDone && (
+        <View style={styles.block}>
+          <TouchableOpacity onPress={() => InstanceSpeaker.speak(question.word)}>
+            <Icon name="volume-high" style={styles.icon} />
+          </TouchableOpacity>
+        </View>
+      )}
+      {isDone && isCorrect && <WordInformation isCorrect={true} question={question} />}
+      {isDone && !isCorrect && <WordInformation isCorrect={false} question={question} />}
 
       <Text style={styles.text}>Nghe và chọn câu trả lời</Text>
       <Card style={styles.card}>
-        <AnswerLine answer="disapear" />
-        <AnswerLine answer="casually" />
-        <AnswerLine answer="verbally" />
-        <AnswerLine answer="outdated" />
+        {!loading &&
+          question.answers.map((answer, i) => (
+            <AnswerLine
+              content={answer.content}
+              isCorrect={answer.isCorrect}
+              onSubmitAnswer={onSubmitAnswer}
+              isDone={isDone}
+            />
+          ))}
       </Card>
       <Button info style={styles.buttonLearn}>
         <Text style={styles.textButton}>TIẾP TỤC</Text>
@@ -41,7 +74,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignSelf: 'center',
-    marginTop: 20,
+    marginVertical: 20,
   },
   icon: {
     color: Colors.BLUE_DARK,

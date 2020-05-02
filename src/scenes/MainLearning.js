@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 import { Button, Icon } from 'native-base'
 
@@ -8,12 +8,22 @@ import VocabularyQuestion from '../components/molecules/learning/VocabularyQuest
 import WriteQuestion from '../components/molecules/learning/WriteQuestion'
 import { QUESTION_TYPE } from '../constants'
 import { Mixins, Colors, Typography } from '../styles'
+import { generateQuestionFromWord } from '../utils'
+import { dictStoreContext } from '../contexts'
 
 const questions = [
   {
-    type: QUESTION_TYPE.MEANING_TO_VOCABULARY,
+    type: QUESTION_TYPE.WRITING,
     word: 'human',
-    data: {},
+    pronouce: '/ˈ(h)yo͞omən/',
+    description: 'noun: con người',
+    answers: [],
+  },
+  {
+    type: QUESTION_TYPE.VOCABULARY_TO_MEANING,
+    word: 'human',
+    pronouce: '/ˈ(h)yo͞omən/',
+    description: 'noun: con người',
     answers: [
       {
         content: 'con người',
@@ -36,22 +46,22 @@ const questions = [
   {
     type: QUESTION_TYPE.MEANING_TO_VOCABULARY,
     word: 'good',
-    data: {},
+    description: 'adj: tốt, giỏi',
     answers: [
       {
-        content: 'xấu',
+        content: 'best',
         isCorrect: false,
       },
       {
-        content: 'tốt, giỏi',
+        content: 'good',
         isCorrect: true,
       },
       {
-        content: 'tệ',
+        content: 'bad',
         isCorrect: false,
       },
       {
-        content: 'học sinh',
+        content: 'terribled',
         isCorrect: false,
       },
     ],
@@ -59,10 +69,30 @@ const questions = [
   {
     type: QUESTION_TYPE.PRONUNCIATION,
     word: 'good',
-    data: {},
-    answers: [],
+    pronounce: '/gu:d/',
+    description: 'adj: tốt, giỏi',
+    answers: [
+      {
+        content: 'best',
+        isCorrect: false,
+      },
+      {
+        content: 'good',
+        isCorrect: true,
+      },
+      {
+        content: 'bad',
+        isCorrect: false,
+      },
+      {
+        content: 'terribled',
+        isCorrect: false,
+      },
+    ],
   },
 ]
+
+const words = ['human', 'hello', 'morning', 'sunny', 'bye', 'my']
 
 const MainLearning = ({ navigation }) => {
   const [lesson, setLesson] = useState(0)
@@ -70,10 +100,35 @@ const MainLearning = ({ navigation }) => {
   const [loading, setLoading] = useState(true)
   const [numCorrect, setNumCorrect] = useState(0)
   const [numQuestion, setNumQuestion] = useState(10)
+  const [questionList, setQuestionList] = useState([])
+
+  const dictStore = useContext(dictStoreContext)
+
+  useEffect(() => {
+    const getWordList = async () => {
+      const wordList = []
+      for (let i = 0; i < words.length; i++) {
+        wordList.push(await dictStore.findWord(words[i]))
+      }
+      return wordList
+    }
+
+    const setUp = async () => {
+      const wordList = await getWordList()
+      let data = []
+      for (let i = 0; i < wordList.length; i++) {
+        const question = await generateQuestionFromWord(wordList[i], wordList)
+        data.push(question)
+      }
+      console.log(data)
+      setQuestionList(data)
+    }
+    setUp()
+  }, [])
 
   const toNextQuestion = () => {
     const nextIndex = currentQuestionIndex + 1
-    if (nextIndex < 2) {
+    if (nextIndex < 3) {
       setCurrentQuestionIndex(nextIndex)
       setLoading(true)
     }

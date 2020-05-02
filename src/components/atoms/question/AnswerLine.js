@@ -32,9 +32,9 @@ const AnswerLine = (props) => {
       <Radio
         selectedColor={
           isCorrect
-            ? Colors.SUCCESS
+            ? Colors.TEXT_SUCCESS
             : selected && !isCorrect
-            ? Colors.ALERT
+            ? Colors.TEXT_FAILED
             : Colors.BLUE_EXPLAIN
         }
         selected={selected || (isDone && isCorrect)}
@@ -76,14 +76,14 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   correctAnswer: {
-    color: Colors.SUCCESS,
+    color: Colors.TEXT_SUCCESS,
     fontWeight: 'bold',
   },
   iconSuccess: {
-    color: Colors.SUCCESS,
+    color: Colors.TEXT_SUCCESS,
   },
   iconFailed: {
-    color: Colors.ALERT,
+    color: Colors.TEXT_FAILED,
   },
 })
 export default AnswerLine

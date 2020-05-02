@@ -1,4 +1,7 @@
 import { InstanceSpeaker } from './speaker'
+import { useContext } from 'react'
+import { dictStoreContext } from '../contexts'
+import { QUESTION_TYPE } from '../constants'
 
 const backHandleToExitApp = (Alert, BackHandler) => {
   const backAction = () => {
@@ -17,4 +20,114 @@ const backHandleToExitApp = (Alert, BackHandler) => {
   return () => backHandler.remove()
 }
 
-module.exports = { backHandleToExitApp, InstanceSpeaker }
+const shuffle = async (a) => {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+const generateVocabularyToMeaningQuestion = async (word, wordList) => {
+  let words = wordList
+  let answers = []
+  const wrongAnswerQuantity = Math.floor(3 + Math.random() * 3)
+  for (let i = 0; i < wrongAnswerQuantity; i++) {
+    const randomIndex = Math.floor(Math.random() * words.length)
+    answers.push({ content: wordList[randomIndex].description, isCorrect: false })
+    words.splice(randomIndex, 1)
+  }
+  answers.push({ content: word.description, isCorrect: true })
+  answers = await shuffle(answers)
+  question.answers = answers
+  return {
+    word: word.word,
+    type: QUESTION_TYPE.VOCABULARY_TO_MEANING,
+    pronounce: word.pronounce,
+    description: word.description,
+    answers,
+  }
+}
+
+const generateMeaningToVocabularyQuestion = async (word, wordList) => {
+  let words = wordList
+  let answers = []
+  const wrongAnswerQuantity = Math.floor(3 + Math.random() * 3)
+  for (let i = 0; i < wrongAnswerQuantity; i++) {
+    const randomIndex = Math.floor(Math.random() * words.length)
+    answers.push({ content: wordList[randomIndex].word, isCorrect: false })
+    await words.splice(randomIndex, 1)
+  }
+  answers.push({ content: word.description, isCorrect: true })
+  answers = await shuffle(answers)
+  question.answers = answers
+  return {
+    word: word.word,
+    type: QUESTION_TYPE.VOCABULARY_TO_MEANING,
+    pronounce: word.pronounce,
+    description: word.description,
+    answers,
+  }
+}
+
+const generatePronuciationQuestion = async (word, wordList) => {
+  let words = wordList
+  let answers = []
+  const wrongAnswerQuantity = Math.floor(3 + Math.random() * 3)
+  for (let i = 0; i < wrongAnswerQuantity; i++) {
+    const randomIndex = Math.floor(Math.random() * words.length)
+    answers.push({ content: wordList[randomIndex].word, isCorrect: false })
+    words.splice(randomIndex, 1)
+  }
+  answers.push({ content: word.description, isCorrect: true })
+  answers = await shuffle(answers)
+  question.answers = answers
+  return {
+    word: word.word,
+    type: QUESTION_TYPE.VOCABULARY_TO_MEANING,
+    pronounce: word.pronounce,
+    description: word.description,
+    answers,
+  }
+}
+
+const generateWritingQuestion = async (word) => {
+  return {
+    word: word.word,
+    type: QUESTION_TYPE.WRITING,
+    pronounce: word.pronounce,
+    description: word.description,
+  }
+}
+
+const generateQuestionFromWord = async (word, words) => {
+  const randomType = Math.floor(1 + Math.random() * 4)
+  // 1: VOCABULARY_TO_MEANING
+  // 2: MEANING_TO_VOCABULARY
+  // 3: PRONUCIATION
+  // 4: WRITING
+
+  const index = await words.findIndex((e) => e === word)
+  words = await words.splice(index, 1)
+
+  let question
+  switch (randomType) {
+    case 1:
+      question = await generateVocabularyToMeaningQuestion(word, words)
+      break
+    case 2:
+      question = await generateMeaningToVocabularyQuestion(word, words)
+      break
+    case 3:
+      question = await generatePronuciationQuestion(word, words)
+      break
+    case 4:
+      question = await generateWritingQuestion(word)
+      break
+    default:
+      question = await generateWritingQuestion(word)
+  }
+  return question
+}
+
+module.exports = { backHandleToExitApp, InstanceSpeaker, generateQuestionFromWord }

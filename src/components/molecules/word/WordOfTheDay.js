@@ -34,13 +34,13 @@ const WordOfTheDay = (props) => {
           </Right>
         </Row>
         <View style={styles.row}>
-          <Text style={styles.word}>{word.word}</Text>
+          <Text style={styles.word}>{word ? word.word : ''}</Text>
           <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
             <Icon name="volume-high" style={[styles.icon, styles.blueDarkColor]} />
           </TouchableOpacity>
         </View>
         {/* <Text style={styles.type}>tính từ</Text> */}
-        <Text style={styles.meaning}>{word.description}</Text>
+        <Text style={styles.meaning}>{word ? word.description : ''}</Text>
       </View>
     </TouchableOpacity>
   )

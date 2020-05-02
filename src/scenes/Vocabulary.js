@@ -51,10 +51,6 @@ const ArrVocabulary = [
     id: 11,
     name: 'Luyện thi IELTS cơ bản',
   },
-  {
-    id: 10,
-    name: 'Luyện thi IELTS nâng cao ',
-  },
 ]
 
 const Vocabulary = ({ navigation }) => {
