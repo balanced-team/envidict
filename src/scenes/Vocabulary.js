@@ -5,6 +5,7 @@ import { List } from 'native-base'
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
 import ListItemVocabulary from '../components/atoms/ListItemVocabulary/ListItemVocabulary'
+import { RoutesConstants } from '../navigations/route-constants'
 
 const ArrVocabulary = [
   {
@@ -67,7 +68,7 @@ const Vocabulary = ({ navigation }) => {
           <ListItemVocabulary
             key={'vocabulary-' + item.id}
             nameVocabulary={item.name}
-            onPressListItem={() => navigation.navigate('ListWord')}
+            onPressListItem={() => navigation.navigate(RoutesConstants.ListWord)}
           />
         ))}
       </List>

@@ -8,12 +8,22 @@ import { InstanceSpeaker } from '../../../utils/speaker'
 import WordInformation from './WordInformation'
 
 const PronunticationQuestion = (props) => {
-  const { question, loading, setLoading, increaseNumCorrect } = props
+  const {
+    question,
+    loading,
+    setLoading,
+    increaseNumCorrect,
+    setIsStop,
+    setIsDoneTest,
+    numQuestion,
+    currentQuestionIndex,
+  } = props
 
   const [isDone, setIsDone] = useState(false)
   const [isCorrect, setIsCorrect] = useState(null)
 
   useEffect(() => {
+    setIsStop(false)
     setIsCorrect(null)
     setIsDone(false)
     setLoading(false)
@@ -22,11 +32,15 @@ const PronunticationQuestion = (props) => {
   const onSubmitAnswer = async (content) => {
     const trueAnswer = await question.answers.find((answer) => answer.content === content)
     setIsDone(true)
+    setIsStop(true)
     if (trueAnswer.isCorrect) {
       setIsCorrect(true)
       increaseNumCorrect()
     } else {
       setIsCorrect(false)
+    }
+    if (currentQuestionIndex === numQuestion - 1) {
+      setIsDoneTest(true)
     }
   }
 
@@ -47,6 +61,7 @@ const PronunticationQuestion = (props) => {
         {!loading &&
           question.answers.map((answer, i) => (
             <AnswerLine
+              key={i}
               content={answer.content}
               isCorrect={answer.isCorrect}
               onSubmitAnswer={onSubmitAnswer}
@@ -54,10 +69,6 @@ const PronunticationQuestion = (props) => {
             />
           ))}
       </Card>
-      <Button info style={styles.buttonLearn}>
-        <Text style={styles.textButton}>TIẾP TỤC</Text>
-        <Icon name="doubleright" type="AntDesign" style={styles.iconRight} />
-      </Button>
     </View>
   )
 }
@@ -94,17 +105,6 @@ const styles = StyleSheet.create({
     height: 200,
     marginTop: 10,
     justifyContent: 'space-evenly',
-  },
-  buttonLearn: {
-    width: Mixins.WINDOW_WIDTH,
-    justifyContent: 'center',
-    backgroundColor: Colors.BLUE_DARK,
-    position: 'absolute',
-    bottom: 0,
-  },
-  textButton: {
-    fontSize: Typography.FONT_SIZE_16,
-    color: Colors.WHITE,
   },
   iconRight: {
     fontSize: 12,

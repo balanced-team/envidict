@@ -3,17 +3,26 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Icon, Button } from 'native-base'
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input'
 
-import HeaderExam from '../../atoms/question/HeaderExam'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { InstanceSpeaker } from '../../../utils/speaker'
 import WordInformation from './WordInformation'
 
 const WriteQuestion = (props) => {
-  const { question, loading, setLoading, increaseNumCorrect } = props
+  const {
+    question,
+    loading,
+    setLoading,
+    increaseNumCorrect,
+    setIsStop,
+    setIsDoneTest,
+    numQuestion,
+    currentQuestionIndex,
+  } = props
   const [isDone, setIsDone] = useState(false)
   const [isCorrect, setIsCorrect] = useState(null)
 
   useEffect(() => {
+    setIsStop(false)
     setIsDone(false)
     setIsCorrect(null)
     setLoading(false)
@@ -24,11 +33,14 @@ const WriteQuestion = (props) => {
 
   const onChangeAnswer = (text) => {
     setAnswer(text)
-    console.log(text)
     if (text.toLowerCase() === question.word.toLowerCase()) {
       setIsDone(true)
+      setIsStop(true)
       setIsCorrect(true)
       increaseNumCorrect()
+      if (currentQuestionIndex === numQuestion) {
+        setIsDoneTest(true)
+      }
     }
   }
 
@@ -42,6 +54,10 @@ const WriteQuestion = (props) => {
       }
     }
     setIsDone(true)
+    setIsStop(true)
+    if (currentQuestionIndex === numQuestion - 1) {
+      setIsDoneTest(true)
+    }
   }
 
   return (
@@ -104,14 +120,6 @@ const styles = StyleSheet.create({
     paddingLeft: 12,
     color: Colors.BLUE_DARK,
     marginTop: 10,
-  },
-  buttonLearn: {
-    width: Mixins.WINDOW_WIDTH,
-    justifyContent: 'center',
-    backgroundColor: Colors.BLUE_DARK,
-    position: 'absolute',
-    bottom: 0,
-    marginBottom: 66,
   },
   buttonCheck: {
     width: 180,

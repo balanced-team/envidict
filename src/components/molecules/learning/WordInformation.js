@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon } from 'native-base'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { Colors, Typography, Mixins } from '../../../styles'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const WordInformation = (props) => {
   const { isCorrect, question } = props

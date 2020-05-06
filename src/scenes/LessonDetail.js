@@ -4,10 +4,11 @@ import { Button, Icon } from 'native-base'
 
 import LessonContent from '../components/atoms/lesson/LessonContent'
 import { Colors, Mixins, Typography } from '../styles'
+import { RoutesConstants } from '../navigations/route-constants'
 
 const LessonDetail = ({ navigation }) => {
   const onClickLearnNow = () => {
-    navigation.navigate('LearnNow')
+    navigation.navigate(RoutesConstants.LearnNow)
   }
   return (
     <View style={styles.container}>

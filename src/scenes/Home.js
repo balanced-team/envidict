@@ -21,11 +21,11 @@ const Home = ({ navigation }) => {
   }
 
   const onClickPreView = () => {
-    navigation.navigate('LessonDetail')
+    navigation.navigate(RoutesConstants.LessonDetail)
   }
 
   const onClickPractise = () => {
-    navigation.navigate('MainLearning')
+    navigation.navigate(RoutesConstants.MainLearning)
   }
 
   const onClickOnlineTranslationButton = () => {
@@ -33,11 +33,11 @@ const Home = ({ navigation }) => {
   }
 
   const onClickLearnNow = () => {
-    navigation.navigate('LearnNow')
+    navigation.navigate(RoutesConstants.LearnNow)
   }
 
   const onGoToSearchView = () => {
-    navigation.navigate('Tìm kiếm')
+    navigation.navigate(RoutesConstants.SearchWord)
   }
   return (
     <MainLayout

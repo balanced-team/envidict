@@ -28,18 +28,16 @@ const shuffle = async (a) => {
   return a
 }
 
-const generateVocabularyToMeaningQuestion = async (word, wordList) => {
-  let words = wordList
+const generateVocabularyToMeaningQuestion = async (word, words) => {
   let answers = []
   const wrongAnswerQuantity = Math.floor(3 + Math.random() * 3)
   for (let i = 0; i < wrongAnswerQuantity; i++) {
     const randomIndex = Math.floor(Math.random() * words.length)
-    answers.push({ content: wordList[randomIndex].description, isCorrect: false })
+    answers.push({ content: words[randomIndex].description, isCorrect: false })
     words.splice(randomIndex, 1)
   }
   answers.push({ content: word.description, isCorrect: true })
   answers = await shuffle(answers)
-  question.answers = answers
   return {
     word: word.word,
     type: QUESTION_TYPE.VOCABULARY_TO_MEANING,
@@ -49,42 +47,38 @@ const generateVocabularyToMeaningQuestion = async (word, wordList) => {
   }
 }
 
-const generateMeaningToVocabularyQuestion = async (word, wordList) => {
-  let words = wordList
+const generateMeaningToVocabularyQuestion = async (word, words) => {
   let answers = []
   const wrongAnswerQuantity = Math.floor(3 + Math.random() * 3)
   for (let i = 0; i < wrongAnswerQuantity; i++) {
     const randomIndex = Math.floor(Math.random() * words.length)
-    answers.push({ content: wordList[randomIndex].word, isCorrect: false })
+    answers.push({ content: words[randomIndex].word, isCorrect: false })
     await words.splice(randomIndex, 1)
   }
-  answers.push({ content: word.description, isCorrect: true })
+  answers.push({ content: word.word, isCorrect: true })
   answers = await shuffle(answers)
-  question.answers = answers
   return {
     word: word.word,
-    type: QUESTION_TYPE.VOCABULARY_TO_MEANING,
+    type: QUESTION_TYPE.MEANING_TO_VOCABULARY,
     pronounce: word.pronounce,
     description: word.description,
     answers,
   }
 }
 
-const generatePronuciationQuestion = async (word, wordList) => {
-  let words = wordList
+const generatePronuciationQuestion = async (word, words) => {
   let answers = []
   const wrongAnswerQuantity = Math.floor(3 + Math.random() * 3)
   for (let i = 0; i < wrongAnswerQuantity; i++) {
     const randomIndex = Math.floor(Math.random() * words.length)
-    answers.push({ content: wordList[randomIndex].word, isCorrect: false })
+    answers.push({ content: words[randomIndex].word, isCorrect: false })
     words.splice(randomIndex, 1)
   }
-  answers.push({ content: word.description, isCorrect: true })
+  answers.push({ content: word.word, isCorrect: true })
   answers = await shuffle(answers)
-  question.answers = answers
   return {
     word: word.word,
-    type: QUESTION_TYPE.VOCABULARY_TO_MEANING,
+    type: QUESTION_TYPE.PRONUNCIATION,
     pronounce: word.pronounce,
     description: word.description,
     answers,
@@ -107,8 +101,7 @@ const generateQuestionFromWord = async (word, words) => {
   // 3: PRONUCIATION
   // 4: WRITING
 
-  const index = await words.findIndex((e) => e === word)
-  words = await words.splice(index, 1)
+  words = await words.filter((e) => e !== word)
 
   let question
   switch (randomType) {
@@ -125,7 +118,7 @@ const generateQuestionFromWord = async (word, words) => {
       question = await generateWritingQuestion(word)
       break
     default:
-      question = await generateWritingQuestion(word)
+      question = await generateMeaningToVocabularyQuestion(word, words)
   }
   return question
 }

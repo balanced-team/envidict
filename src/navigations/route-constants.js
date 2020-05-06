@@ -7,4 +7,5 @@ export const RoutesConstants = {
   MainLearning: 'Luyện tập',
   ListWord: 'Danh sách từ vựng',
   OnlineTranslation: 'Dịch online',
+  SearchWord: 'Tìm kiếm',
 }

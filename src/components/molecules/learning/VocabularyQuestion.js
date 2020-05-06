@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Icon, Card } from 'native-base'
+import { Icon, Card, Grid, Col } from 'native-base'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { QUESTION_TYPE } from '../../../constants'
 import WordInformation from './WordInformation'
+import { InstanceSpeaker } from '../../../utils/speaker'
 
 const VocabularyQuestion = (props) => {
-  const { question, loading, setLoading, increaseNumCorrect } = props
+  const {
+    question,
+    loading,
+    setLoading,
+    increaseNumCorrect,
+    setIsStop,
+    setIsDoneTest,
+    numQuestion,
+    currentQuestionIndex,
+  } = props
   const [isDone, setIsDone] = useState(false)
   const [isCorrect, setIsCorrect] = useState(null)
 
   useEffect(() => {
+    setIsStop(false)
     setIsCorrect(null)
     setIsDone(false)
     setLoading(false)
@@ -22,11 +33,15 @@ const VocabularyQuestion = (props) => {
   const onSubmitAnswer = async (content) => {
     const trueAnswer = await question.answers.find((answer) => answer.content === content)
     setIsDone(true)
+    setIsStop(true)
     if (trueAnswer.isCorrect) {
       setIsCorrect(true)
       increaseNumCorrect()
     } else {
       setIsCorrect(false)
+    }
+    if (currentQuestionIndex === numQuestion - 1) {
+      setIsDoneTest(true)
     }
   }
 
@@ -36,7 +51,6 @@ const VocabularyQuestion = (props) => {
         <View
           style={[
             styles.block,
-            styles.inLine,
             ...[
               isCorrect === true
                 ? styles.correct
@@ -46,27 +60,32 @@ const VocabularyQuestion = (props) => {
             ],
           ]}
         >
-          <View>
-            <Text style={[styles.text]}>
-              {question.type === QUESTION_TYPE.MEANING_TO_VOCABULARY
-                ? question.description
-                : question.word}
-            </Text>
-            {question.type === QUESTION_TYPE.VOCABULARY_TO_MEANING && (
-              <Text
-                style={[
-                  styles.text,
-                  { fontSize: Typography.FONT_SIZE_16, color: Colors.BLUE_LIGHT },
-                ]}
-              >
-                {question.pronouce}
+          <Grid>
+            <Col size={14}>
+              <Text style={[styles.text]}>
+                {question.type === QUESTION_TYPE.MEANING_TO_VOCABULARY
+                  ? question.description
+                  : question.word}
               </Text>
-            )}
-            <Text style={styles.description}>{question.description}</Text>
-          </View>
-          <TouchableOpacity>
-            <Icon name="volume-high" style={styles.icon} />
-          </TouchableOpacity>
+              {question.type === QUESTION_TYPE.VOCABULARY_TO_MEANING && (
+                <Text
+                  style={[
+                    styles.text,
+                    { fontSize: Typography.FONT_SIZE_16, color: Colors.BLUE_LIGHT },
+                  ]}
+                >
+                  {question.pronouce}
+                </Text>
+              )}
+              <Text style={styles.description}>{question.description}</Text>
+            </Col>
+
+            <Col size={2} style={styles.columnRight}>
+              <TouchableOpacity onPress={() => InstanceSpeaker.speak(question.word)}>
+                <Icon name="volume-high" style={styles.icon} />
+              </TouchableOpacity>
+            </Col>
+          </Grid>
         </View>
       )}
 
@@ -77,6 +96,7 @@ const VocabularyQuestion = (props) => {
         {!loading &&
           question.answers.map((answer, i) => (
             <AnswerLine
+              key={i}
               content={answer.content}
               isCorrect={answer.isCorrect}
               onSubmitAnswer={onSubmitAnswer}
@@ -88,12 +108,9 @@ const VocabularyQuestion = (props) => {
   )
 }
 const styles = StyleSheet.create({
-  inLine: {
-    flexDirection: 'row',
-  },
   block: {
     width: Mixins.WINDOW_WIDTH - 20,
-    height: 100,
+    minHeight: 100,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
     borderRadius: 10,
@@ -102,12 +119,13 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     alignItems: 'center',
   },
+  columnRight: {
+    justifyContent: 'space-between',
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
   icon: {
     color: Colors.BLUE_DARK,
-    justifyContent: 'flex-end',
-    textAlign: 'right',
-    alignSelf: 'flex-end',
-    marginRight: 20,
   },
   text: {
     fontSize: Typography.FONT_SIZE_20,
@@ -130,7 +148,8 @@ const styles = StyleSheet.create({
   iconRight: {
     fontSize: 12,
     color: Colors.WHITE,
-    marginLeft: 5,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   correct: {
     backgroundColor: Colors.BACKGROUND_SUCCESS,

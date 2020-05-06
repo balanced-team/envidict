@@ -6,6 +6,7 @@ import { View } from 'native-base'
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
 import Courses from '../components/atoms/courses/Courses'
+import { RoutesConstants } from '../navigations/route-constants'
 
 const Learning = ({ navigation }) => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const Learning = ({ navigation }) => {
   }, [])
 
   const handleNavigate = () => {
-    navigation.navigate('LessonList')
+    navigation.navigate(RoutesConstants.LessonList)
   }
 
   return (
