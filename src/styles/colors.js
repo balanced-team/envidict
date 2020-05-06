@@ -24,3 +24,9 @@ export const GREEN_LIGHT = '#80ff80'
 //BACKGROUND
 export const SECONDARY_LIGHT = '#d9d9d9'
 export const SECONDARY_LIGHTEST = '#cccccc'
+export const BACKGROUND_SUCCESS = '#c8e6c9'
+export const BACKGROUND_FAILED = '#ffcdd2'
+
+// TEXT
+export const TEXT_FAILED = '#b71c1c'
+export const TEXT_SUCCESS = '#388e3c'

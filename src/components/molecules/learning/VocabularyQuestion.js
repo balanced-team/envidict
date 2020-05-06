@@ -1,79 +1,141 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Icon, Button, Card } from 'native-base'
-
-import HeaderExam from '../../atoms/question/HeaderExam'
-import AnswerLine from '../../atoms/question/AnswerLine'
-import { Colors, Typography, Mixins } from '../../../styles'
+import { Icon, Card, Grid, Col } from 'native-base'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-const VocabularyQuestion = () => {
+import AnswerLine from '../../atoms/question/AnswerLine'
+import { Colors, Typography, Mixins } from '../../../styles'
+import { QUESTION_TYPE } from '../../../constants'
+import WordInformation from './WordInformation'
+import { InstanceSpeaker } from '../../../utils/speaker'
+
+const VocabularyQuestion = (props) => {
+  const {
+    question,
+    loading,
+    setLoading,
+    increaseNumCorrect,
+    setIsStop,
+    setIsDoneTest,
+    numQuestion,
+    currentQuestionIndex,
+  } = props
+  const [isDone, setIsDone] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(null)
+
+  useEffect(() => {
+    setIsStop(false)
+    setIsCorrect(null)
+    setIsDone(false)
+    setLoading(false)
+  }, [question])
+
+  const onSubmitAnswer = async (content) => {
+    const trueAnswer = await question.answers.find((answer) => answer.content === content)
+    setIsDone(true)
+    setIsStop(true)
+    if (trueAnswer.isCorrect) {
+      setIsCorrect(true)
+      increaseNumCorrect()
+    } else {
+      setIsCorrect(false)
+    }
+    if (currentQuestionIndex === numQuestion - 1) {
+      setIsDoneTest(true)
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <HeaderExam />
+    <View>
+      {!isDone && (
+        <View
+          style={[
+            styles.block,
+            ...[
+              isCorrect === true
+                ? styles.correct
+                : isCorrect === false
+                ? styles.wrong
+                : [],
+            ],
+          ]}
+        >
+          <Grid>
+            <Col size={14}>
+              <Text style={[styles.text]}>
+                {question.type === QUESTION_TYPE.MEANING_TO_VOCABULARY
+                  ? question.description
+                  : question.word}
+              </Text>
+              {question.type === QUESTION_TYPE.VOCABULARY_TO_MEANING && (
+                <Text
+                  style={[
+                    styles.text,
+                    { fontSize: Typography.FONT_SIZE_16, color: Colors.BLUE_LIGHT },
+                  ]}
+                >
+                  {question.pronouce}
+                </Text>
+              )}
+              <Text style={styles.description}>{question.description}</Text>
+            </Col>
 
-      <View style={[styles.block, styles.inLine]}>
-        <View>
-          <Text style={styles.text}>outdated</Text>
-          <Text
-            style={[
-              styles.text,
-              { fontSize: Typography.FONT_SIZE_16, color: Colors.BLUE_LIGHT },
-            ]}
-          >
-            /out`date/
-          </Text>
+            <Col size={2} style={styles.columnRight}>
+              <TouchableOpacity onPress={() => InstanceSpeaker.speak(question.word)}>
+                <Icon name="volume-high" style={styles.icon} />
+              </TouchableOpacity>
+            </Col>
+          </Grid>
         </View>
-        <TouchableOpacity>
-          <Icon name="volume-high" style={styles.icon} />
-        </TouchableOpacity>
-      </View>
+      )}
 
+      {isDone && isCorrect && <WordInformation isCorrect={true} question={question} />}
+      {isDone && !isCorrect && <WordInformation isCorrect={false} question={question} />}
       <Text style={styles.text}>Chọn nghĩa của từ đã cho</Text>
       <Card style={styles.card}>
-        <AnswerLine answer="Biến mất" />
-        <AnswerLine answer="Xuất hiện" />
-        <AnswerLine answer="Quá hạn" />
+        {!loading &&
+          question.answers.map((answer, i) => (
+            <AnswerLine
+              key={i}
+              content={answer.content}
+              isCorrect={answer.isCorrect}
+              onSubmitAnswer={onSubmitAnswer}
+              isDone={isDone}
+            />
+          ))}
       </Card>
-      <Button info style={styles.buttonLearn}>
-        <Text style={styles.textButton}>TIẾP TỤC</Text>
-        <Icon name="doubleright" type="AntDesign" style={styles.iconRight} />
-      </Button>
     </View>
   )
 }
 const styles = StyleSheet.create({
-  container: {
-    height: Mixins.WINDOW_HEIGHT,
-    backgroundColor: Colors.WHITE,
-  },
-  inLine: {
-    flexDirection: 'row',
-  },
   block: {
     width: Mixins.WINDOW_WIDTH - 20,
-    height: 100,
+    minHeight: 100,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
     borderRadius: 10,
     justifyContent: 'space-between',
     alignSelf: 'center',
-    marginTop: 20,
+    marginVertical: 20,
+    alignItems: 'center',
+  },
+  columnRight: {
+    justifyContent: 'space-between',
+    alignSelf: 'center',
     alignItems: 'center',
   },
   icon: {
     color: Colors.BLUE_DARK,
-    justifyContent: 'flex-end',
-    textAlign: 'right',
-    alignSelf: 'flex-end',
-    marginRight: 20,
   },
   text: {
     fontSize: Typography.FONT_SIZE_20,
     paddingLeft: 12,
-    paddingTop: 10,
     color: Colors.BLUE_DARK,
     fontWeight: 'bold',
+  },
+  description: {
+    fontSize: Typography.FONT_SIZE_16,
+    paddingLeft: 12,
   },
   card: {
     marginLeft: 10,
@@ -83,21 +145,21 @@ const styles = StyleSheet.create({
     marginTop: 10,
     justifyContent: 'space-evenly',
   },
-  buttonLearn: {
-    width: Mixins.WINDOW_WIDTH,
-    justifyContent: 'center',
-    backgroundColor: Colors.BLUE_DARK,
-    position: 'absolute',
-    bottom: 0,
-  },
-  textButton: {
-    fontSize: Typography.FONT_SIZE_16,
-    color: Colors.WHITE,
-  },
   iconRight: {
     fontSize: 12,
     color: Colors.WHITE,
-    marginLeft: 5,
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  correct: {
+    backgroundColor: Colors.BACKGROUND_SUCCESS,
+    color: Colors.TEXT_SUCCESS,
+    borderColor: Colors.TEXT_SUCCESS,
+  },
+  wrong: {
+    backgroundColor: Colors.BACKGROUND_FAILED,
+    color: Colors.TEXT_FAILED,
+    borderColor: Colors.TEXT_FAILED,
   },
 })
 export default VocabularyQuestion

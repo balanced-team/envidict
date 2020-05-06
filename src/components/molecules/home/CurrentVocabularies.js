@@ -11,9 +11,9 @@ import { Colors } from '../../../styles'
 const CurrentVocabularies = (props) => {
   const { onClickPreView, onClickLearnNow, onClickPractise } = props
   return (
-    <TouchableHighlight onPress={onClickPreView}>
-      <View>
-        <Text style={styles.tittle}>Từ vựng phỏng vấn, xin việc</Text>
+    <View>
+      <Text style={styles.tittle}>Từ vựng phỏng vấn, xin việc</Text>
+      <TouchableHighlight onPress={onClickPreView}>
         <View style={styles.card}>
           <Text style={styles.lessonName}>Bài 1: Job search</Text>
           <Grid>
@@ -43,8 +43,8 @@ const CurrentVocabularies = (props) => {
             </Button>
           </View>
         </View>
-      </View>
-    </TouchableHighlight>
+      </TouchableHighlight>
+    </View>
   )
 }
 

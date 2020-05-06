@@ -41,7 +41,7 @@ const Routes = () => {
           options={headerOptions}
         />
         <Stack.Screen
-          name="Tìm kiếm"
+          name={RoutesConstants.SearchWord}
           component={SearchWord}
           options={{
             headerShown: false,
@@ -49,18 +49,30 @@ const Routes = () => {
           }}
         />
         <Stack.Screen
-          name="LessonDetail"
+          name={RoutesConstants.LessonDetail}
           component={LessonDetail}
           options={headerOptions}
         />
-        <Stack.Screen name="LessonList" component={LessonList} options={headerOptions} />
-        <Stack.Screen name="LearnNow" component={LearnNow} options={headerOptions} />
         <Stack.Screen
-          name="MainLearning"
+          name={RoutesConstants.LessonList}
+          component={LessonList}
+          options={headerOptions}
+        />
+        <Stack.Screen
+          name={RoutesConstants.LearnNow}
+          component={LearnNow}
+          options={headerOptions}
+        />
+        <Stack.Screen
+          name={RoutesConstants.MainLearning}
           component={MainLearning}
           options={headerOptions}
         />
-        <Stack.Screen name="ListWord" component={ListWord} options={headerOptions} />
+        <Stack.Screen
+          name={RoutesConstants.ListWord}
+          component={ListWord}
+          options={headerOptions}
+        />
         <Stack.Screen
           name={RoutesConstants.OnlineTranslation}
           component={OnlineTranslation}

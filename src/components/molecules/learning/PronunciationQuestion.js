@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { Icon, Button } from 'native-base'
-import SmoothPinCodeInput from 'react-native-smooth-pincode-input'
+import { Icon, Card, Button } from 'native-base'
 
+import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { InstanceSpeaker } from '../../../utils/speaker'
 import WordInformation from './WordInformation'
 
-const WriteQuestion = (props) => {
+const PronunticationQuestion = (props) => {
   const {
     question,
     loading,
@@ -18,43 +18,27 @@ const WriteQuestion = (props) => {
     numQuestion,
     currentQuestionIndex,
   } = props
+
   const [isDone, setIsDone] = useState(false)
   const [isCorrect, setIsCorrect] = useState(null)
 
   useEffect(() => {
     setIsStop(false)
-    setIsDone(false)
     setIsCorrect(null)
+    setIsDone(false)
     setLoading(false)
-    setAnswer('')
   }, [question])
 
-  const [answer, setAnswer] = useState('')
-
-  const onChangeAnswer = (text) => {
-    setAnswer(text)
-    if (text.toLowerCase() === question.word.toLowerCase()) {
-      setIsDone(true)
-      setIsStop(true)
-      setIsCorrect(true)
-      increaseNumCorrect()
-      if (currentQuestionIndex === numQuestion) {
-        setIsDoneTest(true)
-      }
-    }
-  }
-
-  const onSubmit = () => {
-    if (!isDone) {
-      if (answer.toLowerCase() === question.word.toLowerCase()) {
-        setIsCorrect(true)
-        increaseNumCorrect()
-      } else {
-        setIsCorrect(false)
-      }
-    }
+  const onSubmitAnswer = async (content) => {
+    const trueAnswer = await question.answers.find((answer) => answer.content === content)
     setIsDone(true)
     setIsStop(true)
+    if (trueAnswer.isCorrect) {
+      setIsCorrect(true)
+      increaseNumCorrect()
+    } else {
+      setIsCorrect(false)
+    }
     if (currentQuestionIndex === numQuestion - 1) {
       setIsDoneTest(true)
     }
@@ -71,42 +55,35 @@ const WriteQuestion = (props) => {
       )}
       {isDone && isCorrect && <WordInformation isCorrect={true} question={question} />}
       {isDone && !isCorrect && <WordInformation isCorrect={false} question={question} />}
-      <SmoothPinCodeInput
-        containerStyle={{
-          justifyContent: 'center',
-          alignSelf: 'center',
-        }}
-        cellStyle={{
-          borderBottomWidth: 2,
-          borderColor: Colors.BLUE_MEDIUM,
-        }}
-        cellStyleFocused={{
-          borderColor: Colors.BLUE_TEXT,
-        }}
-        textStyle={{
-          textTransform: 'uppercase',
-        }}
-        value={answer}
-        onTextChange={onChangeAnswer}
-        keyboardType="email-address"
-        codeLength={question.word.length}
-      />
 
-      <Button style={styles.buttonCheck} onPress={onSubmit}>
-        <Text style={styles.textButton}>KIỂM TRA</Text>
-      </Button>
+      <Text style={styles.text}>Nghe và chọn câu trả lời</Text>
+      <Card style={styles.card}>
+        {!loading &&
+          question.answers.map((answer, i) => (
+            <AnswerLine
+              key={i}
+              content={answer.content}
+              isCorrect={answer.isCorrect}
+              onSubmitAnswer={onSubmitAnswer}
+              isDone={isDone}
+            />
+          ))}
+      </Card>
     </View>
   )
 }
-
 const styles = StyleSheet.create({
+  container: {
+    height: Mixins.WINDOW_HEIGHT,
+    backgroundColor: Colors.WHITE,
+  },
   block: {
     width: Mixins.WINDOW_WIDTH - 20,
     height: 100,
     borderWidth: 1,
     borderColor: Colors.BLUE_DARK,
     borderRadius: 10,
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignSelf: 'center',
     marginVertical: 20,
   },
@@ -121,17 +98,13 @@ const styles = StyleSheet.create({
     color: Colors.BLUE_DARK,
     marginTop: 10,
   },
-  buttonCheck: {
-    width: 180,
-    justifyContent: 'center',
-    alignSelf: 'center',
-    backgroundColor: Colors.BLUE_LIGHT,
+  card: {
+    marginLeft: 10,
+    marginRight: 10,
     borderRadius: 10,
-    marginTop: 30,
-  },
-  textButton: {
-    fontSize: Typography.FONT_SIZE_16,
-    color: Colors.WHITE,
+    height: 200,
+    marginTop: 10,
+    justifyContent: 'space-evenly',
   },
   iconRight: {
     fontSize: 12,
@@ -139,4 +112,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 })
-export default WriteQuestion
+export default PronunticationQuestion

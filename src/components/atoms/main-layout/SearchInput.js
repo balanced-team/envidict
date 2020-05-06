@@ -25,9 +25,11 @@ const SearchInput = (props) => {
       />
       <TouchableOpacity
         onPress={() => {
-          setText('')
-          setKey('')
-          setWordList([])
+          if (setKey && setText && setWordList) {
+            setText('')
+            setKey('')
+            setWordList([])
+          }
         }}
       >
         <Icon name="close" />

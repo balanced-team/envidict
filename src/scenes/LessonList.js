@@ -7,16 +7,17 @@ import ListItemCourses from '../components/atoms/courses/ListItemCourses'
 import CurrentVocabularies from '../components/molecules/home/CurrentVocabularies'
 import Lesson from '../components/atoms/lesson/Lesson'
 import { Colors } from '../styles'
+import { RoutesConstants } from '../navigations/route-constants'
 
 const LessonList = ({ navigation }) => {
   const onClickPreView = () => {
-    navigation.navigate('LessonDetail')
+    navigation.navigate(RoutesConstants.LessonDetail)
   }
   const onClickPractise = () => {
-    navigation.navigate('MainLearning')
+    navigation.navigate(RoutesConstants.MainLearning)
   }
   const onClickLearnNow = () => {
-    navigation.navigate('LearnNow')
+    navigation.navigate(RoutesConstants.LearnNow)
   }
   return (
     <MainLayout>
