@@ -20,11 +20,11 @@ export class TopicStore {
 }
 
 class Topic {
-  @observable lessionColl = db.collection('lessions')
+  @observable lessonColl = db.collection('lessons')
   @observable id = ''
   @observable name = ''
-  @observable lessionIds = []
-  @observable lessions = []
+  @observable lessonIds = []
+  @observable lessons = []
 
   constructor(json) {
     this.fromJson(json)
@@ -37,20 +37,20 @@ class Topic {
 
   @action
   async fetch() {
-    const lessions = await Promise.all(
-      this.lessionIds.map(async (id) => {
-        const doc = await this.lessionColl.doc(id).get()
-        return new Lession({ id: doc.id, ...doc.data() })
+    const lessons = await Promise.all(
+      this.lessonIds.map(async (id) => {
+        const doc = await this.lessonColl.doc(id).get()
+        return new Lesson({ id: doc.id, ...doc.data() })
       })
     )
 
     runInAction(() => {
-      this.lessions = lessions
+      this.lessons = lessons
     })
   }
 }
 
-class Lession {
+class Lesson {
   @observable enviColl = db.collection('envi')
   @observable id = ''
   @observable wordIds = []
