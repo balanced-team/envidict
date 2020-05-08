@@ -4,7 +4,7 @@ import { Icon, Button } from 'native-base'
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input'
 
 import { Colors, Typography, Mixins } from '../../../styles'
-import { InstanceSpeaker } from '../../../utils/speaker'
+import { InstanceSpeaker } from '../../../utils'
 import WordInformation from './WordInformation'
 
 const WriteQuestion = (props) => {
@@ -38,7 +38,7 @@ const WriteQuestion = (props) => {
       setIsStop(true)
       setIsCorrect(true)
       increaseNumCorrect()
-      if (currentQuestionIndex === numQuestion) {
+      if (currentQuestionIndex === numQuestion - 1) {
         setIsDoneTest(true)
       }
     }

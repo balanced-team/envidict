@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import { View, Icon } from 'native-base'
 import HTMLView from 'react-native-htmlview'
 
 import { Colors } from '../../../styles/index'
-import { InstanceSpeaker } from '../../../utils/speaker'
+import { InstanceSpeaker } from '../../../utils'
+import { voiceStoreContext } from '../../../contexts'
 
 const DetailsView = (props) => {
   const { word } = props
+  const voiceStore = useContext(voiceStoreContext)
+
+  useEffect(() => {
+    if (voiceStore.autoSpeak) {
+      InstanceSpeaker.speak(word.word)
+    }
+  }, [word])
 
   const renderNode = (node, index, siblings, parent, defaultRenderer) => {
     if (node.name === 'h1' || node.name === 'h3') {

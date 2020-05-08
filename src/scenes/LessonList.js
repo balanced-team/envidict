@@ -34,7 +34,7 @@ const LessonList = ({ navigation }) => {
         info
         style={styles.buttonChange}
         onPress={() => {
-          navigation.push('Learning')
+          navigation.push(RoutesConstants.MainLearning)
         }}
       >
         <Icon name="exchange-alt" type="FontAwesome5" style={styles.iconChange} />

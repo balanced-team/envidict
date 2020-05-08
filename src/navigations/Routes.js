@@ -13,6 +13,7 @@ import OnlineTranslation from '../scenes/OnlineTranslation'
 import { Colors } from '../styles'
 import SearchWord from '../scenes/SearchWord'
 import { RoutesConstants } from './route-constants'
+import SettingsRight from '../components/atoms/navigations/SettingsRight'
 
 const Stack = createStackNavigator()
 const headerOptions = {
@@ -24,6 +25,7 @@ const headerOptions = {
     color: Colors.WHITE,
   },
   headerTintColor: Colors.WHITE,
+  headerRight: () => <SettingsRight />,
 }
 
 const Routes = () => {

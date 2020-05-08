@@ -1,5 +1,6 @@
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
+import { Colors } from '../../../styles'
 
 const TabBarIcon = (props) => {
   return (
@@ -7,7 +8,7 @@ const TabBarIcon = (props) => {
       name={props.name}
       size={30}
       style={{ marginBottom: -3 }}
-      color={props.focused ? '#000000' : '#d3d3d3'}
+      color={props.focused ? Colors.PRIMARY : '#d3d3d3'}
     />
   )
 }

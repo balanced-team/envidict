@@ -5,7 +5,7 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import SearchHeader from '../components/molecules/main-layout/SearchHeader'
 import { dictStoreContext } from '../contexts'
 import { RoutesConstants } from '../navigations/route-constants'
-import { InstanceSpeaker } from '../utils/speaker'
+import { InstanceSpeaker } from '../utils'
 import { AsyncStorage } from 'react-native'
 
 const SearchWord = ({ navigation }) => {

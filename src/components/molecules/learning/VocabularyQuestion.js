@@ -7,7 +7,7 @@ import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { QUESTION_TYPE } from '../../../constants'
 import WordInformation from './WordInformation'
-import { InstanceSpeaker } from '../../../utils/speaker'
+import { InstanceSpeaker } from '../../../utils'
 
 const VocabularyQuestion = (props) => {
   const {

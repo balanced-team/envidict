@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Text, StyleSheet, Alert, BackHandler } from 'react-native'
 import { ListItem, Icon, Left, Body, Right, Switch, Button, Content } from 'native-base'
 
 import MainLayout from '../components/templates/MainLayout'
 import { backHandleToExitApp } from '../utils'
 import { Colors, Typography } from '../styles'
+import { voiceStoreContext } from '../contexts'
 
 const Frame = (props) => {
   const { enable, nameIcon, toggleSwitch, content } = props
+
   return (
     <ListItem icon>
       <Left>
@@ -30,9 +32,10 @@ const Frame = (props) => {
 }
 
 const Settings = () => {
+  const voiceStore = useContext(voiceStoreContext)
   const [stateEnable, setStateEnable] = useState({
     quickSearch: false,
-    sound: false,
+    sound: !voiceStore.autoSpeak,
     notification: false,
     alertEveryDay: false,
   })
@@ -45,6 +48,9 @@ const Settings = () => {
   }
 
   const extractFrameProps = (key) => {
+    if (key === 'sound') {
+      voiceStore.toggleAutoSpeak()
+    }
     return {
       enable: stateEnable[key],
       toggleSwitch: (val) => toggleSwitch(key, val),
@@ -72,6 +78,7 @@ const Settings = () => {
         {...extractFrameProps('sound')}
         nameIcon="volume-high"
         content="Tự động phát âm"
+        enable={stateEnable.sound}
       />
       <ListItem icon>
         <Left>

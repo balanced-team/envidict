@@ -1,8 +1,9 @@
 import React from 'react'
 import { Form, Picker } from 'native-base'
+import { languages } from '../../../constants'
 
 const LanguagePicker = (props) => {
-  const { langs, defaultSelected, onChangeLang } = props
+  const { defaultSelected, onChangeLang } = props
   const onValueChange = (value) => {
     onChangeLang(value)
   }
@@ -15,7 +16,7 @@ const LanguagePicker = (props) => {
         selectedValue={defaultSelected}
         onValueChange={onValueChange}
       >
-        {langs.map((lang, index) => {
+        {languages.map((lang, index) => {
           return (
             <Picker.Item key={'word' + index} label={lang.label} value={lang.value} />
           )
