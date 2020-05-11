@@ -5,9 +5,10 @@ import * as Font from 'expo-font'
 import * as firebase from 'firebase/app'
 import 'firebase/firestore'
 import { Root } from 'native-base'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { StatusBar, StyleSheet, View } from 'react-native'
 import Routes from './src/navigations/Routes'
+import { topicStoreContext } from './src/contexts'
 
 if (!global.btoa) {
   global.btoa = encode
@@ -18,7 +19,9 @@ if (!global.atob) {
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
+  const topicStore = useContext(topicStoreContext)
 
+  topicStore.fetch()
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
@@ -44,17 +47,6 @@ const loadResourcesAsync = async () => {
     ...Ionicons.font,
     Roboto: require('native-base/Fonts/Roboto.ttf'),
     Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
-  })
-
-  firebase.initializeApp({
-    apiKey: 'AIzaSyDuVs4fMylajYaD400oHVKGtXZW3FT9Xss',
-    authDomain: 'envidict-4c249.firebaseapp.com',
-    databaseURL: 'https://envidict-4c249.firebaseio.com',
-    projectId: 'envidict-4c249',
-    storageBucket: 'envidict-4c249.appspot.com',
-    messagingSenderId: '17743148956',
-    appId: '1:17743148956:web:967ea767205aee123a3a59',
-    measurementId: 'G-X1497GR21T',
   })
 }
 

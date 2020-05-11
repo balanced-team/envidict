@@ -6,7 +6,7 @@ const ListItemCourses = (props) => {
   const { image, title, subTitle, onGoToLessonDetail } = props
 
   return (
-    <TouchableOpacity onPress={onGoToLessonDetail}>
+    <TouchableOpacity onPress={() => onGoToLessonDetail(props.id, props.image)}>
       <View style={styles.container}>
         <Image style={styles.image} source={{ uri: image }} />
         <View style={styles.subView}>
