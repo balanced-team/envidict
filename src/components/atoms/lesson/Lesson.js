@@ -20,7 +20,7 @@ const Lesson = (props) => {
     <Card style={styles.card}>
       <CardItem>
         <Body>
-          <Text style={styles.namLesson}>Chủ đề 1: Constracts</Text>
+          <Text style={styles.namLesson}>{props.name}</Text>
         </Body>
         <Right>
           <Icon active name="md-bookmark" type="Ionicons" style={styles.icon} />

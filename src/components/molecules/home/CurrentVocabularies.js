@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   StyleSheet,
   ProgressBarAndroid,
@@ -10,23 +10,28 @@ import { Colors } from '../../../styles'
 
 const CurrentVocabularies = (props) => {
   const { onClickPreView, onClickLearnNow, onClickPractise } = props
+
+  useEffect(() => {}, [props])
+
   return (
     <View>
       <Text style={styles.tittle}>Từ vựng phỏng vấn, xin việc</Text>
       <TouchableHighlight onPress={onClickPreView}>
         <View style={styles.card}>
-          <Text style={styles.lessonName}>Bài 1: Job search</Text>
+          <Text style={styles.lessonName}>{'Bài ' + (props.index + 1)}</Text>
           <Grid>
             <Col size={60}>
               <ProgressBarAndroid
                 styleAttr="Horizontal"
                 indeterminate={false}
-                progress={0.7}
+                progress={7 / 10}
                 color={Colors.SUCCESS}
               ></ProgressBarAndroid>
             </Col>
             <Col size={40}>
-              <Text style={styles.information}>Đã thuộc: 7/10</Text>
+              <Text style={styles.information}>
+                {'Đã thuộc: 7/' + props.wordIds.length}
+              </Text>
             </Col>
           </Grid>
           <View style={styles.buttons}>
@@ -37,7 +42,10 @@ const CurrentVocabularies = (props) => {
               <Text uppercase={false}>Học ngay</Text>
             </Button>
             <Button style={buttonStyle} small>
-              <Text uppercase={false} onPress={onClickPractise}>
+              <Text
+                uppercase={false}
+                onPress={() => onClickPractise(props.id, props.courseId)}
+              >
                 Luyện tập
               </Text>
             </Button>

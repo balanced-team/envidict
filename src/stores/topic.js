@@ -19,7 +19,7 @@ export class TopicStore {
   }
 }
 
-class Topic {
+export class Topic {
   @observable lessonColl = db.collection('lessons')
   @observable id = ''
   @observable name = ''

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Text, StyleSheet } from 'react-native'
 import { View, List, ListItem } from 'native-base'
 
 import { Typography, Colors } from '../../../styles'
 import ListItemCourses from './ListItemCourses'
+import { topicStoreContext } from '../../../contexts'
 
-const courses = [
+const coursesImages = [
   {
     image: 'https://cdn.iconicjob.vn/prod/wp-content/uploads/2018/01/%E1%BA%A3nh-1.jpg',
     title: 'Từ vựng phỏng vấn, xin việc',
@@ -39,19 +40,24 @@ const courses = [
     subTitle: 'Số bài học: 20',
   },
 ]
+
 const Courses = (props) => {
   const { coursesName, onGoToLessonDetail } = props
+
+  const topicStore = useContext(topicStoreContext)
+
   return (
     <View>
       <Text style={styles.coursesName}>{coursesName}</Text>
       <List>
-        {courses.map((course, i) => (
+        {topicStore.topics.map((course, i) => (
           <ListItem noIndent>
             <ListItemCourses
-              key={course.title}
-              image={course.image}
-              title={course.title}
-              subTitle={course.subTitle}
+              key={course.id}
+              id={course.id}
+              image={coursesImages[i].image}
+              title={course.name}
+              subTitle={'Số bài học: ' + course.lessonIds.length}
               onGoToLessonDetail={onGoToLessonDetail}
             />
           </ListItem>
