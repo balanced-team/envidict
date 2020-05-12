@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders icon book 1`] = `<Text />`;
+
+exports[`App renders icon heart 1`] = `<Text />`;
+
+exports[`App renders icon home 1`] = `<Text />`;
+
+exports[`App renders icon settings 1`] = `<Text />`;
+
+exports[`App renders the loading screen 1`] = `<Text />`;
+
+exports[`Loading navigation icons renders icon book 1`] = `<Text />`;
+
+exports[`Loading navigation icons renders icon heart 1`] = `<Text />`;
+
+exports[`Loading navigation icons renders icon home 1`] = `<Text />`;
+
+exports[`Loading navigation icons renders icon settings 1`] = `<Text />`;
