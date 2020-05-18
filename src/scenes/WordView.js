@@ -53,14 +53,14 @@ const WordView = ({ route, navigation }) => {
     <Container>
       <Tabs>
         <Tab
-          heading="Translate"
+          heading="Chi tiết"
           tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
           activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >
           <DetailsView isShowTranslate={true} word={word} />
         </Tab>
         <Tab
-          heading="Note"
+          heading="Ghi chú"
           tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
           activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >

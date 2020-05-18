@@ -4,11 +4,9 @@ import * as Speak from 'expo-speech'
 class Speaker {
   constructor() {
     this.speaker = Speak
-    this.rate = 1
-    this.pitch = 1
   }
 
-  speak(text, language) {
+  speak(text, language, rate, pitch) {
     // check if whether the speaker utility is currently speaking, stop it
     if (this.speaker.isSpeakingAsync()) {
       this.speaker.stop()
@@ -16,12 +14,12 @@ class Speaker {
 
     const options = {
       language: language ? language : 'en',
-      rate: this.rate,
-      pitch: this.pitch,
+      rate: rate ? rate : 1,
+      pitch: pitch ? pitch : 1,
     }
 
     this.speaker.speak(text, options)
   }
 }
 
-export const InstanceSpeaker = new Speaker()
+export default Speaker

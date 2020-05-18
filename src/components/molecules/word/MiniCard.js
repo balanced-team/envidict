@@ -4,7 +4,7 @@ import { Text, View, Icon } from 'native-base'
 
 import { Colors } from '../../../styles'
 import { FONT_SIZE_14 } from '../../../styles/typography'
-import { InstanceSpeaker } from '../../../utils/speaker'
+import { InstanceSpeaker } from '../../../utils'
 
 const MiniCard = (props) => {
   const { word, description } = props.data

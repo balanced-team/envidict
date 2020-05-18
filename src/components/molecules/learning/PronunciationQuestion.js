@@ -4,7 +4,7 @@ import { Icon, Card, Button } from 'native-base'
 
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
-import { InstanceSpeaker } from '../../../utils/speaker'
+import { InstanceSpeaker } from '../../../utils'
 import WordInformation from './WordInformation'
 
 const PronunticationQuestion = (props) => {

@@ -2,20 +2,28 @@ import { Button, Card, Icon } from 'native-base'
 import React, { useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import DetailView from '../components/organisms/word-view/DetailsView'
-import { dictStoreContext } from '../contexts'
+import { dictStoreContext, voiceStoreContext } from '../contexts'
 import { Colors, Mixins, Typography } from '../styles'
+import { InstanceSpeaker } from '../utils'
 
 const LearnNow = () => {
   const [isShowTranslate, setIsShowTranslate] = useState(true)
   const [isRemembered, setisRemembered] = useState(false)
   const [word, setWord] = useState({})
   const dictStore = useContext(dictStoreContext)
+  const voiceStore = useContext(voiceStoreContext)
+
   useEffect(() => {
     const run = async () => {
-      setWord(await dictStore.findWord('application'))
+      const data = await dictStore.findWord('application')
+
+      setWord(data)
+      if (voiceStore.autoSpeak) {
+        InstanceSpeaker.speak(data.word)
+      }
     }
     run()
-  })
+  }, [])
 
   const toggleShowTranslate = () => {
     setIsShowTranslate((preState) => !preState)
