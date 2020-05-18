@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Alert, BackHandler } from 'react-native'
 import { List } from 'native-base'
+import * as Animatable from 'react-native-animatable'
 
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'
@@ -64,12 +65,17 @@ const Vocabulary = ({ navigation }) => {
   return (
     <MainLayout voiceButtonIsVisible={true}>
       <List>
-        {arrVocabulary.map((item) => (
-          <ListItemVocabulary
+        {arrVocabulary.map((item, i) => (
+          <Animatable.View
+            animation="lightSpeedIn"
+            duration={500 + i * 500}
             key={'vocabulary-' + item.id}
-            nameVocabulary={item.name}
-            onPressListItem={() => navigation.navigate(RoutesConstants.ListWord)}
-          />
+          >
+            <ListItemVocabulary
+              nameVocabulary={item.name}
+              onPressListItem={() => navigation.navigate(RoutesConstants.ListWord)}
+            />
+          </Animatable.View>
         ))}
       </List>
     </MainLayout>
