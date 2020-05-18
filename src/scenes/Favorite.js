@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import * as Animatable from 'react-native-animatable'
 import { Alert, BackHandler, AsyncStorage } from 'react-native'
 import ListItemWord from '../components/molecules/favorite/ListItemWord'
 import MainLayout from '../components/templates/MainLayout'
@@ -47,12 +48,17 @@ const Favorite = ({ navigation }) => {
   return (
     <MainLayout voiceButtonIsVisible={true}>
       {wordDetailsList.map((word, i) => (
-        <ListItemWord
+        <Animatable.View
           key={'word' + i.toString()}
-          word={word}
-          onGoToWordView={onGoToWordView}
-          onRemoveFavoriteWord={onRemoveFavoriteWord}
-        />
+          animation="fadeInRight"
+          duration={700 + i * 1000}
+        >
+          <ListItemWord
+            word={word}
+            onGoToWordView={onGoToWordView}
+            onRemoveFavoriteWord={onRemoveFavoriteWord}
+          />
+        </Animatable.View>
       ))}
     </MainLayout>
   )

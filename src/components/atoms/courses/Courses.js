@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Text, StyleSheet } from 'react-native'
 import { View, List, ListItem } from 'native-base'
+import * as Animatable from 'react-native-animatable'
 
 import { Typography, Colors } from '../../../styles'
 import ListItemCourses from './ListItemCourses'
@@ -51,16 +52,18 @@ const Courses = (props) => {
       <Text style={styles.coursesName}>{coursesName}</Text>
       <List>
         {topicStore.topics.map((course, i) => (
-          <ListItem noIndent>
-            <ListItemCourses
-              key={course.id}
-              id={course.id}
-              image={coursesImages[i].image}
-              title={course.name}
-              subTitle={'Số bài học: ' + course.lessonIds.length}
-              onGoToLessonDetail={onGoToLessonDetail}
-            />
-          </ListItem>
+          <Animatable.View key={i} animation="flipInX" duration={500 + i * 500}>
+            <ListItem noIndent>
+              <ListItemCourses
+                key={course.id}
+                id={course.id}
+                image={coursesImages[i].image}
+                title={course.name}
+                subTitle={'Số bài học: ' + course.lessonIds.length}
+                onGoToLessonDetail={onGoToLessonDetail}
+              />
+            </ListItem>
+          </Animatable.View>
         ))}
       </List>
     </View>

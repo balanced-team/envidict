@@ -1,6 +1,8 @@
 import { List, ListItem, Text, View } from 'native-base'
 import React, { useContext, useEffect, useState } from 'react'
 import { StyleSheet, AsyncStorage } from 'react-native'
+import * as Animatable from 'react-native-animatable'
+
 import { dictStoreContext } from '../../../contexts'
 import { Colors } from '../../../styles'
 import MiniCard from '../word/MiniCard'
@@ -27,12 +29,15 @@ const RecentWords = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.tittle}>Tìm kiếm gần đây</Text>
+
       <List
         horizontal
         dataArray={recentWords}
         renderRow={(word, i) => (
           <ListItem noBorder key={i} onPress={() => onGoToWordView(word)}>
-            <MiniCard data={word} />
+            <Animatable.View animation="fadeInRight" delay={i * 1000} duration={500}>
+              <MiniCard data={word} />
+            </Animatable.View>
           </ListItem>
         )}
       ></List>
