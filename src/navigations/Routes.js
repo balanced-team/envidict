@@ -14,6 +14,7 @@ import { Colors } from '../styles'
 import SearchWord from '../scenes/SearchWord'
 import { RoutesConstants } from './route-constants'
 import SettingsRight from '../components/atoms/navigations/SettingsRight'
+import Learning from '../scenes/Learning'
 
 const Stack = createStackNavigator()
 const headerOptions = {
@@ -35,6 +36,11 @@ const Routes = () => {
         <Stack.Screen
           name="App"
           component={BottomTabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={RoutesConstants.Learning}
+          component={Learning}
           options={{ headerShown: false }}
         />
         <Stack.Screen

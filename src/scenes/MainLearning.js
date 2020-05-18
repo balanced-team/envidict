@@ -9,14 +9,18 @@ import WriteQuestion from '../components/molecules/learning/WriteQuestion'
 import { QUESTION_TYPE } from '../constants'
 import { Mixins, Colors, Typography } from '../styles'
 import { generateQuestionFromWord } from '../utils'
-import { dictStoreContext } from '../contexts'
+import { dictStoreContext, topicStoreContext } from '../contexts'
 import { useNavigation } from '@react-navigation/native'
 import Dialog from 'react-native-dialog'
 import { RoutesConstants } from '../navigations/route-constants'
 
-const words = ['human', 'hello', 'morning', 'sunny', 'bye', 'my']
+// const words = ['human', 'hello', 'morning', 'sunny', 'bye', 'my']
 
-const MainLearning = ({ navigation }) => {
+const MainLearning = (props) => {
+  const { id, courseId } = props.route.params
+
+  console.log(props.route.params)
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [loading, setLoading] = useState(true)
   const [numCorrect, setNumCorrect] = useState(0)
@@ -27,11 +31,16 @@ const MainLearning = ({ navigation }) => {
   const [refresh, setRefresh] = useState(false)
 
   const dictStore = useContext(dictStoreContext)
+  const topicStore = useContext(topicStoreContext)
 
   const navigator = useNavigation()
 
   useEffect(() => {
     const getWordList = async () => {
+      const currentCourse = await topicStore.topics.find((topic) => topic.id === courseId)
+      const currentLesson = await currentCourse.lessons.find((lesson) => lesson.id === id)
+      await currentLesson.fetch()
+      const words = currentLesson.wordIds
       const wordList = []
       for (let i = 0; i < words.length; i++) {
         wordList.push(await dictStore.findWord(words[i]))
@@ -57,7 +66,7 @@ const MainLearning = ({ navigation }) => {
     setIsStop(false)
     setNumCorrect(0)
     setCurrentQuestionIndex(0)
-  }, [refresh])
+  }, [refresh, props.route.params])
 
   const toNextQuestion = () => {
     const nextIndex = currentQuestionIndex + 1

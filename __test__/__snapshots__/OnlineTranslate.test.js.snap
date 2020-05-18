@@ -1,0 +1,3512 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Online translate renders online translation screen 1`] = `
+<RCTScrollView
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "borderColor": "#1c74bb",
+            "borderRadius": 10,
+            "borderWidth": 1,
+            "flexDirection": "column",
+            "margin": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "alignSelf": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <Text />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "alignSelf": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <Text />
+          </View>
+        </View>
+      </View>
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        multiline={true}
+        onChangeText={[Function]}
+        placeholder="Nhập để dịch"
+        placeholderTextColor="#d9d9d9"
+        rejectResponderTermination={true}
+        rowSpan={5}
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 20,
+            "height": 125,
+            "paddingLeft": 10,
+            "paddingRight": 5,
+            "textAlignVertical": "top",
+          }
+        }
+        underlineColorAndroid="rgba(0,0,0,0)"
+        value="Hello"
+      />
+    </View>
+    <View
+      style={Object {}}
+    >
+      <View
+        style={
+          Array [
+            Object {},
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-around",
+            },
+          ]
+        }
+      >
+        <View
+          style={Object {}}
+        >
+          <View>
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomWidth": null,
+                  "borderColor": "#007aff",
+                  "borderLeftWidth": null,
+                  "borderRadius": 5,
+                  "borderRightWidth": null,
+                  "borderTopWidth": null,
+                  "borderWidth": undefined,
+                  "elevation": 0,
+                  "flexDirection": "row",
+                  "height": 45,
+                  "justifyContent": "space-between",
+                  "opacity": 1,
+                  "paddingBottom": 6,
+                  "paddingTop": 6,
+                  "shadowColor": null,
+                  "shadowOffset": null,
+                  "shadowOpacity": null,
+                  "shadowRadius": null,
+                  "width": 140,
+                }
+              }
+            >
+              <Text
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16.5,
+                      "marginLeft": 0,
+                      "marginRight": 0,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                    },
+                    undefined,
+                  ]
+                }
+                uppercase={false}
+              >
+                Tiếng Anh
+              </Text>
+            </View>
+            <Modal
+              animationType="slide"
+              hardwareAccelerated={false}
+              onRequestClose={[Function]}
+              supportedOrientations={
+                Array [
+                  "portrait",
+                  "landscape",
+                ]
+              }
+              transparent={false}
+              visible={false}
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "flex": 1,
+                    "height": 1334,
+                  }
+                }
+              >
+                <View
+                  onLayout={[Function]}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#F8F8F8",
+                        "borderBottomColor": "#a7a6ab",
+                        "borderBottomWidth": 0.5,
+                        "elevation": 3,
+                        "flexDirection": "row",
+                        "height": 64,
+                        "justifyContent": "center",
+                        "left": 0,
+                        "paddingLeft": 6,
+                        "paddingRight": 10,
+                        "paddingTop": 18,
+                        "right": 0,
+                        "shadowColor": undefined,
+                        "shadowOffset": undefined,
+                        "shadowOpacity": undefined,
+                        "shadowRadius": undefined,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "flex-start",
+                          "alignSelf": "center",
+                          "flex": 1,
+                        }
+                      }
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "alignSelf": null,
+                            "backgroundColor": "transparent",
+                            "borderBottomWidth": null,
+                            "borderColor": null,
+                            "borderLeftWidth": null,
+                            "borderRadius": 5,
+                            "borderRightWidth": null,
+                            "borderTopWidth": null,
+                            "borderWidth": undefined,
+                            "elevation": 0,
+                            "flexDirection": "row",
+                            "height": 45,
+                            "justifyContent": "space-between",
+                            "marginLeft": 3,
+                            "opacity": 1,
+                            "paddingBottom": 6,
+                            "paddingLeft": 4,
+                            "paddingRight": 6,
+                            "paddingTop": 6,
+                            "shadowColor": null,
+                            "shadowOffset": null,
+                            "shadowOpacity": null,
+                            "shadowRadius": null,
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#007aff",
+                              "fontFamily": "System",
+                              "fontSize": 17,
+                              "marginLeft": 0,
+                              "marginRight": 0,
+                              "paddingLeft": 2,
+                              "paddingRight": undefined,
+                              "top": 1,
+                            }
+                          }
+                          uppercase={false}
+                        >
+                          Back
+                        </Text>
+                      </View>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "alignSelf": "center",
+                          "flex": 1,
+                        }
+                      }
+                    >
+                      <Text
+                        numberOfLines={1}
+                        style={
+                          Object {
+                            "color": "#000",
+                            "fontFamily": "System",
+                            "fontSize": 17,
+                            "fontWeight": "700",
+                            "marginLeft": undefined,
+                            "paddingLeft": 4,
+                            "paddingTop": 1,
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        Select One
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "flex-end",
+                          "alignSelf": "center",
+                          "flex": 1,
+                          "flexDirection": "row",
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                    />
+                  </View>
+                </View>
+                <RCTScrollView
+                  data={
+                    Array [
+                      <Item
+                        label="Tiếng Việt"
+                        value="vi"
+                      />,
+                      <Item
+                        label="Tiếng Anh"
+                        value="en"
+                      />,
+                      <Item
+                        label="Tiếng Nhật"
+                        value="ja"
+                      />,
+                      <Item
+                        label="Tiếng Trung"
+                        value="zh"
+                      />,
+                      <Item
+                        label="Tiếng Nam Phi"
+                        value="af"
+                      />,
+                      <Item
+                        label="Tiếng Amharic "
+                        value="am"
+                      />,
+                      <Item
+                        label="Tiếng Ả Rập"
+                        value="ar"
+                      />,
+                      <Item
+                        label="Tiếng Azerbaijani"
+                        value="az"
+                      />,
+                      <Item
+                        label="Tiếng Bashkir"
+                        value="ba"
+                      />,
+                      <Item
+                        label="Tiếng Belarus"
+                        value="be"
+                      />,
+                      <Item
+                        label="Tiếng Bulgari"
+                        value="bg"
+                      />,
+                      <Item
+                        label="Tiếng Bengali"
+                        value="bn"
+                      />,
+                      <Item
+                        label="Tiếng Bosni"
+                        value="bs"
+                      />,
+                      <Item
+                        label="Tiếng Catalan"
+                        value="ca"
+                      />,
+                      <Item
+                        label="Tiếng Cebuano"
+                        value="ceb"
+                      />,
+                      <Item
+                        label="Tiếng Séc"
+                        value="cs"
+                      />,
+                      <Item
+                        label="Tiếng Chuvash"
+                        value="cv"
+                      />,
+                      <Item
+                        label="Tiếng Wales"
+                        value="cy"
+                      />,
+                      <Item
+                        label="Tiếng Đan Mạch"
+                        value="da"
+                      />,
+                      <Item
+                        label="Tiếng Đức"
+                        value="de"
+                      />,
+                      <Item
+                        label="Tiếng Hi Lạp"
+                        value="el"
+                      />,
+                      <Item
+                        label="Tiếng Esperanto"
+                        value="eo"
+                      />,
+                      <Item
+                        label="Tiếng Tây Ban Nha"
+                        value="es"
+                      />,
+                      <Item
+                        label="Tiếng Estonia"
+                        value="et"
+                      />,
+                      <Item
+                        label="Tiếng xứ Basque"
+                        value="eu"
+                      />,
+                      <Item
+                        label="Tiếng Ba Tư"
+                        value="fa"
+                      />,
+                      <Item
+                        label="Tiếng Phần Lan"
+                        value="fi"
+                      />,
+                      <Item
+                        label="Tiếng Pháp"
+                        value="fr"
+                      />,
+                      <Item
+                        label="Tiếng Ailen"
+                        value="ga"
+                      />,
+                      <Item
+                        label="Tiếng Gaelic Scotland"
+                        value="gd"
+                      />,
+                      <Item
+                        label="Tiếng Galician"
+                        value="gl"
+                      />,
+                      <Item
+                        label="Tiếng Gujarati"
+                        value="gu"
+                      />,
+                      <Item
+                        label="Tiếng Do Thái"
+                        value="he"
+                      />,
+                      <Item
+                        label="Tiếng Hindi"
+                        value="hi"
+                      />,
+                      <Item
+                        label="Tiếng Croatian"
+                        value="hr"
+                      />,
+                      <Item
+                        label="Tiếng Haiti"
+                        value="ht"
+                      />,
+                      <Item
+                        label="Tiếng Hungari"
+                        value="hu"
+                      />,
+                      <Item
+                        label="Tiếng Armenian"
+                        value="hy"
+                      />,
+                      <Item
+                        label="Tiếng Indonesia"
+                        value="id"
+                      />,
+                      <Item
+                        label="Tiếng Iceland"
+                        value="is"
+                      />,
+                      <Item
+                        label="Tiếng Ý"
+                        value="it"
+                      />,
+                      <Item
+                        label="Tiếng Java"
+                        value="jv"
+                      />,
+                      <Item
+                        label="Tiếng Georgia"
+                        value="ka"
+                      />,
+                      <Item
+                        label="Tiếng Kazakhstan"
+                        value="kk"
+                      />,
+                      <Item
+                        label="Tiếng Khmer"
+                        value="km"
+                      />,
+                      <Item
+                        label="Tiếng Kannada"
+                        value="kn"
+                      />,
+                      <Item
+                        label="Tiếng Hàn"
+                        value="ko"
+                      />,
+                      <Item
+                        label="Tiếng Kyrgyz"
+                        value="ky"
+                      />,
+                      <Item
+                        label="Tiếng Latin"
+                        value="la"
+                      />,
+                      <Item
+                        label="Tiếng Do Thái"
+                        value="lb"
+                      />,
+                      <Item
+                        label="Tiếng Lào"
+                        value="lo"
+                      />,
+                      <Item
+                        label="Tiếng  Litva"
+                        value="lt"
+                      />,
+                      <Item
+                        label="Tiếng Latvia"
+                        value="lv"
+                      />,
+                      <Item
+                        label="Tiếng Malagasy"
+                        value="mg"
+                      />,
+                      <Item
+                        label="Tiếng Mari"
+                        value="mhr"
+                      />,
+                      <Item
+                        label="Tiếng Maori"
+                        value="mi"
+                      />,
+                      <Item
+                        label="Tiếng Macedonia"
+                        value="mk"
+                      />,
+                      <Item
+                        label="Tiếng Malayalam"
+                        value="ml"
+                      />,
+                      <Item
+                        label="Tiếng Mông cổ"
+                        value="mn"
+                      />,
+                      <Item
+                        label="Tiếng Marathi"
+                        value="mr"
+                      />,
+                      <Item
+                        label="Tiếng Hill Mari"
+                        value="mrj"
+                      />,
+                      <Item
+                        label="Tiếng Mã Lai"
+                        value="ms"
+                      />,
+                      <Item
+                        label="Tiếng Malta"
+                        value="mt"
+                      />,
+                      <Item
+                        label="Tiếng Miến Điện"
+                        value="my"
+                      />,
+                      <Item
+                        label="Tiếng Nepal"
+                        value="ne"
+                      />,
+                      <Item
+                        label="Tiếng Hà Lan"
+                        value="nl"
+                      />,
+                      <Item
+                        label="Tiếng Na Uy"
+                        value="no"
+                      />,
+                      <Item
+                        label="Tiếng  Ba Tư"
+                        value="pa"
+                      />,
+                      <Item
+                        label="Tiếng Papiamento"
+                        value="pap"
+                      />,
+                      <Item
+                        label="Tiếng Ba Lan"
+                        value="pl"
+                      />,
+                      <Item
+                        label="Tiếng Bồ Đào Nha"
+                        value="pt"
+                      />,
+                      <Item
+                        label="Tiếng Rumani"
+                        value="ro"
+                      />,
+                      <Item
+                        label="Tiếng Nga"
+                        value="ru"
+                      />,
+                      <Item
+                        label="Yakut"
+                        value="sah"
+                      />,
+                      <Item
+                        label="Tiếng Sinhalese"
+                        value="si"
+                      />,
+                      <Item
+                        label="Tiếng Slovak"
+                        value="sk"
+                      />,
+                      <Item
+                        label="Tiếng Slovenia"
+                        value="sl"
+                      />,
+                      <Item
+                        label="Tiếng Albania"
+                        value="sq"
+                      />,
+                      <Item
+                        label="Tiếng Serbia"
+                        value="sr"
+                      />,
+                      <Item
+                        label="Tiếng Sundan"
+                        value="su"
+                      />,
+                      <Item
+                        label="Tiếng Thụy Điển"
+                        value="sv"
+                      />,
+                      <Item
+                        label="Tiếng Swahili"
+                        value="sw"
+                      />,
+                      <Item
+                        label="Tiếng Tamil"
+                        value="ta"
+                      />,
+                      <Item
+                        label="Tiếng Telugu"
+                        value="te"
+                      />,
+                      <Item
+                        label="Tiếng Tajik"
+                        value="tg"
+                      />,
+                      <Item
+                        label="Tiếng Thái"
+                        value="th"
+                      />,
+                      <Item
+                        label="Tiếng Tagalog"
+                        value="tl"
+                      />,
+                      <Item
+                        label="Tiếng Thổ Nhĩ Kỳ"
+                        value="tr"
+                      />,
+                      <Item
+                        label="Tiếng Tatar"
+                        value="tt"
+                      />,
+                      <Item
+                        label="Tiếng Udmurt"
+                        value="udm"
+                      />,
+                      <Item
+                        label="Tiếng Ukraina"
+                        value="uk"
+                      />,
+                      <Item
+                        label="Tiếng Urdu"
+                        value="ur"
+                      />,
+                      <Item
+                        label="Tiếng Uzbek"
+                        value="uz"
+                      />,
+                      <Item
+                        label="Tiếng Xhosa"
+                        value="xh"
+                      />,
+                      <Item
+                        label="Yiddish"
+                        value="yi"
+                      />,
+                    ]
+                  }
+                  disableVirtualization={false}
+                  getItem={[Function]}
+                  getItemCount={[Function]}
+                  horizontal={false}
+                  initialNumToRender={10}
+                  keyExtractor={[Function]}
+                  maxToRenderPerBatch={10}
+                  numColumns={1}
+                  onContentSizeChange={[Function]}
+                  onEndReachedThreshold={2}
+                  onLayout={[Function]}
+                  onMomentumScrollEnd={[Function]}
+                  onScroll={[Function]}
+                  onScrollBeginDrag={[Function]}
+                  onScrollEndDrag={[Function]}
+                  removeClippedSubviews={false}
+                  renderItem={[Function]}
+                  scrollEventThrottle={50}
+                  stickyHeaderIndices={Array []}
+                  updateCellsBatchingPeriod={50}
+                  viewabilityConfigCallbackPairs={Array []}
+                  windowSize={21}
+                >
+                  <View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Việt
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={true}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#007aff",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Anh
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            >
+                              <Text />
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Nhật
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Trung
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Nam Phi
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Amharic 
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Ả Rập
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Azerbaijani
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Bashkir
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Belarus
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "height": 0,
+                        }
+                      }
+                    />
+                  </View>
+                </RCTScrollView>
+              </View>
+            </Modal>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text />
+        </View>
+        <View
+          style={Object {}}
+        >
+          <View>
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomWidth": null,
+                  "borderColor": "#007aff",
+                  "borderLeftWidth": null,
+                  "borderRadius": 5,
+                  "borderRightWidth": null,
+                  "borderTopWidth": null,
+                  "borderWidth": undefined,
+                  "elevation": 0,
+                  "flexDirection": "row",
+                  "height": 45,
+                  "justifyContent": "space-between",
+                  "opacity": 1,
+                  "paddingBottom": 6,
+                  "paddingTop": 6,
+                  "shadowColor": null,
+                  "shadowOffset": null,
+                  "shadowOpacity": null,
+                  "shadowRadius": null,
+                  "width": 140,
+                }
+              }
+            >
+              <Text
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16.5,
+                      "marginLeft": 0,
+                      "marginRight": 0,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                    },
+                    undefined,
+                  ]
+                }
+                uppercase={false}
+              >
+                Tiếng Việt
+              </Text>
+            </View>
+            <Modal
+              animationType="slide"
+              hardwareAccelerated={false}
+              onRequestClose={[Function]}
+              supportedOrientations={
+                Array [
+                  "portrait",
+                  "landscape",
+                ]
+              }
+              transparent={false}
+              visible={false}
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "flex": 1,
+                    "height": 1334,
+                  }
+                }
+              >
+                <View
+                  onLayout={[Function]}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#F8F8F8",
+                        "borderBottomColor": "#a7a6ab",
+                        "borderBottomWidth": 0.5,
+                        "elevation": 3,
+                        "flexDirection": "row",
+                        "height": 64,
+                        "justifyContent": "center",
+                        "left": 0,
+                        "paddingLeft": 6,
+                        "paddingRight": 10,
+                        "paddingTop": 18,
+                        "right": 0,
+                        "shadowColor": undefined,
+                        "shadowOffset": undefined,
+                        "shadowOpacity": undefined,
+                        "shadowRadius": undefined,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "flex-start",
+                          "alignSelf": "center",
+                          "flex": 1,
+                        }
+                      }
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "alignSelf": null,
+                            "backgroundColor": "transparent",
+                            "borderBottomWidth": null,
+                            "borderColor": null,
+                            "borderLeftWidth": null,
+                            "borderRadius": 5,
+                            "borderRightWidth": null,
+                            "borderTopWidth": null,
+                            "borderWidth": undefined,
+                            "elevation": 0,
+                            "flexDirection": "row",
+                            "height": 45,
+                            "justifyContent": "space-between",
+                            "marginLeft": 3,
+                            "opacity": 1,
+                            "paddingBottom": 6,
+                            "paddingLeft": 4,
+                            "paddingRight": 6,
+                            "paddingTop": 6,
+                            "shadowColor": null,
+                            "shadowOffset": null,
+                            "shadowOpacity": null,
+                            "shadowRadius": null,
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "#007aff",
+                              "fontFamily": "System",
+                              "fontSize": 17,
+                              "marginLeft": 0,
+                              "marginRight": 0,
+                              "paddingLeft": 2,
+                              "paddingRight": undefined,
+                              "top": 1,
+                            }
+                          }
+                          uppercase={false}
+                        >
+                          Back
+                        </Text>
+                      </View>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "alignSelf": "center",
+                          "flex": 1,
+                        }
+                      }
+                    >
+                      <Text
+                        numberOfLines={1}
+                        style={
+                          Object {
+                            "color": "#000",
+                            "fontFamily": "System",
+                            "fontSize": 17,
+                            "fontWeight": "700",
+                            "marginLeft": undefined,
+                            "paddingLeft": 4,
+                            "paddingTop": 1,
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        Select One
+                      </Text>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "flex-end",
+                          "alignSelf": "center",
+                          "flex": 1,
+                          "flexDirection": "row",
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                    />
+                  </View>
+                </View>
+                <RCTScrollView
+                  data={
+                    Array [
+                      <Item
+                        label="Tiếng Việt"
+                        value="vi"
+                      />,
+                      <Item
+                        label="Tiếng Anh"
+                        value="en"
+                      />,
+                      <Item
+                        label="Tiếng Nhật"
+                        value="ja"
+                      />,
+                      <Item
+                        label="Tiếng Trung"
+                        value="zh"
+                      />,
+                      <Item
+                        label="Tiếng Nam Phi"
+                        value="af"
+                      />,
+                      <Item
+                        label="Tiếng Amharic "
+                        value="am"
+                      />,
+                      <Item
+                        label="Tiếng Ả Rập"
+                        value="ar"
+                      />,
+                      <Item
+                        label="Tiếng Azerbaijani"
+                        value="az"
+                      />,
+                      <Item
+                        label="Tiếng Bashkir"
+                        value="ba"
+                      />,
+                      <Item
+                        label="Tiếng Belarus"
+                        value="be"
+                      />,
+                      <Item
+                        label="Tiếng Bulgari"
+                        value="bg"
+                      />,
+                      <Item
+                        label="Tiếng Bengali"
+                        value="bn"
+                      />,
+                      <Item
+                        label="Tiếng Bosni"
+                        value="bs"
+                      />,
+                      <Item
+                        label="Tiếng Catalan"
+                        value="ca"
+                      />,
+                      <Item
+                        label="Tiếng Cebuano"
+                        value="ceb"
+                      />,
+                      <Item
+                        label="Tiếng Séc"
+                        value="cs"
+                      />,
+                      <Item
+                        label="Tiếng Chuvash"
+                        value="cv"
+                      />,
+                      <Item
+                        label="Tiếng Wales"
+                        value="cy"
+                      />,
+                      <Item
+                        label="Tiếng Đan Mạch"
+                        value="da"
+                      />,
+                      <Item
+                        label="Tiếng Đức"
+                        value="de"
+                      />,
+                      <Item
+                        label="Tiếng Hi Lạp"
+                        value="el"
+                      />,
+                      <Item
+                        label="Tiếng Esperanto"
+                        value="eo"
+                      />,
+                      <Item
+                        label="Tiếng Tây Ban Nha"
+                        value="es"
+                      />,
+                      <Item
+                        label="Tiếng Estonia"
+                        value="et"
+                      />,
+                      <Item
+                        label="Tiếng xứ Basque"
+                        value="eu"
+                      />,
+                      <Item
+                        label="Tiếng Ba Tư"
+                        value="fa"
+                      />,
+                      <Item
+                        label="Tiếng Phần Lan"
+                        value="fi"
+                      />,
+                      <Item
+                        label="Tiếng Pháp"
+                        value="fr"
+                      />,
+                      <Item
+                        label="Tiếng Ailen"
+                        value="ga"
+                      />,
+                      <Item
+                        label="Tiếng Gaelic Scotland"
+                        value="gd"
+                      />,
+                      <Item
+                        label="Tiếng Galician"
+                        value="gl"
+                      />,
+                      <Item
+                        label="Tiếng Gujarati"
+                        value="gu"
+                      />,
+                      <Item
+                        label="Tiếng Do Thái"
+                        value="he"
+                      />,
+                      <Item
+                        label="Tiếng Hindi"
+                        value="hi"
+                      />,
+                      <Item
+                        label="Tiếng Croatian"
+                        value="hr"
+                      />,
+                      <Item
+                        label="Tiếng Haiti"
+                        value="ht"
+                      />,
+                      <Item
+                        label="Tiếng Hungari"
+                        value="hu"
+                      />,
+                      <Item
+                        label="Tiếng Armenian"
+                        value="hy"
+                      />,
+                      <Item
+                        label="Tiếng Indonesia"
+                        value="id"
+                      />,
+                      <Item
+                        label="Tiếng Iceland"
+                        value="is"
+                      />,
+                      <Item
+                        label="Tiếng Ý"
+                        value="it"
+                      />,
+                      <Item
+                        label="Tiếng Java"
+                        value="jv"
+                      />,
+                      <Item
+                        label="Tiếng Georgia"
+                        value="ka"
+                      />,
+                      <Item
+                        label="Tiếng Kazakhstan"
+                        value="kk"
+                      />,
+                      <Item
+                        label="Tiếng Khmer"
+                        value="km"
+                      />,
+                      <Item
+                        label="Tiếng Kannada"
+                        value="kn"
+                      />,
+                      <Item
+                        label="Tiếng Hàn"
+                        value="ko"
+                      />,
+                      <Item
+                        label="Tiếng Kyrgyz"
+                        value="ky"
+                      />,
+                      <Item
+                        label="Tiếng Latin"
+                        value="la"
+                      />,
+                      <Item
+                        label="Tiếng Do Thái"
+                        value="lb"
+                      />,
+                      <Item
+                        label="Tiếng Lào"
+                        value="lo"
+                      />,
+                      <Item
+                        label="Tiếng  Litva"
+                        value="lt"
+                      />,
+                      <Item
+                        label="Tiếng Latvia"
+                        value="lv"
+                      />,
+                      <Item
+                        label="Tiếng Malagasy"
+                        value="mg"
+                      />,
+                      <Item
+                        label="Tiếng Mari"
+                        value="mhr"
+                      />,
+                      <Item
+                        label="Tiếng Maori"
+                        value="mi"
+                      />,
+                      <Item
+                        label="Tiếng Macedonia"
+                        value="mk"
+                      />,
+                      <Item
+                        label="Tiếng Malayalam"
+                        value="ml"
+                      />,
+                      <Item
+                        label="Tiếng Mông cổ"
+                        value="mn"
+                      />,
+                      <Item
+                        label="Tiếng Marathi"
+                        value="mr"
+                      />,
+                      <Item
+                        label="Tiếng Hill Mari"
+                        value="mrj"
+                      />,
+                      <Item
+                        label="Tiếng Mã Lai"
+                        value="ms"
+                      />,
+                      <Item
+                        label="Tiếng Malta"
+                        value="mt"
+                      />,
+                      <Item
+                        label="Tiếng Miến Điện"
+                        value="my"
+                      />,
+                      <Item
+                        label="Tiếng Nepal"
+                        value="ne"
+                      />,
+                      <Item
+                        label="Tiếng Hà Lan"
+                        value="nl"
+                      />,
+                      <Item
+                        label="Tiếng Na Uy"
+                        value="no"
+                      />,
+                      <Item
+                        label="Tiếng  Ba Tư"
+                        value="pa"
+                      />,
+                      <Item
+                        label="Tiếng Papiamento"
+                        value="pap"
+                      />,
+                      <Item
+                        label="Tiếng Ba Lan"
+                        value="pl"
+                      />,
+                      <Item
+                        label="Tiếng Bồ Đào Nha"
+                        value="pt"
+                      />,
+                      <Item
+                        label="Tiếng Rumani"
+                        value="ro"
+                      />,
+                      <Item
+                        label="Tiếng Nga"
+                        value="ru"
+                      />,
+                      <Item
+                        label="Yakut"
+                        value="sah"
+                      />,
+                      <Item
+                        label="Tiếng Sinhalese"
+                        value="si"
+                      />,
+                      <Item
+                        label="Tiếng Slovak"
+                        value="sk"
+                      />,
+                      <Item
+                        label="Tiếng Slovenia"
+                        value="sl"
+                      />,
+                      <Item
+                        label="Tiếng Albania"
+                        value="sq"
+                      />,
+                      <Item
+                        label="Tiếng Serbia"
+                        value="sr"
+                      />,
+                      <Item
+                        label="Tiếng Sundan"
+                        value="su"
+                      />,
+                      <Item
+                        label="Tiếng Thụy Điển"
+                        value="sv"
+                      />,
+                      <Item
+                        label="Tiếng Swahili"
+                        value="sw"
+                      />,
+                      <Item
+                        label="Tiếng Tamil"
+                        value="ta"
+                      />,
+                      <Item
+                        label="Tiếng Telugu"
+                        value="te"
+                      />,
+                      <Item
+                        label="Tiếng Tajik"
+                        value="tg"
+                      />,
+                      <Item
+                        label="Tiếng Thái"
+                        value="th"
+                      />,
+                      <Item
+                        label="Tiếng Tagalog"
+                        value="tl"
+                      />,
+                      <Item
+                        label="Tiếng Thổ Nhĩ Kỳ"
+                        value="tr"
+                      />,
+                      <Item
+                        label="Tiếng Tatar"
+                        value="tt"
+                      />,
+                      <Item
+                        label="Tiếng Udmurt"
+                        value="udm"
+                      />,
+                      <Item
+                        label="Tiếng Ukraina"
+                        value="uk"
+                      />,
+                      <Item
+                        label="Tiếng Urdu"
+                        value="ur"
+                      />,
+                      <Item
+                        label="Tiếng Uzbek"
+                        value="uz"
+                      />,
+                      <Item
+                        label="Tiếng Xhosa"
+                        value="xh"
+                      />,
+                      <Item
+                        label="Yiddish"
+                        value="yi"
+                      />,
+                    ]
+                  }
+                  disableVirtualization={false}
+                  getItem={[Function]}
+                  getItemCount={[Function]}
+                  horizontal={false}
+                  initialNumToRender={10}
+                  keyExtractor={[Function]}
+                  maxToRenderPerBatch={10}
+                  numColumns={1}
+                  onContentSizeChange={[Function]}
+                  onEndReachedThreshold={2}
+                  onLayout={[Function]}
+                  onMomentumScrollEnd={[Function]}
+                  onScroll={[Function]}
+                  onScrollBeginDrag={[Function]}
+                  onScrollEndDrag={[Function]}
+                  removeClippedSubviews={false}
+                  renderItem={[Function]}
+                  scrollEventThrottle={50}
+                  stickyHeaderIndices={Array []}
+                  updateCellsBatchingPeriod={50}
+                  viewabilityConfigCallbackPairs={Array []}
+                  windowSize={21}
+                >
+                  <View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={true}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#007aff",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Việt
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            >
+                              <Text />
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Anh
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Nhật
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Trung
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Nam Phi
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Amharic 
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Ả Rập
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Azerbaijani
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Bashkir
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      onLayout={[Function]}
+                      style={null}
+                    >
+                      <View
+                        accessible={true}
+                        focusable={true}
+                        isTVSelectable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={null}
+                      >
+                        <View
+                          button={true}
+                          onPress={[Function]}
+                          selected={false}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderBottomWidth": 0.5,
+                              "borderColor": "#c9c9c9",
+                              "flexDirection": "row",
+                              "marginLeft": 16,
+                              "paddingBottom": 13,
+                              "paddingRight": 16,
+                              "paddingTop": 13,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-start",
+                                "alignSelf": "center",
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#000",
+                                  "fontFamily": "System",
+                                  "fontSize": 16,
+                                }
+                              }
+                              uppercase={false}
+                            >
+                              Tiếng Belarus
+                            </Text>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "flex-end",
+                                "alignSelf": "center",
+                                "flex": 0.28,
+                                "paddingBottom": null,
+                                "paddingLeft": null,
+                                "paddingRight": null,
+                                "paddingTop": null,
+                              }
+                            }
+                          >
+                            <View
+                              accessible={true}
+                              focusable={false}
+                              isTVSelectable={true}
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Object {
+                                  "alignSelf": null,
+                                  "opacity": 1,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "height": 0,
+                        }
+                      }
+                    />
+                  </View>
+                </RCTScrollView>
+              </View>
+            </Modal>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "borderTopColor": "#FFFFFF",
+            "elevation": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0,
+            "shadowRadius": 0,
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#1c74bb",
+            "borderBottomWidth": null,
+            "borderColor": "#007aff",
+            "borderLeftWidth": null,
+            "borderRadius": 57,
+            "borderRightWidth": null,
+            "borderTopWidth": null,
+            "borderWidth": undefined,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "opacity": 1,
+            "paddingBottom": 6,
+            "paddingTop": 6,
+            "shadowColor": undefined,
+            "shadowOffset": undefined,
+            "shadowOpacity": undefined,
+            "shadowRadius": undefined,
+            "width": 150,
+          }
+        }
+      >
+        <Text />
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#fff",
+                "fontFamily": "System",
+                "fontSize": 16.5,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+              },
+              Object {
+                "fontSize": 16,
+              },
+            ]
+          }
+          uppercase={false}
+        >
+          Dịch
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "borderColor": "#1c74bb",
+            "borderRadius": 10,
+            "borderWidth": 1,
+            "flexDirection": "column",
+            "margin": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "alignSelf": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <Text />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "alignSelf": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <Text />
+          </View>
+        </View>
+      </View>
+      <TextInput
+        allowFontScaling={true}
+        disabled={true}
+        editable={false}
+        multiline={true}
+        placeholderTextColor="#d9d9d9"
+        rejectResponderTermination={true}
+        rowSpan={5}
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 20,
+            "height": 125,
+            "paddingLeft": 10,
+            "paddingRight": 5,
+            "textAlignVertical": "top",
+          }
+        }
+        underlineColorAndroid="rgba(0,0,0,0)"
+        value=""
+      />
+    </View>
+  </View>
+</RCTScrollView>
+`;

@@ -8,4 +8,5 @@ export const RoutesConstants = {
   ListWord: 'Danh sách từ vựng',
   OnlineTranslation: 'Dịch online',
   SearchWord: 'Tìm kiếm',
+  Learning: 'Learning',
 }

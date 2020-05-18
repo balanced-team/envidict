@@ -1,2 +1,3 @@
-export { default as DictStore } from './dict'
 export { default as VoiceStore } from './voice'
+export { DictStore } from './dict'
+export { TopicStore } from './topic'

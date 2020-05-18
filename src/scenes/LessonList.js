@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Alert, BackHandler, StyleSheet, Text, View } from 'react-native'
 import { List, Separator, Button, Icon } from 'native-base'
 
@@ -8,24 +8,63 @@ import CurrentVocabularies from '../components/molecules/home/CurrentVocabularie
 import Lesson from '../components/atoms/lesson/Lesson'
 import { Colors } from '../styles'
 import { RoutesConstants } from '../navigations/route-constants'
+import { topicStoreContext } from '../contexts'
+import { Topic } from '../stores/topic'
 
-const LessonList = ({ navigation }) => {
+const LessonList = (props) => {
+  // const {} =
+  const coursesId = props.route.params.courseId
+  const image = props.route.params.image
+  const [course, setCourse] = useState(new Topic())
+  const [currentLesson, setCurrentLesson] = useState({
+    id: '',
+    courseId: '',
+    wordIds: [],
+    index: 0,
+  })
+
+  const topicStore = useContext(topicStoreContext)
+
+  useEffect(() => {
+    const setUp = async () => {
+      const currentCourse = topicStore.topics.find((topic) => topic.id === coursesId)
+      await currentCourse.fetch()
+      console.log()
+      setCourse(currentCourse)
+      setCurrentLesson({
+        courseId: currentCourse.lessons[0].topicId,
+        wordIds: currentCourse.lessons[0].wordIds,
+        id: currentCourse.lessons[0].id,
+        index: currentCourse.lessons.findIndex(
+          (lesson) => (lesson.id = currentCourse.lessons[0].id)
+        ),
+      })
+    }
+    setUp()
+  }, [coursesId])
+
   const onClickPreView = () => {
-    navigation.navigate(RoutesConstants.LessonDetail)
+    props.navigation.navigate(RoutesConstants.LessonDetail)
   }
-  const onClickPractise = () => {
-    navigation.navigate(RoutesConstants.MainLearning)
+
+  const onClickPractise = (id, courseId) => {
+    props.navigation.navigate(RoutesConstants.MainLearning, {
+      id: id,
+      courseId: courseId,
+    })
   }
+
   const onClickLearnNow = () => {
-    navigation.navigate(RoutesConstants.LearnNow)
+    props.navigation.navigate(RoutesConstants.LearnNow)
   }
+
   return (
     <MainLayout>
       <View style={styles.listItemCourses}>
         <ListItemCourses
-          image="https://reactjs.org/logo-og.png"
-          title="600 Từ vựng TOEIC"
-          subTitle="Số bài học: 50"
+          image={image}
+          title={course.name}
+          subTitle={`Số bài học: ${course.lessonIds.length}`}
         />
       </View>
 
@@ -34,7 +73,7 @@ const LessonList = ({ navigation }) => {
         info
         style={styles.buttonChange}
         onPress={() => {
-          navigation.push(RoutesConstants.MainLearning)
+          props.navigation.push(RoutesConstants.Learning)
         }}
       >
         <Icon name="exchange-alt" type="FontAwesome5" style={styles.iconChange} />
@@ -44,14 +83,24 @@ const LessonList = ({ navigation }) => {
         onClickPreView={onClickPreView}
         onClickPractise={onClickPractise}
         onClickLearnNow={onClickLearnNow}
+        id={currentLesson.id}
+        index={currentLesson.index}
+        courseId={currentLesson.courseId}
+        wordIds={currentLesson.wordIds}
       />
       <Separator>
         <Text style={styles.tittle}>Danh sách bài đã học</Text>
       </Separator>
-      <Lesson />
-      <Lesson />
-      <Lesson />
-      <Lesson />
+      {course.lessons
+        .filter((lesson) => lesson.id !== currentLesson.id)
+        .map((lesson, i) => (
+          <Lesson
+            key={lesson.id}
+            courseId={coursesId}
+            lessonId={lesson.id}
+            name={`Bài ${i + 1}`}
+          />
+        ))}
     </MainLayout>
   )
 }

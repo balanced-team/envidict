@@ -1,6 +1,6 @@
 // import Tts from 'react-native-tts'
-
 import * as Speak from 'expo-speech'
+
 class Speaker {
   constructor() {
     this.speaker = Speak

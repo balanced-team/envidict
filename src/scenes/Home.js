@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Alert, BackHandler } from 'react-native'
 import { Text, View, Button, Icon } from 'native-base'
 import { StyleSheet } from 'react-native'
+import * as Amimatable from 'react-native-animatable'
 
 import MainLayout from '../components/templates/MainLayout'
 import WordOfTheDay from '../components/molecules/word/WordOfTheDay'
@@ -24,8 +25,8 @@ const Home = ({ navigation }) => {
     navigation.navigate(RoutesConstants.LessonDetail)
   }
 
-  const onClickPractise = () => {
-    navigation.navigate(RoutesConstants.MainLearning)
+  const onClickPractise = (id, courseId) => {
+    navigation.navigate(RoutesConstants.MainLearning, { id: id, courseId: courseId })
   }
 
   const onClickOnlineTranslationButton = () => {
@@ -45,27 +46,33 @@ const Home = ({ navigation }) => {
       voiceButtonIsVisible={true}
       onGoToSearchView={onGoToSearchView}
     >
-      <WordOfTheDay onGoToWordView={onGoToWordView} />
-      <RecentWords onGoToWordView={onGoToWordView} />
-      <View style={styles.buttonWrapper}>
-        <Button
-          style={buttonStyle}
-          onPress={onClickOnlineTranslationButton}
-          iconLeft
-          block
-          rounded
-        >
-          <Icon name="translate" type="MaterialCommunityIcons" />
-          <Text style={styles.buttonText} uppercase={false}>
-            Dịch online
-          </Text>
-        </Button>
-      </View>
-      <CurrentVocabularies
+      <Amimatable.View animation="fadeInLeft">
+        <WordOfTheDay onGoToWordView={onGoToWordView} />
+        <RecentWords onGoToWordView={onGoToWordView} />
+        <View style={styles.buttonWrapper}>
+          <Button
+            style={buttonStyle}
+            onPress={onClickOnlineTranslationButton}
+            iconLeft
+            block
+            rounded
+          >
+            <Icon name="translate" type="MaterialCommunityIcons" />
+            <Text style={styles.buttonText} uppercase={false}>
+              Dịch online
+            </Text>
+          </Button>
+        </View>
+        {/* <CurrentVocabularies
         onClickPreView={onClickPreView}
         onClickPractise={onClickPractise}
         onClickLearnNow={onClickLearnNow}
-      />
+        id={'abc'}
+        index={0}
+        courseId={'mnq'}
+        wordIds={['1', '2', '3', '4', '5', '6', '7', '3', '4', '5']}
+      /> */}
+      </Amimatable.View>
     </MainLayout>
   )
 }

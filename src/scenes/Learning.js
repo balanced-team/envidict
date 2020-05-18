@@ -13,8 +13,8 @@ const Learning = ({ navigation }) => {
     backHandleToExitApp(Alert, BackHandler)
   }, [])
 
-  const handleNavigate = () => {
-    navigation.navigate(RoutesConstants.LessonList)
+  const handleNavigate = (courseId, image) => {
+    navigation.navigate(RoutesConstants.LessonList, { courseId: courseId, image: image })
   }
 
   return (
