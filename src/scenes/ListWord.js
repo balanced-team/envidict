@@ -25,11 +25,17 @@ const ListWord = ({ navigation }) => {
 
   useEffect(() => {
     let data = []
-    wordList.forEach(async (word) => {
-      const result = await dictStore.findWord(word)
-      data.push(result)
-    })
-    setWords(data)
+    const setUp = async () => {
+      for (let i = 0; i < wordList.length; i++) {
+        const result = await dictStore.findWord(wordList[i])
+        if (result !== undefined) {
+          data.push(result)
+        }
+      }
+
+      setWords(data)
+    }
+    setUp()
   }, [])
 
   const onPressListItem = (word) => {
@@ -37,11 +43,14 @@ const ListWord = ({ navigation }) => {
   }
 
   return (
-    <MainLayout voiceButtonIsVisible={false}>
+    <MainLayout autoFocusSearchInput={false} voiceButtonIsVisible={false}>
       <List>
-        {words.map((word, i) => (
-          <WordItem key={'word' + i} word={word} onPressListItem={onPressListItem} />
-        ))}
+        {words.length > 0 &&
+          words.map((word, i) => {
+            return (
+              <WordItem key={'word' + i} word={word} onPressListItem={onPressListItem} />
+            )
+          })}
       </List>
     </MainLayout>
   )

@@ -3,9 +3,13 @@ import { Item, Icon, Input } from 'native-base'
 import { StyleSheet } from 'react-native'
 import { Colors } from '../../../styles'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native'
+import { RoutesConstants } from '../../../navigations/route-constants'
 
 const SearchInput = (props) => {
   const [text, setText] = useState('')
+
+  const navigator = useNavigation()
 
   const { onGoToSearchView, searchByKey, autoFocus, setWordList, setKey } = props
   return (
@@ -14,7 +18,7 @@ const SearchInput = (props) => {
       <Input
         placeholder="Gõ từ để tra từ điển"
         autoFocus={autoFocus}
-        onFocus={onGoToSearchView}
+        onFocus={() => navigator.navigate(RoutesConstants.SearchWord)}
         onChangeText={(text) => {
           setText(text)
           searchByKey(text)

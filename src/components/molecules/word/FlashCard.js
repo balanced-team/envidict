@@ -1,28 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Text, View, Icon } from 'native-base'
+import * as Animatable from 'react-native-animatable'
 
 import { Colors, Typography } from '../../../styles'
 import { FONT_SIZE_14 } from '../../../styles/typography'
 import { InstanceSpeaker } from '../../../utils'
+import { RoutesConstants } from '../../../navigations/route-constants'
+import {
+  TouchableHighlight,
+  TouchableWithoutFeedback,
+} from 'react-native-gesture-handler'
 
 const FlashCard = (props) => {
-  const { word, pronounce, type, explain } = props
+  const { word, pronounce, type, explain, data } = props
+  let viewRef
+
+  const handleViewRef = (ref) => (viewRef = ref)
+
+  const navigator = useNavigation()
+  const goToWordView = (word) => {
+    viewRef.flipOutX(1000)
+    navigator.navigate(RoutesConstants.WordView, { word })
+    viewRef.fadeIn(500)
+  }
+
   return (
-    <View style={styles.card}>
-      <View style={styles.row}>
-        <Text style={styles.word}>{word}</Text>
-        <Icon name="heart" style={styles.icon} />
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.pronounce}>{pronounce}</Text>
-        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
-          <Icon name="volume-high" style={styles.pronounceIcon} />
-        </TouchableOpacity>
-      </View>
-      <Text style={styles.type}>{type}</Text>
-      <Text style={styles.explain}>{explain}</Text>
-    </View>
+    <Animatable.View ref={handleViewRef}>
+      <TouchableWithoutFeedback onPress={() => goToWordView(data)}>
+        <View style={styles.card}>
+          <View style={styles.row}>
+            <Text style={styles.word}>{word}</Text>
+            <Icon name="heart" style={styles.icon} />
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.pronounce}>{pronounce}</Text>
+            <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+              <Icon name="volume-high" style={styles.pronounceIcon} />
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.type}>{type}</Text>
+          <Text style={styles.explain}>{explain}</Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </Animatable.View>
   )
 }
 

@@ -5,11 +5,15 @@ import DetailView from '../components/organisms/word-view/DetailsView'
 import { dictStoreContext, voiceStoreContext } from '../contexts'
 import { Colors, Mixins, Typography } from '../styles'
 import { InstanceSpeaker } from '../utils'
+import { Word } from '../stores/dict'
 
 const LearnNow = () => {
   const [isShowTranslate, setIsShowTranslate] = useState(true)
   const [isRemembered, setisRemembered] = useState(false)
-  const [word, setWord] = useState({})
+  const [word, setWord] = useState(
+    new Word({ type: '', id: null, word: '', description: '', html: '', pronounce: '' })
+  )
+
   const dictStore = useContext(dictStoreContext)
   const voiceStore = useContext(voiceStoreContext)
 

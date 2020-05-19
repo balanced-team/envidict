@@ -59,7 +59,7 @@ const LessonList = (props) => {
   }
 
   return (
-    <MainLayout>
+    <MainLayout autoFocusSearchInput={false}>
       <View style={styles.listItemCourses}>
         <ListItemCourses
           image={image}

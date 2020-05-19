@@ -62,7 +62,7 @@ const Settings = () => {
   }, [])
 
   return (
-    <MainLayout voiceButtonIsVisible={true}>
+    <MainLayout autoFocusSearchInput={false} voiceButtonIsVisible={true}>
       <Content>
         <Text style={styles.textTile}>Dictionary</Text>
         <Frame

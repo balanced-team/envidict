@@ -18,7 +18,7 @@ const Learning = ({ navigation }) => {
   }
 
   return (
-    <MainLayout voiceButtonIsVisible={true}>
+    <MainLayout autoFocusSearchInput={false} voiceButtonIsVisible={true}>
       <Courses
         key={'course 1'}
         coursesName="Ôn luyện giao tiếp cơ bản"

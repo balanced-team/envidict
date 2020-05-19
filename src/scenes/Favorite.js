@@ -20,6 +20,7 @@ const Favorite = ({ navigation }) => {
         const result = await dictStore.findWord(words[i])
         data.push(result)
       }
+      console.log(data)
       setWordDetailsList(data)
     }
     setUp()
@@ -46,7 +47,7 @@ const Favorite = ({ navigation }) => {
   }
 
   return (
-    <MainLayout voiceButtonIsVisible={true}>
+    <MainLayout autoFocusSearchInput={false} voiceButtonIsVisible={true}>
       {wordDetailsList.map((word, i) => (
         <Animatable.View
           key={'word' + i.toString()}

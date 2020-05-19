@@ -63,12 +63,12 @@ const Vocabulary = ({ navigation }) => {
   }, [])
 
   return (
-    <MainLayout voiceButtonIsVisible={true}>
+    <MainLayout autoFocusSearchInput={false} voiceButtonIsVisible={true}>
       <List>
         {arrVocabulary.map((item, i) => (
           <Animatable.View
             animation="lightSpeedIn"
-            duration={500 + i * 500}
+            duration={300 + i * 500}
             key={'vocabulary-' + item.id}
           >
             <ListItemVocabulary

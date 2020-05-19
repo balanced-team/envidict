@@ -10,6 +10,7 @@ const LessonDetail = ({ navigation }) => {
   const onClickLearnNow = () => {
     navigation.navigate(RoutesConstants.LearnNow)
   }
+
   return (
     <View style={styles.container}>
       <LessonContent />
