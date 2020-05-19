@@ -19,7 +19,9 @@ const RecentWords = (props) => {
       const words = JSON.parse(await AsyncStorage.getItem('recentWords'))
       for (let i = words.length - 1; i >= 0; i--) {
         const result = await dictStore.findWord(words[i])
-        recentWordList.push(result)
+        if (result) {
+          recentWordList.push(result)
+        }
       }
       setRecentsWord(recentWordList)
     }
@@ -35,7 +37,7 @@ const RecentWords = (props) => {
         dataArray={recentWords}
         renderRow={(word, i) => (
           <ListItem noBorder key={i} onPress={() => onGoToWordView(word)}>
-            <Animatable.View animation="fadeInRight" delay={i * 1000} duration={500}>
+            <Animatable.View animation="fadeInRight" delay={i * 1000} duration={300}>
               <MiniCard data={word} />
             </Animatable.View>
           </ListItem>

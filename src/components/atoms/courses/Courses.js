@@ -52,7 +52,7 @@ const Courses = (props) => {
       <Text style={styles.coursesName}>{coursesName}</Text>
       <List>
         {topicStore.topics.map((course, i) => (
-          <Animatable.View key={i} animation="flipInX" duration={500 + i * 500}>
+          <Animatable.View key={i} animation="flipInX" duration={500 + i * 200}>
             <ListItem noIndent>
               <ListItemCourses
                 key={course.id}

@@ -62,7 +62,7 @@ const Home = ({ navigation }) => {
           </Text>
         </Button>
       </View>
-      {/* <CurrentVocabularies
+      <CurrentVocabularies
         onClickPreView={onClickPreView}
         onClickPractise={onClickPractise}
         onClickLearnNow={onClickLearnNow}
@@ -70,7 +70,7 @@ const Home = ({ navigation }) => {
         index={0}
         courseId={'mnq'}
         wordIds={['1', '2', '3', '4', '5', '6', '7', '3', '4', '5']}
-      /> */}
+      />
     </MainLayout>
   )
 }

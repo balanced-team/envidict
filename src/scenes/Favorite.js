@@ -52,7 +52,7 @@ const Favorite = ({ navigation }) => {
         <Animatable.View
           key={'word' + i.toString()}
           animation="fadeInRight"
-          duration={700 + i * 1000}
+          duration={500 + i * 300}
         >
           <ListItemWord
             word={word}

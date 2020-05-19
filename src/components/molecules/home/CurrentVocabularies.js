@@ -15,7 +15,7 @@ const CurrentVocabularies = (props) => {
 
   return (
     <View>
-      <Text style={styles.tittle}>Từ vựng phỏng vấn, xin việc</Text>
+      <Text style={styles.tittle}>Bộ từ vựng 1</Text>
       <TouchableHighlight onPress={onClickPreView}>
         <View style={styles.card}>
           <Text style={styles.lessonName}>{'Bài ' + (props.index + 1)}</Text>

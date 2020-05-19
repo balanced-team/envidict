@@ -68,7 +68,7 @@ const Vocabulary = ({ navigation }) => {
         {arrVocabulary.map((item, i) => (
           <Animatable.View
             animation="lightSpeedIn"
-            duration={300 + i * 500}
+            duration={300 + i * 200}
             key={'vocabulary-' + item.id}
           >
             <ListItemVocabulary
