@@ -4,7 +4,7 @@ import { ListItem, View } from 'native-base'
 
 import { Colors, Typography } from '../../../styles'
 
-const WordItem = (props, { navigation }) => {
+const WordItem = (props) => {
   const { word, onPressListItem } = props
   return (
     <ListItem noIndent onPress={() => onPressListItem(word)}>

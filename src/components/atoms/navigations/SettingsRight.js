@@ -4,7 +4,7 @@ import { Icon, View, Text, Grid, Col } from 'native-base'
 import { Colors } from '../../../styles'
 
 const SettingsRight = () => {
-  const [isShowSettings, setIsShowSettings] = useState(true)
+  const [isShowSettings, setIsShowSettings] = useState(false)
 
   const toggleIsShowSettings = () => {
     setIsShowSettings(!isShowSettings)

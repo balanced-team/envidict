@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, FlatList } from 'react-native'
 
 import { Colors } from '../../../styles'
 import FlashCard from '../../molecules/word/FlashCard'
 
-const recentWords = [
+const wordList = [
   {
     id: 1,
     word: 'beautiful',
@@ -20,23 +20,22 @@ const recentWords = [
 ]
 
 const LessonContent = () => {
+  const [words, setWords] = useState(wordList)
   return (
     <FlatList
       numColumns={2}
       columnWrapperStyle={styles.row}
-      data={recentWords}
-      _renderItem={({ item }) => (
+      data={words}
+      renderItem={({ item }) => (
         <FlashCard
           key={'word-${item.id}'}
           word={item.word}
           pronounce={item.pronounce}
           type={item.type}
           explain={item.explain}
+          data={item}
         />
       )}
-      keyExtractor={(item) => {
-        item.id.toString()
-      }}
     ></FlatList>
   )
 }

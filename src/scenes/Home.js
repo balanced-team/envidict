@@ -46,24 +46,23 @@ const Home = ({ navigation }) => {
       voiceButtonIsVisible={true}
       onGoToSearchView={onGoToSearchView}
     >
-      <Amimatable.View animation="fadeInLeft">
-        <WordOfTheDay onGoToWordView={onGoToWordView} />
-        <RecentWords onGoToWordView={onGoToWordView} />
-        <View style={styles.buttonWrapper}>
-          <Button
-            style={buttonStyle}
-            onPress={onClickOnlineTranslationButton}
-            iconLeft
-            block
-            rounded
-          >
-            <Icon name="translate" type="MaterialCommunityIcons" />
-            <Text style={styles.buttonText} uppercase={false}>
-              Dịch online
-            </Text>
-          </Button>
-        </View>
-        {/* <CurrentVocabularies
+      <WordOfTheDay onGoToWordView={onGoToWordView} />
+      <RecentWords onGoToWordView={onGoToWordView} />
+      <View style={styles.buttonWrapper}>
+        <Button
+          style={buttonStyle}
+          onPress={onClickOnlineTranslationButton}
+          iconLeft
+          block
+          rounded
+        >
+          <Icon name="translate" type="MaterialCommunityIcons" />
+          <Text style={styles.buttonText} uppercase={false}>
+            Dịch online
+          </Text>
+        </Button>
+      </View>
+      {/* <CurrentVocabularies
         onClickPreView={onClickPreView}
         onClickPractise={onClickPractise}
         onClickLearnNow={onClickLearnNow}
@@ -72,7 +71,6 @@ const Home = ({ navigation }) => {
         courseId={'mnq'}
         wordIds={['1', '2', '3', '4', '5', '6', '7', '3', '4', '5']}
       /> */}
-      </Amimatable.View>
     </MainLayout>
   )
 }
