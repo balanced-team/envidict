@@ -11,14 +11,18 @@ const SearchInput = (props) => {
 
   const navigator = useNavigation()
 
-  const { onGoToSearchView, searchByKey, autoFocus, setWordList, setKey } = props
+  const { searchByKey, autoFocus, setWordList, setKey, isVocabularySearch } = props
   return (
     <Item rounded style={styles.searchInput}>
       <Icon name="search" />
       <Input
         placeholder="Gõ từ để tra từ điển"
         autoFocus={autoFocus}
-        onFocus={() => navigator.navigate(RoutesConstants.SearchWord)}
+        onFocus={() => {
+          if (isVocabularySearch !== true) {
+            navigator.navigate(RoutesConstants.SearchWord)
+          }
+        }}
         onChangeText={(text) => {
           setText(text)
           searchByKey(text)
