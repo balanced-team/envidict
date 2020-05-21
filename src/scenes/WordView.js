@@ -5,6 +5,8 @@ import { Container, View, Button, Tabs, Tab, Icon } from 'native-base'
 import NoteView from '../components/organisms/word-view/NoteView'
 import DetailsView from '../components/organisms/word-view/DetailsView'
 import { Colors } from '../styles/index'
+import { useNavigation } from '@react-navigation/native'
+import { RoutesConstants } from '../navigations/route-constants'
 
 const WordView = ({ route, navigation }) => {
   const { word } = route.params
@@ -64,7 +66,7 @@ const WordView = ({ route, navigation }) => {
           tabStyle={{ backgroundColor: Colors.BLUE_LIGHT }}
           activeTabStyle={{ backgroundColor: Colors.BLUE_DARK }}
         >
-          <NoteView />
+          <NoteView word={word} />
         </Tab>
       </Tabs>
       <View style={styles.remindView}>
@@ -74,7 +76,11 @@ const WordView = ({ route, navigation }) => {
             name={isFavorite ? 'md-heart' : 'md-heart-empty'}
           />
         </Button>
-        <Button bordered style={styles.customButonIconSearch}>
+        <Button
+          bordered
+          style={styles.customButonIconSearch}
+          onPress={() => navigation.navigate(RoutesConstants.SearchWord)}
+        >
           <Icon style={styles.customIconSearch} name="search" />
         </Button>
       </View>

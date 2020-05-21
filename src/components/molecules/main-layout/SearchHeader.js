@@ -15,6 +15,7 @@ const SearchHeader = (props) => {
         setWordList={props.setWordList}
         setKey={props.setKey}
         autoFocus={props.autoFocus}
+        isVocabularySearch={props.isVocabularySearch}
       />
       {props.voiceButtonIsVisible === true && <VoiceButton />}
     </Header>

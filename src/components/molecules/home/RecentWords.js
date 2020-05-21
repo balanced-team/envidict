@@ -36,12 +36,13 @@ const RecentWords = (props) => {
         horizontal
         dataArray={recentWords}
         renderRow={(word, i) => (
-          <ListItem noBorder key={i} onPress={() => onGoToWordView(word)}>
+          <ListItem noBorder onPress={() => onGoToWordView(word)}>
             <Animatable.View animation="fadeInRight" delay={i * 1000} duration={300}>
               <MiniCard data={word} />
             </Animatable.View>
           </ListItem>
         )}
+        keyExtractor={(item, index) => index.toString()}
       ></List>
     </View>
   )

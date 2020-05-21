@@ -12,7 +12,6 @@ const ListItemWord = (props) => {
 
   const handleRemoveFavoriteWord = () => {
     onRemoveFavoriteWord(word.word)
-    // wordRef.zoomOut(800)
   }
   const handleWordRef = (ref) => (wordRef = ref)
 

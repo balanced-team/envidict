@@ -19,8 +19,6 @@ import { RoutesConstants } from '../navigations/route-constants'
 const MainLearning = (props) => {
   const { id, courseId } = props.route.params
 
-  console.log(props.route.params)
-
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [loading, setLoading] = useState(true)
   const [numCorrect, setNumCorrect] = useState(0)

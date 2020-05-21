@@ -20,7 +20,6 @@ const Favorite = ({ navigation }) => {
         const result = await dictStore.findWord(words[i])
         data.push(result)
       }
-      console.log(data)
       setWordDetailsList(data)
     }
     setUp()

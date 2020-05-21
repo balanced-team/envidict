@@ -29,7 +29,6 @@ const LessonList = (props) => {
     const setUp = async () => {
       const currentCourse = topicStore.topics.find((topic) => topic.id === coursesId)
       await currentCourse.fetch()
-      console.log()
       setCourse(currentCourse)
       setCurrentLesson({
         courseId: currentCourse.lessons[0].topicId,

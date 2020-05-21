@@ -12,11 +12,12 @@ const Tab = createBottomTabNavigator()
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator tabBarOptions={{ showLabel: false }}>
+    <Tab.Navigator tabBarOptions={{ showLabel: true }}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
+          tabBarLabel: 'Nhà',
           tabBarIcon: ({ focused }) => <TabBarIcon name="md-home" focused={focused} />,
         }}
       />
@@ -24,6 +25,7 @@ const BottomTabNavigator = () => {
         name="Favorite"
         component={Favorite}
         options={{
+          tabBarLabel: 'Yêu thích',
           tabBarIcon: ({ focused }) => <TabBarIcon name="md-heart" focused={focused} />,
         }}
       />
@@ -31,6 +33,7 @@ const BottomTabNavigator = () => {
         name="Vocabulary"
         component={Vocabulary}
         options={{
+          tabBarLabel: 'Bộ từ',
           tabBarIcon: ({ focused }) => <TabBarIcon name="md-book" focused={focused} />,
         }}
       />
@@ -38,6 +41,7 @@ const BottomTabNavigator = () => {
         name="Learning"
         component={Learning}
         options={{
+          tabBarLabel: 'Học tập',
           tabBarIcon: ({ focused }) => <TabBarIcon name="md-ribbon" focused={focused} />,
         }}
       />
@@ -45,6 +49,7 @@ const BottomTabNavigator = () => {
         name="Settings"
         component={Settings}
         options={{
+          tabBarLabel: 'Cài đặt',
           tabBarIcon: ({ focused }) => (
             <TabBarIcon name="md-settings" focused={focused} />
           ),

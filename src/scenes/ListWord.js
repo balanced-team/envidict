@@ -4,8 +4,9 @@ import WordItem from '../components/atoms/ListItemVocabulary/WordItem'
 import MainLayout from '../components/templates/MainLayout'
 import { dictStoreContext } from '../contexts'
 import { RoutesConstants } from '../navigations/route-constants'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ScrollView } from 'react-native'
 import { Mixins, Colors, Typography } from '../styles'
+import SearchHeader from '../components/molecules/main-layout/SearchHeader'
 
 const wordList = [
   'good',
@@ -18,11 +19,37 @@ const wordList = [
   'ignore',
   'figure',
   'search',
+  'happy',
+  'money',
+  'terrible',
+  'sunday',
+  'important',
+  'excellent',
+  'bye',
+  'cat',
+  'hear',
+  'carrot',
+  'bean',
+  'engine',
+  'identification',
+  'master',
+  'cousin',
+  'tolerant',
+  'outfit',
+  'fear',
+  'stride',
+  'firm',
+  'kit',
+  'perform',
+  'deposit',
+  'memory',
 ]
 
 const ListWord = ({ navigation }) => {
   const [words, setWords] = useState([])
   const [loading, setLoading] = useState(true)
+  const [key, setKey] = useState('')
+  const [viewWords, setViewWords] = useState(words)
 
   const dictStore = useContext(dictStoreContext)
 
@@ -38,6 +65,7 @@ const ListWord = ({ navigation }) => {
       }
 
       setWords(data)
+      setViewWords(data)
       setLoading(false)
     }
     setUp()
@@ -47,28 +75,41 @@ const ListWord = ({ navigation }) => {
     navigation.navigate(RoutesConstants.WordView, { word: word })
   }
 
+  const searchByKey = async (key) => {
+    if (key === '') {
+      setViewWords(words)
+    } else {
+      const headIncludeWords = await words.filter((word) => word.word.indexOf(key) === 0)
+      const otherWords = await words.filter((word) => word.word.indexOf(key) > 0)
+      setViewWords([...headIncludeWords, ...otherWords])
+    }
+  }
+
   return (
-    <MainLayout autoFocusSearchInput={false} voiceButtonIsVisible={false}>
+    <View>
+      <SearchHeader searchByKey={searchByKey} setKey={setKey} isVocabularySearch={true} />
       {loading ? (
         <View style={styles.container}>
           <Spinner color={Colors.BLUE_DARK} />
           <Text style={styles.loadingText}>Đang tải dữ liệu...</Text>
         </View>
       ) : (
-        <List>
-          {words.length > 0 &&
-            words.map((word, i) => {
-              return (
-                <WordItem
-                  key={'word' + i}
-                  word={word}
-                  onPressListItem={onPressListItem}
-                />
-              )
-            })}
-        </List>
+        <ScrollView>
+          <List>
+            {viewWords.length > 0 &&
+              viewWords.map((word, i) => {
+                return (
+                  <WordItem
+                    key={'word' + i}
+                    word={word}
+                    onPressListItem={onPressListItem}
+                  />
+                )
+              })}
+          </List>
+        </ScrollView>
       )}
-    </MainLayout>
+    </View>
   )
 }
 
