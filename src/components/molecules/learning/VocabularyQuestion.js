@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Card, Grid, Col } from 'native-base'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -7,7 +7,7 @@ import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
 import { QUESTION_TYPE } from '../../../constants'
 import WordInformation from './WordInformation'
-import { InstanceSpeaker } from '../../../utils'
+import { voiceStoreContext } from '../../../contexts'
 
 const VocabularyQuestion = (props) => {
   const {
@@ -22,6 +22,8 @@ const VocabularyQuestion = (props) => {
   } = props
   const [isDone, setIsDone] = useState(false)
   const [isCorrect, setIsCorrect] = useState(null)
+
+  const voiceStore = useContext(voiceStoreContext)
 
   useEffect(() => {
     setIsStop(false)
@@ -81,7 +83,7 @@ const VocabularyQuestion = (props) => {
             </Col>
 
             <Col size={2} style={styles.columnRight}>
-              <TouchableOpacity onPress={() => InstanceSpeaker.speak(question.word)}>
+              <TouchableOpacity onPress={() => voiceStore.speak(question.word)}>
                 <Icon name="volume-high" style={styles.icon} />
               </TouchableOpacity>
             </Col>

@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as Animatable from 'react-native-animatable'
 import { Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { ListItem, Body, Right, Icon } from 'native-base'
 
 import { Colors, Typography } from '../../../styles'
-import { InstanceSpeaker } from '../../../utils'
+import { voiceStoreContext } from '../../../contexts'
 
 const ListItemWord = (props) => {
   let wordRef
   const { word, onGoToWordView, onRemoveFavoriteWord } = props
+
+  const voiceStore = useContext(voiceStoreContext)
 
   const handleRemoveFavoriteWord = () => {
     onRemoveFavoriteWord(word.word)
@@ -23,7 +25,7 @@ const ListItemWord = (props) => {
           <Text style={styles.type}>{word.description}</Text>
         </Body>
         <Right>
-          <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
+          <TouchableOpacity onPress={() => voiceStore.speak(word.word)}>
             <Icon style={styles.customIconVolume} name="volume-high" />
           </TouchableOpacity>
         </Right>

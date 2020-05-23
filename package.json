@@ -27,6 +27,7 @@
     "mobx": "^5.15.4",
     "mobx-react": "^6.1.8",
     "native-base": "2.13.8",
+    "random-words": "^1.1.1",
     "react": "^16.13.1",
     "react-devtools": "^4.6.0",
     "react-dom": "^16.13.1",

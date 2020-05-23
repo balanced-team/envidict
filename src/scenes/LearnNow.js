@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import DetailView from '../components/organisms/word-view/DetailsView'
 import { dictStoreContext, voiceStoreContext } from '../contexts'
 import { Colors, Mixins, Typography } from '../styles'
-import { InstanceSpeaker } from '../utils'
 import { Word } from '../stores/dict'
 
 const LearnNow = () => {
@@ -23,7 +22,7 @@ const LearnNow = () => {
 
       setWord(data)
       if (voiceStore.autoSpeak) {
-        InstanceSpeaker.speak(data.word)
+        voiceStore.speak(data.word)
       }
     }
     run()

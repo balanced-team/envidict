@@ -5,7 +5,6 @@ import { StyleSheet, TouchableOpacity, ScrollView, Clipboard } from 'react-nativ
 import LanguagePicker from '../components/atoms/online-translation.js/LanguagePicker'
 import { Colors } from '../styles'
 import { translateOnlineAPI } from '../api'
-import { InstanceSpeaker } from '../utils'
 import { voiceStoreContext } from '../contexts'
 
 const OnlineTranslation = ({ route, navigation }) => {
@@ -40,7 +39,7 @@ const OnlineTranslation = ({ route, navigation }) => {
     const result = await translateOnlineAPI.translate(text, fromLang, toLang)
     setTranslatedText(result)
     if (voiceStore.autoSpeak === true) {
-      InstanceSpeaker.speak(translatedText, toLang)
+      voiceStore.speak(translatedText, toLang)
     }
   }
 
@@ -59,7 +58,7 @@ const OnlineTranslation = ({ route, navigation }) => {
       <View style={styles.box}>
         <Row style={styles.row}>
           <Left>
-            <TouchableOpacity onPress={() => InstanceSpeaker.speak(text, fromLang)}>
+            <TouchableOpacity onPress={() => voiceStore.speak(text, fromLang)}>
               <Icon name="volume-high" style={styles.icon} />
             </TouchableOpacity>
           </Left>
@@ -98,9 +97,7 @@ const OnlineTranslation = ({ route, navigation }) => {
       <View style={styles.box}>
         <Row style={styles.row}>
           <Left>
-            <TouchableOpacity
-              onPress={() => InstanceSpeaker.speak(translatedText, toLang)}
-            >
+            <TouchableOpacity onPress={() => voiceStore.speak(translatedText, toLang)}>
               <Icon name="volume-high" style={styles.icon} />
             </TouchableOpacity>
           </Left>

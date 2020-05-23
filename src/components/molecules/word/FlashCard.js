@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Text, View, Icon } from 'native-base'
@@ -6,18 +6,20 @@ import * as Animatable from 'react-native-animatable'
 
 import { Colors, Typography } from '../../../styles'
 import { FONT_SIZE_14 } from '../../../styles/typography'
-import { InstanceSpeaker } from '../../../utils'
 import { RoutesConstants } from '../../../navigations/route-constants'
 import {
   TouchableHighlight,
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler'
+import { voiceStoreContext } from '../../../contexts'
 
 const FlashCard = (props) => {
   const { word, pronounce, type, explain, data } = props
   let viewRef
 
   const handleViewRef = (ref) => (viewRef = ref)
+
+  const voiceStore = useContext(voiceStoreContext)
 
   const navigator = useNavigation()
   const goToWordView = (word) => {
@@ -36,7 +38,7 @@ const FlashCard = (props) => {
           </View>
           <View style={styles.row}>
             <Text style={styles.pronounce}>{pronounce}</Text>
-            <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+            <TouchableOpacity onPress={() => voiceStore.speak(word)}>
               <Icon name="volume-high" style={styles.pronounceIcon} />
             </TouchableOpacity>
           </View>

@@ -1,6 +1,3 @@
-import Speaker from './speaker'
-import { useContext } from 'react'
-import { dictStoreContext } from '../contexts'
 import { QUESTION_TYPE } from '../constants'
 
 const backHandleToExitApp = (Alert, BackHandler) => {
@@ -121,5 +118,4 @@ const generateQuestionFromWord = async (word, words) => {
   }
   return question
 }
-const InstanceSpeaker = new Speaker()
-module.exports = { backHandleToExitApp, InstanceSpeaker, generateQuestionFromWord }
+module.exports = { backHandleToExitApp, generateQuestionFromWord }

@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Spinner, Text } from 'native-base'
 import { StyleSheet } from 'react-native'
+import { Typography, Colors } from '../../../styles'
 
-export default Loading = () => {
+const Loading = () => {
   return (
     <View style={styles.loadingContainer}>
       <Spinner color={Colors.BLUE_DARK} />
@@ -23,3 +24,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 })
+
+export default Loading

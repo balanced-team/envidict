@@ -2,22 +2,30 @@ import { Icon, Left, Right, Row, Text, View } from 'native-base'
 import React, { useContext, useEffect, useState } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import * as Animatable from 'react-native-animatable'
+import randomWorder from 'random-words'
 
-import { dictStoreContext } from '../../../contexts'
+import { dictStoreContext, voiceStoreContext } from '../../../contexts'
 import { Colors } from '../../../styles'
 import { FONT_SIZE_12, FONT_SIZE_14 } from '../../../styles/typography'
-import { InstanceSpeaker } from '../../../utils'
 
 const WordOfTheDay = (props) => {
   const { onGoToWordView } = props
   const dictStore = useContext(dictStoreContext)
+  const voiceStore = useContext(voiceStoreContext)
+
   const [word, setWord] = useState({})
   useEffect(() => {
     const run = async () => {
-      setWord(await dictStore.findWord('absorb'))
+      const random = randomWorder()
+      setWord(await dictStore.findWord(random))
     }
     run()
   }, [])
+
+  const getRandomWord = async () => {
+    const random = randomWorder()
+    setWord(await dictStore.findWord(random))
+  }
 
   return (
     <Animatable.View animation="bounceInDown">
@@ -32,17 +40,18 @@ const WordOfTheDay = (props) => {
             </Left>
             <Right>
               <View style={styles.row}>
-                <Icon name="md-sync" style={[styles.icon, styles.blueDarkColor]} />
+                <TouchableOpacity onPress={getRandomWord}>
+                  <Icon name="md-sync" style={[styles.icon, styles.blueDarkColor]} />
+                </TouchableOpacity>
               </View>
             </Right>
           </Row>
           <View style={styles.row}>
             <Text style={styles.word}>{word ? word.word : ''}</Text>
-            <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
+            <TouchableOpacity onPress={() => voiceStore.speak(word.word)}>
               <Icon name="volume-high" style={[styles.icon, styles.blueDarkColor]} />
             </TouchableOpacity>
           </View>
-          {/* <Text style={styles.type}>tính từ</Text> */}
           <Text style={styles.meaning}>{word ? word.description : ''}</Text>
         </View>
       </TouchableOpacity>
