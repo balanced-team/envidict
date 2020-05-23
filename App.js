@@ -6,9 +6,9 @@ import * as firebase from 'firebase/app'
 import 'firebase/firestore'
 import { Root } from 'native-base'
 import React, { useState, useContext } from 'react'
-import { StatusBar, StyleSheet, View } from 'react-native'
+import { StatusBar, StyleSheet, View, AsyncStorage } from 'react-native'
 import Routes from './src/navigations/Routes'
-import { topicStoreContext } from './src/contexts'
+import { topicStoreContext, voiceStoreContext } from './src/contexts'
 
 if (!global.btoa) {
   global.btoa = encode
@@ -20,12 +20,14 @@ if (!global.atob) {
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
   const topicStore = useContext(topicStoreContext)
+  const voiceStore = useContext(voiceStoreContext)
 
   topicStore.fetch()
+
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
-        startAsync={loadResourcesAsync}
+        startAsync={async () => await loadResourcesAsync(voiceStore)}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
       />
@@ -42,12 +44,22 @@ const App = (props) => {
   }
 }
 
-const loadResourcesAsync = async () => {
+const loadResourcesAsync = async (voiceStore) => {
   await Font.loadAsync({
     ...Ionicons.font,
     Roboto: require('native-base/Fonts/Roboto.ttf'),
     Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
   })
+  const voiceSettings = JSON.parse(await AsyncStorage.getItem('envidictVoiceSettings'))
+  if (voiceSettings === null) {
+    await AsyncStorage.setItem(
+      'envidictVoiceSettings',
+      JSON.stringify({ rate: 1, pitch: 1, volume: 1 })
+    )
+  }
+  voiceStore.setRate(voiceSettings.rate)
+  voiceStore.setPitch(voiceSettings.pitch)
+  voiceStore.setVolume(voiceSettings.volume)
 }
 
 const handleLoadingError = (error) => {

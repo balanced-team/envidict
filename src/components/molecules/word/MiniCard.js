@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Text, View, Icon } from 'native-base'
 
 import { Colors } from '../../../styles'
 import { FONT_SIZE_14 } from '../../../styles/typography'
-import { InstanceSpeaker } from '../../../utils'
+import { voiceStoreContext } from '../../../contexts'
 
 const MiniCard = (props) => {
   const { word, description } = props.data
+
+  const voiceStore = useContext(voiceStoreContext)
+
   return (
     <View style={styles.card}>
       <View style={styles.row}>
         <Text style={styles.word}>{word}</Text>
-        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word)}>
+        <TouchableOpacity onPress={() => voiceStore.speak(word)}>
           <Icon name="volume-high" style={styles.icon} />
         </TouchableOpacity>
       </View>

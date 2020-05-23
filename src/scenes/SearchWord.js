@@ -3,9 +3,8 @@ import { View, Text, Content, List, ListItem, Icon, Right, Body, Left } from 'na
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
 import SearchHeader from '../components/molecules/main-layout/SearchHeader'
-import { dictStoreContext } from '../contexts'
+import { dictStoreContext, voiceStoreContext } from '../contexts'
 import { RoutesConstants } from '../navigations/route-constants'
-import { InstanceSpeaker } from '../utils'
 import { AsyncStorage } from 'react-native'
 
 const SearchWord = ({ navigation }) => {
@@ -13,6 +12,7 @@ const SearchWord = ({ navigation }) => {
   const [wordList, setWordList] = useState([])
 
   const dictStore = useContext(dictStoreContext)
+  const voiceStore = useContext(voiceStoreContext)
 
   const searchByKey = async (text) => {
     const result = await dictStore.findWords(text)
@@ -64,7 +64,7 @@ const SearchWord = ({ navigation }) => {
                   <Text>{word.word}</Text>
                 </Body>
                 <Right>
-                  <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
+                  <TouchableOpacity onPress={() => voiceStore.speak(word.word)}>
                     <Icon name="volume-high" />
                   </TouchableOpacity>
                 </Right>

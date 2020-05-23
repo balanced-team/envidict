@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Icon, Card, Button } from 'native-base'
 
 import AnswerLine from '../../atoms/question/AnswerLine'
 import { Colors, Typography, Mixins } from '../../../styles'
-import { InstanceSpeaker } from '../../../utils'
 import WordInformation from './WordInformation'
+import { voiceStoreContext } from '../../../contexts'
 
 const PronunticationQuestion = (props) => {
   const {
@@ -21,6 +21,8 @@ const PronunticationQuestion = (props) => {
 
   const [isDone, setIsDone] = useState(false)
   const [isCorrect, setIsCorrect] = useState(null)
+
+  const voiceStore = useContext(voiceStoreContext)
 
   useEffect(() => {
     setIsStop(false)
@@ -48,7 +50,7 @@ const PronunticationQuestion = (props) => {
     <View style={styles.container}>
       {!isDone && (
         <View style={styles.block}>
-          <TouchableOpacity onPress={() => InstanceSpeaker.speak(question.word)}>
+          <TouchableOpacity onPress={() => voiceStore.speak(question.word)}>
             <Icon name="volume-high" style={styles.icon} />
           </TouchableOpacity>
         </View>

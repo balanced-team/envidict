@@ -4,7 +4,6 @@ import { View, Icon } from 'native-base'
 import HTMLView from 'react-native-htmlview'
 
 import { Colors } from '../../../styles/index'
-import { InstanceSpeaker } from '../../../utils'
 import { voiceStoreContext } from '../../../contexts'
 
 const DetailsView = (props) => {
@@ -13,7 +12,7 @@ const DetailsView = (props) => {
 
   useEffect(() => {
     if (voiceStore.autoSpeak) {
-      InstanceSpeaker.speak(word.word)
+      voiceStore.speak(word.word)
     }
   }, [word])
 
@@ -27,7 +26,7 @@ const DetailsView = (props) => {
     <ScrollView style={styles.container}>
       <Text style={styles.titleText}>{word.word}</Text>
       <View style={styles.inLine}>
-        <TouchableOpacity onPress={() => InstanceSpeaker.speak(word.word)}>
+        <TouchableOpacity onPress={() => voiceStore.speak(word.word)}>
           <Icon name="volume-high" style={styles.iconVolume}></Icon>
         </TouchableOpacity>
         <Text style={styles.pronounce}>{'/' + word.pronounce + '/'}</Text>

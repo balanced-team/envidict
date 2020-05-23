@@ -1,44 +1,62 @@
 import React, { Fragment, useState, useContext } from 'react'
-import { TouchableOpacity, StyleSheet, Slider, Modal } from 'react-native'
+import { TouchableOpacity, StyleSheet, Slider, Modal, AsyncStorage } from 'react-native'
 import { Icon, View, Text, Button } from 'native-base'
 import { Colors } from '../../../styles'
 import { voiceStoreContext } from '../../../contexts'
 
 const SettingsRight = () => {
-  const [isShowSettings, setIsShowSettings] = useState(false)
-
   const voiceStore = useContext(voiceStoreContext)
+
+  const [isShowSettings, setIsShowSettings] = useState(false)
+  const [rate, setRate] = useState(voiceStore.rate)
+  const [pitch, setPitch] = useState(voiceStore.pitch)
 
   const toggleIsShowSettings = () => {
     setIsShowSettings(!isShowSettings)
   }
 
-  const onChangeVolume = (value) => {
-    voiceStore.setVolume(value / 100)
-  }
-
   const onIncreaseRate = () => {
     if (voiceStore.rate < 2) {
+      setRate(rate + 0.5)
       voiceStore.setRate(voiceStore.rate + 0.5)
     }
   }
 
   const onDecreaseRate = () => {
-    if (voiceStore.rate > 0) {
+    if (voiceStore.rate > 0.5) {
+      setRate(rate - 0.5)
       voiceStore.setRate(voiceStore.rate - 0.5)
     }
   }
 
   const onIncreasePitch = () => {
     if (voiceStore.pitch < 2) {
+      setPitch(pitch + 0.5)
       voiceStore.setPitch(voiceStore.pitch + 0.5)
     }
   }
 
   const onDecreasePitch = () => {
-    if (voiceStore.pitch > 0) {
+    if (voiceStore.pitch > 0.5) {
+      setPitch(pitch - 0.5)
       voiceStore.setPitch(voiceStore.pitch - 0.5)
     }
+  }
+
+  const onSaveSettings = async () => {
+    let voiceSettings = JSON.parse(await AsyncStorage.getItem('envidictVoiceSettings'))
+    if (voiceSettings === null) {
+      await AsyncStorage.setItem(
+        'envidictVoiceSettings',
+        JSON.stringify({ rate: 1, pitch: 1, volume: 1 })
+      )
+    } else {
+      voiceSettings.rate = voiceStore.rate
+      voiceSettings.pitch = voiceStore.pitch
+      voiceSettings.volume = voiceStore.volume
+      await AsyncStorage.setItem('envidictVoiceSettings', JSON.stringify(voiceSettings))
+    }
+    toggleIsShowSettings()
   }
 
   return (
@@ -64,7 +82,7 @@ const SettingsRight = () => {
                   </TouchableOpacity>
 
                   <View>
-                    <Text>{voiceStore.rate + 'x'}</Text>
+                    <Text>{rate + 'x'}</Text>
                   </View>
                   <TouchableOpacity onPress={onDecreaseRate}>
                     <Icon name="caret-down" type="FontAwesome" />
@@ -77,24 +95,13 @@ const SettingsRight = () => {
                   </TouchableOpacity>
 
                   <View>
-                    <Text>{voiceStore.pitch + 'x'}</Text>
+                    <Text>{pitch + 'x'}</Text>
                   </View>
                   <TouchableOpacity onPress={onDecreasePitch}>
                     <Icon name="caret-down" type="FontAwesome" />
                   </TouchableOpacity>
                 </View>
-                <Text style={styles.label}>Âm lượng</Text>
-                <View>
-                  <Slider
-                    minimumValue={0}
-                    maximumValue={100}
-                    step={1}
-                    value={voiceStore.volume * 100}
-                    onValueChange={onChangeVolume}
-                    onSlidingComplete={onChangeVolume}
-                  />
-                </View>
-                <Button small style={styles.button} onPress={toggleIsShowSettings}>
+                <Button small style={styles.button} onPress={onSaveSettings}>
                   <Text>Lưu</Text>
                 </Button>
               </View>
