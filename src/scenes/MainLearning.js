@@ -166,14 +166,6 @@ const MainLearning = (props) => {
                 : 'Không tốt rồi! Học cẩn thận để đạt kết quả cao nhé!')}
           </Dialog.Description>
           <Dialog.Button
-            label="Về trang chủ"
-            onPress={() => {
-              setRefresh(true)
-              navigator.goBack()
-            }}
-            color={Colors.SECONDARY}
-          />
-          <Dialog.Button
             label="Học tiếp"
             onPress={() => {
               setIsDoneTest(false)

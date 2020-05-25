@@ -88,6 +88,7 @@ const WriteQuestion = (props) => {
         textStyle={{
           textTransform: 'uppercase',
         }}
+        cellSize={18}
         value={answer}
         onTextChange={onChangeAnswer}
         keyboardType="email-address"

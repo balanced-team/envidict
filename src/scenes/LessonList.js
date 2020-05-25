@@ -10,6 +10,7 @@ import { Colors } from '../styles'
 import { RoutesConstants } from '../navigations/route-constants'
 import { topicStoreContext } from '../contexts'
 import { Topic } from '../stores/topic'
+import Loading from '../components/organisms/common/Loading'
 
 const LessonList = (props) => {
   // const {} =
@@ -23,10 +24,13 @@ const LessonList = (props) => {
     index: 0,
   })
 
+  const [loading, setLoading] = useState(true)
+
   const topicStore = useContext(topicStoreContext)
 
   useEffect(() => {
     const setUp = async () => {
+      setLoading(true)
       const currentCourse = topicStore.topics.find((topic) => topic.id === coursesId)
       await currentCourse.fetch()
       setCourse(currentCourse)
@@ -38,6 +42,7 @@ const LessonList = (props) => {
           (lesson) => (lesson.id = currentCourse.lessons[0].id)
         ),
       })
+      setLoading(false)
     }
     setUp()
   }, [coursesId])
@@ -59,47 +64,52 @@ const LessonList = (props) => {
 
   return (
     <MainLayout autoFocusSearchInput={false}>
-      <View style={styles.listItemCourses}>
-        <ListItemCourses
-          image={image}
-          title={course.name}
-          subTitle={`Số bài học: ${course.lessonIds.length}`}
-        />
-      </View>
+      {loading && <Loading />}
+      {!loading && (
+        <>
+          <View style={styles.listItemCourses}>
+            <ListItemCourses
+              image={image}
+              title={course.name}
+              subTitle={`Số bài học: ${course.lessonIds.length}`}
+            />
+          </View>
 
-      <Button
-        bordered
-        info
-        style={styles.buttonChange}
-        onPress={() => {
-          props.navigation.push(RoutesConstants.Learning)
-        }}
-      >
-        <Icon name="exchange-alt" type="FontAwesome5" style={styles.iconChange} />
-        <Text style={{ color: Colors.BLUE_LIGHT }}>Chọn bộ từ khác</Text>
-      </Button>
-      <CurrentVocabularies
-        onClickPreView={onClickPreView}
-        onClickPractise={onClickPractise}
-        onClickLearnNow={onClickLearnNow}
-        id={currentLesson.id}
-        index={currentLesson.index}
-        courseId={currentLesson.courseId}
-        wordIds={currentLesson.wordIds}
-      />
-      <Separator>
-        <Text style={styles.tittle}>Danh sách bài đã học</Text>
-      </Separator>
-      {course.lessons
-        .filter((lesson) => lesson.id !== currentLesson.id)
-        .map((lesson, i) => (
-          <Lesson
-            key={lesson.id}
-            courseId={coursesId}
-            lessonId={lesson.id}
-            name={`Bài ${i + 1}`}
+          <Button
+            bordered
+            info
+            style={styles.buttonChange}
+            onPress={() => {
+              props.navigation.push(RoutesConstants.Learning)
+            }}
+          >
+            <Icon name="exchange-alt" type="FontAwesome5" style={styles.iconChange} />
+            <Text style={{ color: Colors.BLUE_LIGHT }}>Chọn bộ từ khác</Text>
+          </Button>
+          <CurrentVocabularies
+            onClickPreView={onClickPreView}
+            onClickPractise={onClickPractise}
+            onClickLearnNow={onClickLearnNow}
+            id={currentLesson.id}
+            index={currentLesson.index}
+            courseId={currentLesson.courseId}
+            wordIds={currentLesson.wordIds}
           />
-        ))}
+          <Separator>
+            <Text style={styles.tittle}>Danh sách bài đã học</Text>
+          </Separator>
+          {course.lessons
+            .filter((lesson) => lesson.id !== currentLesson.id)
+            .map((lesson, i) => (
+              <Lesson
+                key={lesson.id}
+                courseId={coursesId}
+                lessonId={lesson.id}
+                name={`Bài ${i + 1}`}
+              />
+            ))}
+        </>
+      )}
     </MainLayout>
   )
 }
