@@ -79,6 +79,7 @@ const VocabularyQuestion = (props) => {
                   {question.pronouce}
                 </Text>
               )}
+              <Text style={styles.description}>{question.description}</Text>
             </Col>
 
             <Col size={2} style={styles.columnRight}>
