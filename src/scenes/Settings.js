@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Text, StyleSheet, Alert, BackHandler } from 'react-native'
 import { ListItem, Icon, Left, Body, Right, Switch, Button, Content } from 'native-base'
-
 import MainLayout from '../components/templates/MainLayout'
 import { backHandleToExitApp } from '../utils'
 import { Colors, Typography } from '../styles'

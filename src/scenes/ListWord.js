@@ -7,7 +7,7 @@ import { RoutesConstants } from '../navigations/route-constants'
 import { StyleSheet, ScrollView } from 'react-native'
 import { Mixins, Colors, Typography } from '../styles'
 import SearchHeader from '../components/molecules/main-layout/SearchHeader'
-
+// Nên sử dụng firebase để lưu trữ dữ liệu, và thực hiện truy vấn để lấy data về
 const wordList = [
   'good',
   'allocate',
