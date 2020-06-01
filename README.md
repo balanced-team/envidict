@@ -4,7 +4,7 @@ Link ứng dụng: [https://play.google.com/store/apps/details?id=com.ffff.tudie
 ## 1.Thông tin thành viên:
 - Hoàng Kim Minh: 17020891
 - Nguyễn Thị Thúy: 17021054
-- Lương Mạnh Quang: 16021044
+- Lương Quang Mạnh: 16021044
 - Đoàn Hồng Phúc: 16022482
 ## 2. Thông tin ứng dụng
 #### Mô tả ứng dụng
