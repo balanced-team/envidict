@@ -1,4 +1,5 @@
-import { action, observable, runInAction } from 'mobx'
+import AsyncStorage from '@react-native-community/async-storage'
+import { action, computed, observable, runInAction } from 'mobx'
 import { db } from '../utils/firestore'
 import { Word } from './dict'
 
@@ -54,10 +55,29 @@ class Lesson {
   @observable enviColl = db.collection('envi')
   @observable id = ''
   @observable wordIds = []
+  @observable learnedWordIds = new Set() // use Set to avoid accidentally duplicated words
   @observable words = []
 
   constructor(json) {
     this.fromJson(json)
+  }
+
+  @computed
+  get wordCount() {
+    return this.wordIds.length()
+  }
+
+  @computed
+  get learnedWordCount() {
+    return this.learnedWordIds.size
+  }
+
+  /**
+   * Return progress as a float between 0 and 1
+   **/
+  @computed
+  get progress() {
+    return this.learnedWordCount / this.wordCount
   }
 
   @action
@@ -73,9 +93,17 @@ class Lesson {
         return new Word(doc.data(), 'envi')
       })
     )
+    const learnedWordIds = new Set(JSON.parse(await AsyncStorage.getItem(this.id)))
 
     runInAction(() => {
       this.words = words
+      this.learnedWordIds = learnedWordIds
     })
+  }
+
+  @action
+  async markAsLearned(wordId) {
+    this.learnedWordIds.add(wordId)
+    await AsyncStorage.setItem(this.id, JSON.stringify(Array.from(this.learnedWordIds)))
   }
 }
