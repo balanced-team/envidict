@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { ScrollView, Button, Text, Alert, BackHandler } from 'react-native'
 
-import { View } from 'native-base'
+import { View } from 'native-base' // các thẻ không sử dụng nên xóa đi
 
 import { backHandleToExitApp } from '../utils'
 import MainLayout from '../components/templates/MainLayout'

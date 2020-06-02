@@ -94,7 +94,8 @@ const OnlineTranslation = ({ route, navigation }) => {
           </Text>
         </Button>
       </View>
-      <View style={styles.box}>
+
+      <View style={styles.box_bottom}> 
         <Row style={styles.row}>
           <Left>
             <TouchableOpacity onPress={() => voiceStore.speak(translatedText, toLang)}>
@@ -137,6 +138,13 @@ const styles = StyleSheet.create({
   box: {
     flexDirection: 'column',
     borderColor: Colors.BLUE_DARK,
+    borderWidth: 1,
+    borderRadius: 10,
+    margin: 10,
+  },
+  box_bottom: {
+    flexDirection: 'column',
+    borderColor: white,
     borderWidth: 1,
     borderRadius: 10,
     margin: 10,

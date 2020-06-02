@@ -1,6 +1,5 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-
 import Home from '../scenes/Home'
 import Favorite from '../scenes/Favorite'
 import Vocabulary from '../scenes/Vocabulary'

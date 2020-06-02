@@ -2,8 +2,6 @@ import React, { useEffect } from 'react'
 import { Alert, BackHandler } from 'react-native'
 import { Text, View, Button, Icon } from 'native-base'
 import { StyleSheet } from 'react-native'
-import * as Amimatable from 'react-native-animatable'
-
 import MainLayout from '../components/templates/MainLayout'
 import WordOfTheDay from '../components/molecules/word/WordOfTheDay'
 import { backHandleToExitApp } from '../utils'
