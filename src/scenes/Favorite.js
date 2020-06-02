@@ -27,7 +27,7 @@ const Favorite = ({ navigation }) => {
 
   const onRemoveFavoriteWord = async (word) => {
     let favoriteWords = JSON.parse(await AsyncStorage.getItem('favoriteWords'))
-    if (!favoriteWords) {
+    if (!favoriteWords || favoriteWords.length == 0) {
       favoriteWords = []
     }
     const index = favoriteWords.indexOf(word)
